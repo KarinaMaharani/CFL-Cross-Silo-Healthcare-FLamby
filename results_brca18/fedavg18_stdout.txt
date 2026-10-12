@@ -1,0 +1,37 @@
+[20:11:02] === CFL / Fed-TCGA-BRCA, 18 clients | run 'fedavg18' | strategy fedavg ===
+[20:11:03] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:11:03] brca.csv: 1088 patients, 39 features, event rate 0.139
+[20:11:03]   WARNING: 3 client(s) hold fewer than 2 events (C5-0, C5-1, C5-2); their Cox gradient is near-zero, so their update direction carries little information
+[20:11:03]   client  0: C0-0    centre 0 |   83 train (15 events) |  63 test
+[20:11:03]   client  1: C0-1    centre 0 |   83 train (15 events) |  63 test
+[20:11:03]   client  2: C0-2    centre 0 |   82 train (15 events) |  63 test
+[20:11:03]   client  3: C1-0    centre 1 |   53 train (12 events) |  40 test
+[20:11:03]   client  4: C1-1    centre 1 |   52 train (12 events) |  40 test
+[20:11:03]   client  5: C1-2    centre 1 |   51 train (11 events) |  40 test
+[20:11:03]   client  6: C2-0    centre 2 |   55 train ( 5 events) |  42 test
+[20:11:03]   client  7: C2-1    centre 2 |   55 train ( 5 events) |  42 test
+[20:11:03]   client  8: C2-2    centre 2 |   54 train ( 4 events) |  42 test
+[20:11:03]   client  9: C3-0    centre 3 |   44 train ( 6 events) |  33 test
+[20:11:03]   client 10: C3-1    centre 3 |   43 train ( 5 events) |  33 test
+[20:11:03]   client 11: C3-2    centre 3 |   42 train ( 5 events) |  33 test
+[20:11:03]   client 12: C4-0    centre 4 |   44 train ( 3 events) |  33 test
+[20:11:03]   client 13: C4-1    centre 4 |   43 train ( 2 events) |  33 test
+[20:11:03]   client 14: C4-2    centre 4 |   42 train ( 2 events) |  33 test
+[20:11:03]   client 15: C5-0    centre 5 |   14 train ( 1 events) |  11 test
+[20:11:03]   client 16: C5-1    centre 5 |   14 train ( 1 events) |  11 test
+[20:11:03]   client 17: C5-2    centre 5 |   12 train ( 0 events) |  11 test
+[20:11:05] model: FLamby Cox linear model, 40 parameters
+[20:11:05] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[20:11:05] gamma probe: client C0-0 -> halves of 42 / 41 patients, every 5 rounds
+[20:11:08] round   1/100 | c-index 0.3393 (min 0.0426) | loss 0.4484 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1065 max 0.5998 | 2.5s
+[20:11:26] round  10/100 | c-index 0.7044 (min 0.4583) | loss 0.3427 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0941 max 0.7680 | 2.9s
+[20:11:46] round  20/100 | c-index 0.7950 (min 0.5208) | loss 0.3559 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0613 max 1.0430 | 2.9s
+[20:12:06] round  30/100 | c-index 0.8355 (min 0.6591) | loss 0.3462 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1468 max 0.4512 | 3.0s
+[20:12:27] round  40/100 | c-index 0.8336 (min 0.6591) | loss 0.3080 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1632 max 0.5408 | 2.9s
+[20:12:47] round  50/100 | c-index 0.8337 (min 0.6364) | loss 0.3100 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0299 max 0.9091 | 3.0s
+[20:13:07] round  60/100 | c-index 0.8193 (min 0.5625) | loss 0.3348 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0265 max 0.5079 | 3.2s
+[20:13:28] round  70/100 | c-index 0.8181 (min 0.5625) | loss 0.2542 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0666 max 0.4602 | 2.8s
+[20:13:48] round  80/100 | c-index 0.8340 (min 0.6591) | loss 0.2741 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0382 max 0.4467 | 3.0s
+[20:14:08] round  90/100 | c-index 0.8237 (min 0.5625) | loss 0.3205 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0469 max 0.3666 | 2.7s
+[20:14:27] round 100/100 | c-index 0.8212 (min 0.5625) | loss 0.2877 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0343 max 0.6473 | 2.7s
+[20:14:28] done in 3.38 min | c-index 0.8212 | ARI 0.000 | clusters [['C0-0', 'C0-1', 'C0-2', 'C1-0', 'C1-1', 'C1-2', 'C2-0', 'C2-1', 'C2-2', 'C3-0', 'C3-1', 'C3-2', 'C4-0', 'C4-1', 'C4-2', 'C5-0', 'C5-1', 'C5-2']] | splits at []

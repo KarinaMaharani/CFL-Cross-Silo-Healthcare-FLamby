@@ -1,0 +1,148 @@
+[20:09:23] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:09:23] brca.csv: 1088 patients, 39 features, event rate 0.139
+[20:09:23]   WARNING: 3 client(s) hold fewer than 2 events (C5-0, C5-1, C5-2); their Cox gradient is near-zero, so their update direction carries little information
+[20:09:23]   client  0: C0-0    centre 0 |   83 train (15 events) |  63 test
+[20:09:23]   client  1: C0-1    centre 0 |   83 train (15 events) |  63 test
+[20:09:23]   client  2: C0-2    centre 0 |   82 train (15 events) |  63 test
+[20:09:23]   client  3: C1-0    centre 1 |   53 train (12 events) |  40 test
+[20:09:23]   client  4: C1-1    centre 1 |   52 train (12 events) |  40 test
+[20:09:23]   client  5: C1-2    centre 1 |   51 train (11 events) |  40 test
+[20:09:23]   client  6: C2-0    centre 2 |   55 train ( 5 events) |  42 test
+[20:09:23]   client  7: C2-1    centre 2 |   55 train ( 5 events) |  42 test
+[20:09:23]   client  8: C2-2    centre 2 |   54 train ( 4 events) |  42 test
+[20:09:23]   client  9: C3-0    centre 3 |   44 train ( 6 events) |  33 test
+[20:09:23]   client 10: C3-1    centre 3 |   43 train ( 5 events) |  33 test
+[20:09:23]   client 11: C3-2    centre 3 |   42 train ( 5 events) |  33 test
+[20:09:23]   client 12: C4-0    centre 4 |   44 train ( 3 events) |  33 test
+[20:09:23]   client 13: C4-1    centre 4 |   43 train ( 2 events) |  33 test
+[20:09:23]   client 14: C4-2    centre 4 |   42 train ( 2 events) |  33 test
+[20:09:23]   client 15: C5-0    centre 5 |   14 train ( 1 events) |  11 test
+[20:09:23]   client 16: C5-1    centre 5 |   14 train ( 1 events) |  11 test
+[20:09:23]   client 17: C5-2    centre 5 |   12 train ( 0 events) |  11 test
+[20:09:23] model: FLamby Cox linear model, 40 parameters
+[20:09:26] === pooled: clients ['C0-0', 'C0-1', 'C0-2', 'C1-0', 'C1-1', 'C1-2', 'C2-0', 'C2-1', 'C2-2', 'C3-0', 'C3-1', 'C3-2', 'C4-0', 'C4-1', 'C4-2', 'C5-0', 'C5-1', 'C5-2'] | 866 patients (119 events) | 109 steps/epoch x 30 ===
+[20:09:33] pooled    epoch 10/30 | loss 0.2217 | c-index per region [0.824, 0.682, 0.852, 0.562, 0.83, 1.0]
+[20:09:40] pooled    epoch 20/30 | loss 0.2559 | c-index per region [0.776, 0.659, 0.852, 0.562, 1.0, 0.5]
+[20:09:46] pooled    epoch 30/30 | loss 0.2384 | c-index per region [0.686, 0.295, 0.806, 0.5, 0.702, 1.0]
+[20:09:46] === center0: clients ['C0-0', 'C0-1', 'C0-2'] | 248 patients (45 events) | 31 steps/epoch x 30 ===
+[20:09:49] center0   epoch 10/30 | loss 0.1814 | c-index per region [0.619, 0.75, 0.722, 0.5, 0.532, 1.0]
+[20:09:51] center0   epoch 20/30 | loss 0.1597 | c-index per region [0.633, 0.727, 0.769, 0.479, 0.83, 1.0]
+[20:09:54] center0   epoch 30/30 | loss 0.2421 | c-index per region [0.661, 0.795, 0.769, 0.396, 0.936, 1.0]
+[20:09:54] === center1: clients ['C1-0', 'C1-1', 'C1-2'] | 156 patients (35 events) | 20 steps/epoch x 30 ===
+[20:09:56] center1   epoch 10/30 | loss 0.3589 | c-index per region [0.776, 0.614, 0.833, 0.792, 0.745, 1.0]
+[20:09:58] center1   epoch 20/30 | loss 0.2048 | c-index per region [0.818, 0.477, 0.62, 0.792, 0.532, 1.0]
+[20:09:59] center1   epoch 30/30 | loss 0.0939 | c-index per region [0.762, 0.614, 0.824, 0.75, 0.809, 1.0]
+[20:09:59] === center2: clients ['C2-0', 'C2-1', 'C2-2'] | 164 patients (14 events) | 21 steps/epoch x 30 ===
+[20:10:01] center2   epoch 10/30 | loss 0.0731 | c-index per region [0.644, 0.682, 0.917, 0.271, 0.936, 1.0]
+[20:10:02] center2   epoch 20/30 | loss 0.0876 | c-index per region [0.602, 0.568, 0.796, 0.312, 0.574, 0.0]
+[20:10:04] center2   epoch 30/30 | loss 0.2196 | c-index per region [0.51, 0.545, 0.824, 0.292, 0.553, 0.0]
+[20:10:04] === center3: clients ['C3-0', 'C3-1', 'C3-2'] | 129 patients (16 events) | 17 steps/epoch x 30 ===
+[20:10:05] center3   epoch 10/30 | loss 0.2576 | c-index per region [0.389, 0.591, 0.685, 0.833, 0.213, 0.0]
+[20:10:07] center3   epoch 20/30 | loss 0.2459 | c-index per region [0.535, 0.841, 0.843, 0.583, 0.532, 0.5]
+[20:10:08] center3   epoch 30/30 | loss 0.1882 | c-index per region [0.585, 0.841, 0.833, 0.521, 0.638, 1.0]
+[20:10:08] === center4: clients ['C4-0', 'C4-1', 'C4-2'] | 129 patients (7 events) | 17 steps/epoch x 30 ===
+[20:10:09] center4   epoch 10/30 | loss 0.0848 | c-index per region [0.874, 0.523, 0.426, 0.542, 0.872, 1.0]
+[20:10:10] center4   epoch 20/30 | loss 0.0661 | c-index per region [0.818, 0.705, 0.5, 0.417, 0.915, 1.0]
+[20:10:11] center4   epoch 30/30 | loss 0.0256 | c-index per region [0.846, 0.705, 0.509, 0.458, 0.915, 1.0]
+[20:10:11] === center5: clients ['C5-0', 'C5-1', 'C5-2'] | 40 patients (2 events) | 5 steps/epoch x 30 ===
+[20:10:12] center5   epoch 10/30 | loss 0.0000 | c-index per region [0.577, 0.795, 0.759, 0.417, 0.936, 0.5]
+[20:10:13] center5   epoch 20/30 | loss 0.0000 | c-index per region [0.577, 0.795, 0.759, 0.417, 0.936, 0.5]
+[20:10:13] center5   epoch 30/30 | loss 0.0000 | c-index per region [0.574, 0.795, 0.759, 0.417, 0.936, 0.5]
+[20:10:13] === client0: clients ['C0-0'] | 83 patients (15 events) | 11 steps/epoch x 30 ===
+[20:10:14] client0   epoch 10/30 | loss 0.0447 | c-index per region [0.725, 0.682, 0.713, 0.5, 0.553, 1.0]
+[20:10:16] client0   epoch 20/30 | loss 0.0665 | c-index per region [0.636, 0.5, 0.676, 0.562, 0.426, 1.0]
+[20:10:17] client0   epoch 30/30 | loss 0.0172 | c-index per region [0.765, 0.773, 0.694, 0.5, 0.574, 1.0]
+[20:10:17] === client1: clients ['C0-1'] | 83 patients (15 events) | 11 steps/epoch x 30 ===
+[20:10:18] client1   epoch 10/30 | loss 0.1435 | c-index per region [0.664, 0.659, 0.75, 0.458, 0.957, 1.0]
+[20:10:19] client1   epoch 20/30 | loss 0.1984 | c-index per region [0.695, 0.705, 0.769, 0.604, 0.936, 1.0]
+[20:10:20] client1   epoch 30/30 | loss 0.1437 | c-index per region [0.653, 0.727, 0.787, 0.625, 0.936, 0.5]
+[20:10:20] === client2: clients ['C0-2'] | 82 patients (15 events) | 11 steps/epoch x 30 ===
+[20:10:21] client2   epoch 10/30 | loss 0.2631 | c-index per region [0.798, 0.75, 0.824, 0.646, 0.702, 1.0]
+[20:10:23] client2   epoch 20/30 | loss 0.1386 | c-index per region [0.798, 0.705, 0.843, 0.667, 0.723, 1.0]
+[20:10:24] client2   epoch 30/30 | loss 0.0436 | c-index per region [0.745, 0.795, 0.843, 0.542, 0.745, 1.0]
+[20:10:24] === client3: clients ['C1-0'] | 53 patients (12 events) | 7 steps/epoch x 30 ===
+[20:10:25] client3   epoch 10/30 | loss 0.2103 | c-index per region [0.787, 0.341, 0.676, 0.771, 0.638, 1.0]
+[20:10:26] client3   epoch 20/30 | loss 0.1078 | c-index per region [0.759, 0.364, 0.796, 0.75, 0.681, 1.0]
+[20:10:27] client3   epoch 30/30 | loss 0.1263 | c-index per region [0.745, 0.477, 0.676, 0.771, 0.66, 1.0]
+[20:10:27] === client4: clients ['C1-1'] | 52 patients (12 events) | 7 steps/epoch x 30 ===
+[20:10:28] client4   epoch 10/30 | loss 0.1452 | c-index per region [0.751, 0.5, 0.731, 0.896, 0.638, 1.0]
+[20:10:28] client4   epoch 20/30 | loss 0.1538 | c-index per region [0.661, 0.5, 0.546, 0.917, 0.298, 1.0]
+[20:10:29] client4   epoch 30/30 | loss 0.1445 | c-index per region [0.725, 0.568, 0.778, 0.875, 0.723, 1.0]
+[20:10:29] === client5: clients ['C1-2'] | 51 patients (11 events) | 7 steps/epoch x 30 ===
+[20:10:30] client5   epoch 10/30 | loss 0.1274 | c-index per region [0.826, 0.523, 0.546, 0.542, 0.745, 1.0]
+[20:10:31] client5   epoch 20/30 | loss 0.1140 | c-index per region [0.829, 0.545, 0.5, 0.521, 0.511, 1.0]
+[20:10:32] client5   epoch 30/30 | loss 0.0589 | c-index per region [0.784, 0.682, 0.676, 0.396, 0.894, 1.0]
+[20:10:32] === client6: clients ['C2-0'] | 55 patients (5 events) | 7 steps/epoch x 30 ===
+[20:10:33] client6   epoch 10/30 | loss 0.2540 | c-index per region [0.574, 0.682, 0.824, 0.438, 0.851, 0.5]
+[20:10:33] client6   epoch 20/30 | loss 0.0650 | c-index per region [0.611, 0.659, 0.806, 0.458, 0.83, 0.5]
+[20:10:34] client6   epoch 30/30 | loss 0.2665 | c-index per region [0.627, 0.636, 0.815, 0.375, 0.766, 0.5]
+[20:10:34] === client7: clients ['C2-1'] | 55 patients (5 events) | 7 steps/epoch x 30 ===
+[20:10:35] client7   epoch 10/30 | loss 0.0067 | c-index per region [0.532, 0.364, 0.556, 0.812, 0.191, 0.5]
+[20:10:36] client7   epoch 20/30 | loss 0.0080 | c-index per region [0.588, 0.5, 0.676, 0.729, 0.34, 0.5]
+[20:10:37] client7   epoch 30/30 | loss 0.0149 | c-index per region [0.557, 0.386, 0.63, 0.688, 0.34, 0.5]
+[20:10:37] === client8: clients ['C2-2'] | 54 patients (4 events) | 7 steps/epoch x 30 ===
+[20:10:37] client8   epoch 10/30 | loss 0.0218 | c-index per region [0.409, 0.773, 0.713, 0.812, 0.277, 0.5]
+[20:10:38] client8   epoch 20/30 | loss 0.1812 | c-index per region [0.392, 0.705, 0.583, 0.833, 0.213, 0.5]
+[20:10:39] client8   epoch 30/30 | loss 0.0133 | c-index per region [0.426, 0.727, 0.574, 0.812, 0.213, 0.5]
+[20:10:39] === client9: clients ['C3-0'] | 44 patients (6 events) | 6 steps/epoch x 30 ===
+[20:10:40] client9   epoch 10/30 | loss 0.0597 | c-index per region [0.625, 0.864, 0.685, 0.479, 0.915, 0.5]
+[20:10:40] client9   epoch 20/30 | loss 0.0389 | c-index per region [0.633, 0.864, 0.685, 0.5, 0.915, 0.5]
+[20:10:41] client9   epoch 30/30 | loss 0.0198 | c-index per region [0.636, 0.864, 0.676, 0.521, 0.894, 0.5]
+[20:10:41] === client10: clients ['C3-1'] | 43 patients (5 events) | 6 steps/epoch x 30 ===
+[20:10:42] client10  epoch 10/30 | loss 0.0683 | c-index per region [0.473, 0.932, 0.778, 0.708, 0.532, 0.5]
+[20:10:42] client10  epoch 20/30 | loss 0.0137 | c-index per region [0.482, 0.909, 0.796, 0.625, 0.596, 0.5]
+[20:10:43] client10  epoch 30/30 | loss 0.0680 | c-index per region [0.473, 0.886, 0.796, 0.625, 0.553, 1.0]
+[20:10:43] === client11: clients ['C3-2'] | 42 patients (5 events) | 6 steps/epoch x 30 ===
+[20:10:44] client11  epoch 10/30 | loss 0.0923 | c-index per region [0.308, 0.75, 0.63, 0.333, 0.383, 0.0]
+[20:10:45] client11  epoch 20/30 | loss 0.1640 | c-index per region [0.314, 0.705, 0.426, 0.333, 0.319, 0.0]
+[20:10:45] client11  epoch 30/30 | loss 0.0647 | c-index per region [0.345, 0.591, 0.528, 0.312, 0.383, 0.0]
+[20:10:45] === client12: clients ['C4-0'] | 44 patients (3 events) | 6 steps/epoch x 30 ===
+[20:10:46] client12  epoch 10/30 | loss 0.0000 | c-index per region [0.639, 0.909, 0.741, 0.458, 0.979, 0.5]
+[20:10:47] client12  epoch 20/30 | loss 0.0001 | c-index per region [0.661, 0.909, 0.704, 0.458, 0.936, 1.0]
+[20:10:47] client12  epoch 30/30 | loss 0.0011 | c-index per region [0.661, 0.909, 0.713, 0.458, 0.936, 1.0]
+[20:10:47] === client13: clients ['C4-1'] | 43 patients (2 events) | 6 steps/epoch x 30 ===
+[20:10:48] client13  epoch 10/30 | loss 0.0006 | c-index per region [0.636, 0.886, 0.648, 0.354, 0.979, 0.5]
+[20:10:49] client13  epoch 20/30 | loss 0.0008 | c-index per region [0.644, 0.909, 0.611, 0.354, 0.957, 0.5]
+[20:10:49] client13  epoch 30/30 | loss 0.0022 | c-index per region [0.647, 0.909, 0.602, 0.417, 0.957, 0.5]
+[20:10:49] === client14: clients ['C4-2'] | 42 patients (2 events) | 6 steps/epoch x 30 ===
+[20:10:50] client14  epoch 10/30 | loss 0.0003 | c-index per region [0.485, 0.159, 0.269, 0.5, 0.17, 0.5]
+[20:10:50] client14  epoch 20/30 | loss 0.0000 | c-index per region [0.51, 0.205, 0.278, 0.438, 0.191, 0.5]
+[20:10:51] client14  epoch 30/30 | loss 0.0002 | c-index per region [0.538, 0.227, 0.278, 0.396, 0.191, 0.0]
+[20:10:51] === client15: clients ['C5-0'] | 14 patients (1 events) | 2 steps/epoch x 30 ===
+[20:10:52] client15  epoch 10/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:52] client15  epoch 20/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:53] client15  epoch 30/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:53] === client16: clients ['C5-1'] | 14 patients (1 events) | 2 steps/epoch x 30 ===
+[20:10:53] client16  epoch 10/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:54] client16  epoch 20/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:54] client16  epoch 30/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:54] === client17: clients ['C5-2'] | 12 patients (0 events) | 2 steps/epoch x 30 ===
+[20:10:55] client17  epoch 10/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:55] client17  epoch 20/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:56] client17  epoch 30/30 | loss 0.0000 | c-index per region [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:56] summary (columns = test region 0..5):
+[20:10:56]   center0   n=248 (45 events) c-index [0.661, 0.795, 0.769, 0.396, 0.936, 1.0]
+[20:10:56]   center1   n=156 (35 events) c-index [0.762, 0.614, 0.824, 0.75, 0.809, 1.0]
+[20:10:56]   center2   n=164 (14 events) c-index [0.51, 0.545, 0.824, 0.292, 0.553, 0.0]
+[20:10:56]   center3   n=129 (16 events) c-index [0.585, 0.841, 0.833, 0.521, 0.638, 1.0]
+[20:10:56]   center4   n=129 ( 7 events) c-index [0.846, 0.705, 0.509, 0.458, 0.915, 1.0]
+[20:10:56]   center5   n= 40 ( 2 events) c-index [0.574, 0.795, 0.759, 0.417, 0.936, 0.5]
+[20:10:56]   client0   n= 83 (15 events) c-index [0.765, 0.773, 0.694, 0.5, 0.574, 1.0]
+[20:10:56]   client1   n= 83 (15 events) c-index [0.653, 0.727, 0.787, 0.625, 0.936, 0.5]
+[20:10:56]   client10  n= 43 ( 5 events) c-index [0.473, 0.886, 0.796, 0.625, 0.553, 1.0]
+[20:10:56]   client11  n= 42 ( 5 events) c-index [0.345, 0.591, 0.528, 0.312, 0.383, 0.0]
+[20:10:56]   client12  n= 44 ( 3 events) c-index [0.661, 0.909, 0.713, 0.458, 0.936, 1.0]
+[20:10:56]   client13  n= 43 ( 2 events) c-index [0.647, 0.909, 0.602, 0.417, 0.957, 0.5]
+[20:10:56]   client14  n= 42 ( 2 events) c-index [0.538, 0.227, 0.278, 0.396, 0.191, 0.0]
+[20:10:56]   client15  n= 14 ( 1 events) c-index [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:56]   client16  n= 14 ( 1 events) c-index [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:56]   client17  n= 12 ( 0 events) c-index [0.566, 0.818, 0.722, 0.417, 1.0, 0.5]
+[20:10:56]   client2   n= 82 (15 events) c-index [0.745, 0.795, 0.843, 0.542, 0.745, 1.0]
+[20:10:56]   client3   n= 53 (12 events) c-index [0.745, 0.477, 0.676, 0.771, 0.66, 1.0]
+[20:10:56]   client4   n= 52 (12 events) c-index [0.725, 0.568, 0.778, 0.875, 0.723, 1.0]
+[20:10:56]   client5   n= 51 (11 events) c-index [0.784, 0.682, 0.676, 0.396, 0.894, 1.0]
+[20:10:56]   client6   n= 55 ( 5 events) c-index [0.627, 0.636, 0.815, 0.375, 0.766, 0.5]
+[20:10:56]   client7   n= 55 ( 5 events) c-index [0.557, 0.386, 0.63, 0.688, 0.34, 0.5]
+[20:10:56]   client8   n= 54 ( 4 events) c-index [0.426, 0.727, 0.574, 0.812, 0.213, 0.5]
+[20:10:56]   client9   n= 44 ( 6 events) c-index [0.636, 0.864, 0.676, 0.521, 0.894, 0.5]
+[20:10:56]   pooled    n=866 (119 events) c-index [0.686, 0.295, 0.806, 0.5, 0.702, 1.0]

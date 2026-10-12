@@ -1,0 +1,74 @@
+[17:17:57] === CFL / Fed-ISIC2019, 18 clients | run 'cfl18_strag' | strategy cfl ===
+[17:17:57] device: cuda -- NVIDIA RTX A2000 12GB (12.5 GB), torch 2.5.1+cu121, amp=True
+[17:17:57]   client  0: BCN-0        centre BCN        |  3310 train | 2483 test
+[17:17:57]   client  1: BCN-1        centre BCN        |  3310 train | 2483 test
+[17:17:57]   client  2: BCN-2        centre BCN        |  3310 train | 2483 test
+[17:17:57]   client  3: molemax-0    centre molemax    |  1055 train |  791 test
+[17:17:57]   client  4: molemax-1    centre molemax    |  1054 train |  791 test
+[17:17:57]   client  5: molemax-2    centre molemax    |  1054 train |  791 test
+[17:17:57]   client  6: modern-0     centre modern     |   897 train |  672 test
+[17:17:57]   client  7: modern-1     centre modern     |   897 train |  672 test
+[17:17:57]   client  8: modern-2     centre modern     |   897 train |  672 test
+[17:17:57]   client  9: rosendahl-0  centre rosendahl  |   603 train |  452 test
+[17:17:57]   client 10: rosendahl-1  centre rosendahl  |   602 train |  452 test
+[17:17:57]   client 11: rosendahl-2  centre rosendahl  |   602 train |  452 test
+[17:17:57]   client 12: MSK-0        centre MSK        |   219 train |  164 test
+[17:17:57]   client 13: MSK-1        centre MSK        |   218 train |  164 test
+[17:17:57]   client 14: MSK-2        centre MSK        |   218 train |  164 test
+[17:17:57]   client 15: vienna-0     centre vienna     |   117 train |   88 test
+[17:17:57]   client 16: vienna-1     centre vienna     |   117 train |   88 test
+[17:17:57]   client 17: vienna-2     centre vienna     |   117 train |   88 test
+[17:18:27] model: FLamby EfficientNet-B0 (8 classes), 4017796 parameters, pretrained=True
+[17:18:27] straggler mode=partial profile=tiers deadline=1.0 dynamic=False speeds=[1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25]
+[17:18:30] gamma probe: client BCN-0 -> halves of 1655 / 1655 images, every 5 rounds (gamma_max automatic)
+[17:20:58] round 1: gamma probe alpha_halves=0.498 gamma_hat=0.501
+[17:26:46] round   1/40 | bacc nan (min nan) | loss 9.5327 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1397 max 0.7642 | steps 8-33 | 496s | ETA 322m
+[17:30:56] round   2/40 | bacc nan (min nan) | loss 9.2054 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1274 max 0.7435 | steps 8-33 | 250s | ETA 236m
+[17:33:40] round   3/40 | bacc nan (min nan) | loss 8.8758 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1232 max 0.7251 | steps 8-33 | 164s | ETA 187m
+[17:36:21] round   4/40 | bacc nan (min nan) | loss 8.6576 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1138 max 0.7118 | steps 8-33 | 162s | ETA 161m
+[17:36:55] round 5: gamma probe alpha_halves=0.458 gamma_hat=0.520
+[17:42:45] round   5/40 | bacc 0.3506 (min 0.2734) | loss 8.2805 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1190 max 0.6991 | steps 8-33 | 384s | ETA 170m
+[17:45:29] round   6/40 | bacc 0.3506 (min 0.2734) | loss 8.1102 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1145 max 0.6891 | steps 8-33 | 164s | ETA 153m
+[17:48:12] round   7/40 | bacc 0.3506 (min 0.2734) | loss 7.7609 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1124 max 0.6868 | steps 8-33 | 163s | ETA 140m
+[17:50:54] round   8/40 | bacc 0.3506 (min 0.2734) | loss 7.4529 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1118 max 0.6946 | steps 8-33 | 162s | ETA 130m
+[17:53:39] round   9/40 | bacc 0.3506 (min 0.2734) | loss 7.0840 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1084 max 0.6935 | steps 8-33 | 165s | ETA 121m
+[17:54:12] round 10: gamma probe alpha_halves=0.363 gamma_hat=0.564
+[18:00:08] round  10/40 | bacc 0.4506 (min 0.2966) | loss 7.3958 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1059 max 0.6866 | steps 8-33 | 389s | ETA 125m
+[18:02:51] round  11/40 | bacc 0.4506 (min 0.2966) | loss 7.0631 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.1018 max 0.6551 | steps 8-33 | 164s | ETA 117m
+[18:05:35] round  12/40 | bacc 0.4506 (min 0.2966) | loss 7.0767 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0977 max 0.6562 | steps 8-33 | 163s | ETA 110m
+[18:08:19] round  13/40 | bacc 0.4506 (min 0.2966) | loss 6.5290 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0987 max 0.6576 | steps 8-33 | 164s | ETA 103m
+[18:11:01] round 14: SPLIT [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] -> ['molemax-0', 'molemax-1', 'molemax-2', 'modern-0', 'modern-1', 'modern-2', 'MSK-0', 'MSK-1', 'MSK-2', 'vienna-0', 'vienna-1', 'vienna-2'] | ['BCN-0', 'BCN-1', 'BCN-2', 'rosendahl-0', 'rosendahl-1', 'rosendahl-2']  mean=0.0934 max=0.6462 a_cross=0.036 g_est=-0.059 | respects centres
+[18:13:49] round  14/40 | bacc 0.4506 (min 0.2966) | loss 6.9380 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.0934 max 0.6462 | steps 8-33 | 330s | ETA 103m
+[18:14:23] round 15: gamma probe alpha_halves=0.187 gamma_hat=0.638
+[18:17:34] round  15/40 | bacc 0.4376 (min 0.3182) | loss 6.4401 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1429 max 0.6104 | steps 8-33 | 224s | ETA 98m
+[18:20:13] round  16/40 | bacc 0.4376 (min 0.3182) | loss 5.6201 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1270 max 0.5889 | steps 8-33 | 160s | ETA 93m
+[18:22:58] round  17/40 | bacc 0.4376 (min 0.3182) | loss 5.2979 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1203 max 0.5846 | steps 8-33 | 165s | ETA 87m
+[18:25:42] round  18/40 | bacc 0.4376 (min 0.3182) | loss 5.4195 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1199 max 0.5751 | steps 8-33 | 164s | ETA 82m
+[18:28:27] round  19/40 | bacc 0.4376 (min 0.3182) | loss 5.1554 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1179 max 0.5731 | steps 8-33 | 165s | ETA 77m
+[18:29:00] round 20: gamma probe alpha_halves=0.124 gamma_hat=0.662
+[18:34:57] round  20/40 | bacc 0.4794 (min 0.3432) | loss 5.0578 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1086 max 0.5452 | steps 8-33 | 390s | ETA 76m
+[18:37:41] round  21/40 | bacc 0.4794 (min 0.3432) | loss 6.2334 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1121 max 0.5581 | steps 8-33 | 163s | ETA 72m
+[18:40:25] round  22/40 | bacc 0.4794 (min 0.3432) | loss 4.9323 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1108 max 0.5365 | steps 8-33 | 164s | ETA 67m
+[18:42:48] round  23/40 | bacc 0.4794 (min 0.3432) | loss 4.6769 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1089 max 0.5233 | steps 8-33 | 143s | ETA 62m
+[18:44:37] round  24/40 | bacc 0.4794 (min 0.3432) | loss 4.7916 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1132 max 0.5228 | steps 8-33 | 110s | ETA 57m
+[18:45:00] round 25: gamma probe alpha_halves=0.093 gamma_hat=0.673
+[18:47:09] round  25/40 | bacc 0.4930 (min 0.3536) | loss 4.5522 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1099 max 0.5200 | steps 8-33 | 152s | ETA 53m
+[18:49:01] round  26/40 | bacc 0.4930 (min 0.3536) | loss 4.6906 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1094 max 0.5101 | steps 8-33 | 112s | ETA 49m
+[18:50:50] round  27/40 | bacc 0.4930 (min 0.3536) | loss 4.4722 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1123 max 0.5073 | steps 8-33 | 109s | ETA 44m
+[18:52:43] round  28/40 | bacc 0.4930 (min 0.3536) | loss 6.0062 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1104 max 0.5014 | steps 8-33 | 112s | ETA 40m
+[18:54:33] round  29/40 | bacc 0.4930 (min 0.3536) | loss 4.2832 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1050 max 0.4977 | steps 8-33 | 110s | ETA 36m
+[18:54:55] round 30: gamma probe alpha_halves=0.052 gamma_hat=0.689
+[18:58:59] round  30/40 | bacc 0.5208 (min 0.3914) | loss 4.3871 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1071 max 0.4920 | steps 8-33 | 266s | ETA 33m
+[19:00:50] round  31/40 | bacc 0.5208 (min 0.3914) | loss 4.3867 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1067 max 0.4816 | steps 8-33 | 111s | ETA 30m
+[19:02:40] round  32/40 | bacc 0.5208 (min 0.3914) | loss 5.6071 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1061 max 0.4848 | steps 8-33 | 110s | ETA 26m
+[19:04:32] round  33/40 | bacc 0.5208 (min 0.3914) | loss 4.3560 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1043 max 0.4856 | steps 8-33 | 112s | ETA 22m
+[19:06:22] round  34/40 | bacc 0.5208 (min 0.3914) | loss 4.2717 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1068 max 0.4811 | steps 8-33 | 109s | ETA 19m
+[19:06:44] round 35: gamma probe alpha_halves=0.107 gamma_hat=0.668
+[19:08:55] round  35/40 | bacc 0.5263 (min 0.4117) | loss 5.1911 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1059 max 0.4778 | steps 8-33 | 153s | ETA 16m
+[19:10:44] round  36/40 | bacc 0.5263 (min 0.4117) | loss 4.3299 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1051 max 0.4717 | steps 8-33 | 110s | ETA 12m
+[19:12:36] round  37/40 | bacc 0.5263 (min 0.4117) | loss 4.1102 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1048 max 0.4724 | steps 8-33 | 111s | ETA 9m
+[19:14:27] round  38/40 | bacc 0.5263 (min 0.4117) | loss 4.1650 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1094 max 0.4620 | steps 8-33 | 111s | ETA 6m
+[19:16:18] round  39/40 | bacc 0.5263 (min 0.4117) | loss 4.2134 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1046 max 0.4659 | steps 8-33 | 112s | ETA 3m
+[19:16:41] round 40: gamma probe alpha_halves=0.075 gamma_hat=0.680
+[19:20:42] round  40/40 | bacc 0.5330 (min 0.4129) | loss 4.0246 | clusters 2 (ARI 0.212, 0 pure) | ||mean dW|| 0.1044 max 0.4634 | steps 8-33 | 264s | ETA 0m
+[19:22:38] done in 124.1 min | bacc 0.5330 | ARI 0.212 | clusters [['molemax-0', 'molemax-1', 'molemax-2', 'modern-0', 'modern-1', 'modern-2', 'MSK-0', 'MSK-1', 'MSK-2', 'vienna-0', 'vienna-1', 'vienna-2'], ['BCN-0', 'BCN-1', 'BCN-2', 'rosendahl-0', 'rosendahl-1', 'rosendahl-2']] | splits at [14]

@@ -1,0 +1,13 @@
+{
+  "stationary_round": 43,
+  "eps_1": 0.010549901016056478,
+  "eps_2": 0.013051715651526987,
+  "gamma_hat_median_last3": 0.1821057537900106,
+  "rule": {
+    "metric": "dice_fg_mean",
+    "window": 10,
+    "tol": 0.005,
+    "eps1_margin": 1.03,
+    "eps2_margin": 0.97
+  }
+}

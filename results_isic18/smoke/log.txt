@@ -1,0 +1,38 @@
+[01:58:47] === CFL / Fed-ISIC2019, 18 clients | run 'smoke' | strategy cfl ===
+[01:58:47] device: cuda -- NVIDIA RTX A2000 12GB (12.5 GB), torch 2.5.1+cu121, amp=True
+[01:58:48] building image cache /home/karina/skripsi/cfl-replicate-flamby/isic/cache_220.npy (23247 images, 3.4 GB)
+[01:59:08]   cached 2000/23247
+[01:59:30]   cached 4000/23247
+[01:59:43]   cached 6000/23247
+[01:59:54]   cached 8000/23247
+[02:00:06]   cached 10000/23247
+[02:00:32]   cached 12000/23247
+[02:00:46]   cached 14000/23247
+[02:01:02]   cached 16000/23247
+[02:01:13]   cached 18000/23247
+[02:01:22]   cached 20000/23247
+[02:01:43]   cached 22000/23247
+[02:01:53]   client  0: BCN-0        centre BCN        |  3310 train | 2483 test
+[02:01:53]   client  1: BCN-1        centre BCN        |  3310 train | 2483 test
+[02:01:53]   client  2: BCN-2        centre BCN        |  3310 train | 2483 test
+[02:01:53]   client  3: molemax-0    centre molemax    |  1055 train |  791 test
+[02:01:53]   client  4: molemax-1    centre molemax    |  1054 train |  791 test
+[02:01:53]   client  5: molemax-2    centre molemax    |  1054 train |  791 test
+[02:01:53]   client  6: modern-0     centre modern     |   897 train |  672 test
+[02:01:53]   client  7: modern-1     centre modern     |   897 train |  672 test
+[02:01:53]   client  8: modern-2     centre modern     |   897 train |  672 test
+[02:01:53]   client  9: rosendahl-0  centre rosendahl  |   603 train |  452 test
+[02:01:53]   client 10: rosendahl-1  centre rosendahl  |   602 train |  452 test
+[02:01:53]   client 11: rosendahl-2  centre rosendahl  |   602 train |  452 test
+[02:01:53]   client 12: MSK-0        centre MSK        |   219 train |  164 test
+[02:01:53]   client 13: MSK-1        centre MSK        |   218 train |  164 test
+[02:01:53]   client 14: MSK-2        centre MSK        |   218 train |  164 test
+[02:01:53]   client 15: vienna-0     centre vienna     |   117 train |   88 test
+[02:01:53]   client 16: vienna-1     centre vienna     |   117 train |   88 test
+[02:01:53]   client 17: vienna-2     centre vienna     |   117 train |   88 test
+[02:02:35] model: FLamby EfficientNet-B0 (8 classes), 4017796 parameters, pretrained=True
+[02:02:35] straggler mode=partial profile=tiers deadline=1.0 dynamic=False speeds=[1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25]
+[02:05:19] round   1/2 | bacc nan (min nan) | loss 10.6850 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0240 max 0.1216 | steps 1-3 | 163s | ETA 3m
+[02:06:23] round 2: SPLIT [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] -> ['BCN-0', 'molemax-0', 'molemax-1', 'molemax-2', 'modern-0', 'modern-1', 'modern-2', 'rosendahl-0', 'rosendahl-1', 'rosendahl-2', 'MSK-0', 'MSK-1', 'MSK-2', 'vienna-0', 'vienna-1', 'vienna-2'] | ['BCN-1', 'BCN-2']  mean=0.0229 max=0.1166 a_cross=0.137 g_est=-0.239 | CUTS THROUGH A CENTRE
+[02:13:42] round   2/2 | bacc 0.0793 (min 0.0441) | loss 10.7750 | clusters 2 (ARI 0.032, 1 pure) | ||mean dW|| 0.0229 max 0.1166 | steps 1-3 | 504s | ETA 0m
+[02:17:06] done in 14.5 min | bacc 0.0793 | ARI 0.032 | clusters [['BCN-0', 'molemax-0', 'molemax-1', 'molemax-2', 'modern-0', 'modern-1', 'modern-2', 'rosendahl-0', 'rosendahl-1', 'rosendahl-2', 'MSK-0', 'MSK-1', 'MSK-2', 'vienna-0', 'vienna-1', 'vienna-2'], ['BCN-1', 'BCN-2']] | splits at [2]

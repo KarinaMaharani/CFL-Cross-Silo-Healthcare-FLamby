@@ -1,0 +1,168 @@
+[22:39:05] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.4 GB), torch 2.8.0+cu128
+[22:39:05]   client 0: Guys-0     centre Guys |  83 train |  62 test
+[22:39:05]   client 1: Guys-1     centre Guys |  83 train |  62 test
+[22:39:05]   client 2: Guys-2     centre Guys |  83 train |  62 test
+[22:39:05]   client 3: HH-0       centre HH   |  49 train |  36 test
+[22:39:05]   client 4: HH-1       centre HH   |  48 train |  36 test
+[22:39:05]   client 5: HH-2       centre HH   |  48 train |  36 test
+[22:39:05]   client 6: IOP-0      centre IOP  |  20 train |  15 test
+[22:39:05]   client 7: IOP-1      centre IOP  |  20 train |  15 test
+[22:39:05]   client 8: IOP-2      centre IOP  |  19 train |  15 test
+[22:39:05] model: FLamby Fed-IXI 3D U-Net, 246156 parameters
+[22:39:05] === pooled: clients ['Guys-0', 'Guys-1', 'Guys-2', 'HH-0', 'HH-1', 'HH-2', 'IOP-0', 'IOP-1', 'IOP-2'] (453 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:39:23] pooled    epoch  1/10 | loss 0.1083 | dice_fg per centre [] | 14.1s
+[22:39:38] pooled    epoch  2/10 | loss 0.0270 | dice_fg per centre [0.968, 0.9688, 0.9679] | 13.4s
+[22:39:51] pooled    epoch  3/10 | loss 0.0196 | dice_fg per centre [] | 13.5s
+[22:40:05] pooled    epoch  4/10 | loss 0.0172 | dice_fg per centre [0.9762, 0.9782, 0.9744] | 13.5s
+[22:40:19] pooled    epoch  5/10 | loss 0.0156 | dice_fg per centre [] | 13.5s
+[22:40:33] pooled    epoch  6/10 | loss 0.0145 | dice_fg per centre [0.978, 0.9788, 0.9746] | 13.5s
+[22:40:47] pooled    epoch  7/10 | loss 0.0138 | dice_fg per centre [] | 13.7s
+[22:41:01] pooled    epoch  8/10 | loss 0.0132 | dice_fg per centre [0.9793, 0.9804, 0.9779] | 13.9s
+[22:41:15] pooled    epoch  9/10 | loss 0.0129 | dice_fg per centre [] | 14.0s
+[22:41:30] pooled    epoch 10/10 | loss 0.0124 | dice_fg per centre [0.9815, 0.9822, 0.9782] | 14.1s
+[22:41:30] === center0: clients ['Guys-0', 'Guys-1', 'Guys-2'] (249 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:41:38] center0   epoch  1/10 | loss 0.1557 | dice_fg per centre [] | 7.8s
+[22:41:47] center0   epoch  2/10 | loss 0.0460 | dice_fg per centre [0.9684, 0.9634, 0.9598] | 7.8s
+[22:41:54] center0   epoch  3/10 | loss 0.0276 | dice_fg per centre [] | 7.8s
+[22:42:03] center0   epoch  4/10 | loss 0.0223 | dice_fg per centre [0.9723, 0.9692, 0.9624] | 7.8s
+[22:42:11] center0   epoch  5/10 | loss 0.0191 | dice_fg per centre [] | 7.8s
+[22:42:19] center0   epoch  6/10 | loss 0.0173 | dice_fg per centre [0.9755, 0.9703, 0.9677] | 7.9s
+[22:42:27] center0   epoch  7/10 | loss 0.0162 | dice_fg per centre [] | 7.8s
+[22:42:36] center0   epoch  8/10 | loss 0.0151 | dice_fg per centre [0.9779, 0.9722, 0.9683] | 7.8s
+[22:42:44] center0   epoch  9/10 | loss 0.0143 | dice_fg per centre [] | 7.8s
+[22:42:52] center0   epoch 10/10 | loss 0.0137 | dice_fg per centre [0.9791, 0.9732, 0.9707] | 7.8s
+[22:42:52] === center1: clients ['HH-0', 'HH-1', 'HH-2'] (145 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:42:57] center1   epoch  1/10 | loss 0.1978 | dice_fg per centre [] | 4.6s
+[22:43:02] center1   epoch  2/10 | loss 0.0830 | dice_fg per centre [0.9459, 0.967, 0.8906] | 4.6s
+[22:43:07] center1   epoch  3/10 | loss 0.0446 | dice_fg per centre [] | 4.6s
+[22:43:12] center1   epoch  4/10 | loss 0.0309 | dice_fg per centre [0.9568, 0.9716, 0.9252] | 4.6s
+[22:43:17] center1   epoch  5/10 | loss 0.0249 | dice_fg per centre [] | 4.6s
+[22:43:22] center1   epoch  6/10 | loss 0.0213 | dice_fg per centre [0.9637, 0.9743, 0.9369] | 4.6s
+[22:43:27] center1   epoch  7/10 | loss 0.0195 | dice_fg per centre [] | 4.6s
+[22:43:32] center1   epoch  8/10 | loss 0.0181 | dice_fg per centre [0.9603, 0.9751, 0.938] | 4.6s
+[22:43:37] center1   epoch  9/10 | loss 0.0172 | dice_fg per centre [] | 4.6s
+[22:43:42] center1   epoch 10/10 | loss 0.0165 | dice_fg per centre [0.9664, 0.9774, 0.9412] | 4.6s
+[22:43:42] === center2: clients ['IOP-0', 'IOP-1', 'IOP-2'] (59 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:43:44] center2   epoch  1/10 | loss 0.2626 | dice_fg per centre [] | 1.9s
+[22:43:47] center2   epoch  2/10 | loss 0.1696 | dice_fg per centre [0.9301, 0.9234, 0.9206] | 1.9s
+[22:43:49] center2   epoch  3/10 | loss 0.1185 | dice_fg per centre [] | 1.9s
+[22:43:51] center2   epoch  4/10 | loss 0.0855 | dice_fg per centre [0.9341, 0.9298, 0.9589] | 1.9s
+[22:43:53] center2   epoch  5/10 | loss 0.0640 | dice_fg per centre [] | 1.9s
+[22:43:56] center2   epoch  6/10 | loss 0.0505 | dice_fg per centre [0.9516, 0.9554, 0.9631] | 1.9s
+[22:43:58] center2   epoch  7/10 | loss 0.0416 | dice_fg per centre [] | 1.9s
+[22:44:00] center2   epoch  8/10 | loss 0.0359 | dice_fg per centre [0.945, 0.9475, 0.9653] | 1.9s
+[22:44:02] center2   epoch  9/10 | loss 0.0321 | dice_fg per centre [] | 1.9s
+[22:44:05] center2   epoch 10/10 | loss 0.0289 | dice_fg per centre [0.923, 0.917, 0.9684] | 1.9s
+[22:44:05] === client0: clients ['Guys-0'] (83 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:44:08] client0   epoch  1/10 | loss 0.2426 | dice_fg per centre [] | 2.6s
+[22:44:11] client0   epoch  2/10 | loss 0.1390 | dice_fg per centre [0.9469, 0.9321, 0.9423] | 2.6s
+[22:44:14] client0   epoch  3/10 | loss 0.0869 | dice_fg per centre [] | 2.6s
+[22:44:17] client0   epoch  4/10 | loss 0.0574 | dice_fg per centre [0.9649, 0.9561, 0.9545] | 2.6s
+[22:44:20] client0   epoch  5/10 | loss 0.0429 | dice_fg per centre [] | 2.7s
+[22:44:23] client0   epoch  6/10 | loss 0.0350 | dice_fg per centre [0.9671, 0.9589, 0.9601] | 2.6s
+[22:44:26] client0   epoch  7/10 | loss 0.0298 | dice_fg per centre [] | 2.6s
+[22:44:29] client0   epoch  8/10 | loss 0.0261 | dice_fg per centre [0.9712, 0.965, 0.9614] | 2.6s
+[22:44:32] client0   epoch  9/10 | loss 0.0238 | dice_fg per centre [] | 2.7s
+[22:44:35] client0   epoch 10/10 | loss 0.0224 | dice_fg per centre [0.9707, 0.9684, 0.9616] | 2.7s
+[22:44:35] === client1: clients ['Guys-1'] (83 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:44:38] client1   epoch  1/10 | loss 0.2398 | dice_fg per centre [] | 2.7s
+[22:44:41] client1   epoch  2/10 | loss 0.1374 | dice_fg per centre [0.9582, 0.9482, 0.9443] | 2.6s
+[22:44:44] client1   epoch  3/10 | loss 0.0855 | dice_fg per centre [] | 2.7s
+[22:44:48] client1   epoch  4/10 | loss 0.0580 | dice_fg per centre [0.9511, 0.9299, 0.9303] | 2.7s
+[22:44:50] client1   epoch  5/10 | loss 0.0429 | dice_fg per centre [] | 2.7s
+[22:44:54] client1   epoch  6/10 | loss 0.0347 | dice_fg per centre [0.9683, 0.9631, 0.9525] | 2.7s
+[22:44:56] client1   epoch  7/10 | loss 0.0296 | dice_fg per centre [] | 2.7s
+[22:45:00] client1   epoch  8/10 | loss 0.0264 | dice_fg per centre [0.9683, 0.9617, 0.9546] | 2.7s
+[22:45:02] client1   epoch  9/10 | loss 0.0257 | dice_fg per centre [] | 2.7s
+[22:45:06] client1   epoch 10/10 | loss 0.0231 | dice_fg per centre [0.9662, 0.9575, 0.9544] | 2.7s
+[22:45:06] === client2: clients ['Guys-2'] (83 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:45:08] client2   epoch  1/10 | loss 0.2375 | dice_fg per centre [] | 2.7s
+[22:45:12] client2   epoch  2/10 | loss 0.1359 | dice_fg per centre [0.9565, 0.9563, 0.9516] | 2.7s
+[22:45:15] client2   epoch  3/10 | loss 0.0857 | dice_fg per centre [] | 2.7s
+[22:45:18] client2   epoch  4/10 | loss 0.0571 | dice_fg per centre [0.9596, 0.9564, 0.9573] | 2.7s
+[22:45:21] client2   epoch  5/10 | loss 0.0426 | dice_fg per centre [] | 2.7s
+[22:45:24] client2   epoch  6/10 | loss 0.0345 | dice_fg per centre [0.9673, 0.9612, 0.9562] | 2.7s
+[22:45:27] client2   epoch  7/10 | loss 0.0298 | dice_fg per centre [] | 2.7s
+[22:45:30] client2   epoch  8/10 | loss 0.0262 | dice_fg per centre [0.9705, 0.9679, 0.9587] | 2.7s
+[22:45:33] client2   epoch  9/10 | loss 0.0241 | dice_fg per centre [] | 2.7s
+[22:45:36] client2   epoch 10/10 | loss 0.0225 | dice_fg per centre [0.9723, 0.9698, 0.9647] | 2.7s
+[22:45:36] === client3: clients ['HH-0'] (49 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:45:38] client3   epoch  1/10 | loss 0.2723 | dice_fg per centre [] | 1.6s
+[22:45:40] client3   epoch  2/10 | loss 0.1804 | dice_fg per centre [0.9331, 0.9266, 0.8687] | 1.6s
+[22:45:42] client3   epoch  3/10 | loss 0.1351 | dice_fg per centre [] | 1.6s
+[22:45:44] client3   epoch  4/10 | loss 0.1015 | dice_fg per centre [0.9445, 0.9647, 0.9034] | 1.6s
+[22:45:46] client3   epoch  5/10 | loss 0.0769 | dice_fg per centre [] | 1.6s
+[22:45:48] client3   epoch  6/10 | loss 0.0606 | dice_fg per centre [0.949, 0.9673, 0.9207] | 1.6s
+[22:45:50] client3   epoch  7/10 | loss 0.0496 | dice_fg per centre [] | 1.6s
+[22:45:52] client3   epoch  8/10 | loss 0.0427 | dice_fg per centre [0.9523, 0.9653, 0.9169] | 1.6s
+[22:45:54] client3   epoch  9/10 | loss 0.0377 | dice_fg per centre [] | 1.6s
+[22:45:56] client3   epoch 10/10 | loss 0.0334 | dice_fg per centre [0.9456, 0.9676, 0.9055] | 1.6s
+[22:45:56] === client4: clients ['HH-1'] (48 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:45:58] client4   epoch  1/10 | loss 0.2731 | dice_fg per centre [] | 1.5s
+[22:46:00] client4   epoch  2/10 | loss 0.1835 | dice_fg per centre [0.9024, 0.9175, 0.8411] | 1.5s
+[22:46:01] client4   epoch  3/10 | loss 0.1386 | dice_fg per centre [] | 1.5s
+[22:46:04] client4   epoch  4/10 | loss 0.1061 | dice_fg per centre [0.9475, 0.9625, 0.9047] | 1.5s
+[22:46:05] client4   epoch  5/10 | loss 0.0813 | dice_fg per centre [] | 1.5s
+[22:46:08] client4   epoch  6/10 | loss 0.0637 | dice_fg per centre [0.9482, 0.9663, 0.9161] | 1.5s
+[22:46:09] client4   epoch  7/10 | loss 0.0523 | dice_fg per centre [] | 1.5s
+[22:46:12] client4   epoch  8/10 | loss 0.0448 | dice_fg per centre [0.9495, 0.9682, 0.9043] | 1.5s
+[22:46:13] client4   epoch  9/10 | loss 0.0384 | dice_fg per centre [] | 1.5s
+[22:46:15] client4   epoch 10/10 | loss 0.0349 | dice_fg per centre [0.9542, 0.9682, 0.9203] | 1.5s
+[22:46:15] === client5: clients ['HH-2'] (48 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:46:17] client5   epoch  1/10 | loss 0.2729 | dice_fg per centre [] | 1.5s
+[22:46:19] client5   epoch  2/10 | loss 0.1832 | dice_fg per centre [0.9253, 0.9242, 0.8849] | 1.5s
+[22:46:21] client5   epoch  3/10 | loss 0.1394 | dice_fg per centre [] | 1.5s
+[22:46:23] client5   epoch  4/10 | loss 0.1054 | dice_fg per centre [0.9462, 0.9584, 0.9149] | 1.5s
+[22:46:25] client5   epoch  5/10 | loss 0.0816 | dice_fg per centre [] | 1.5s
+[22:46:27] client5   epoch  6/10 | loss 0.0650 | dice_fg per centre [0.9454, 0.9627, 0.8894] | 1.5s
+[22:46:29] client5   epoch  7/10 | loss 0.0529 | dice_fg per centre [] | 1.5s
+[22:46:31] client5   epoch  8/10 | loss 0.0437 | dice_fg per centre [0.9533, 0.9684, 0.916] | 1.5s
+[22:46:33] client5   epoch  9/10 | loss 0.0382 | dice_fg per centre [] | 1.5s
+[22:46:35] client5   epoch 10/10 | loss 0.0352 | dice_fg per centre [0.9571, 0.9683, 0.9149] | 1.5s
+[22:46:35] === client6: clients ['IOP-0'] (20 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:46:35] client6   epoch  1/10 | loss 0.3327 | dice_fg per centre [] | 0.6s
+[22:46:37] client6   epoch  2/10 | loss 0.2362 | dice_fg per centre [0.6655, 0.6334, 0.672] | 0.6s
+[22:46:38] client6   epoch  3/10 | loss 0.2099 | dice_fg per centre [] | 0.6s
+[22:46:39] client6   epoch  4/10 | loss 0.1864 | dice_fg per centre [0.9288, 0.9082, 0.9154] | 0.6s
+[22:46:40] client6   epoch  5/10 | loss 0.1655 | dice_fg per centre [] | 0.6s
+[22:46:41] client6   epoch  6/10 | loss 0.1473 | dice_fg per centre [0.9425, 0.9357, 0.9339] | 0.6s
+[22:46:42] client6   epoch  7/10 | loss 0.1307 | dice_fg per centre [] | 0.6s
+[22:46:43] client6   epoch  8/10 | loss 0.1167 | dice_fg per centre [0.9412, 0.9362, 0.9478] | 0.6s
+[22:46:44] client6   epoch  9/10 | loss 0.1035 | dice_fg per centre [] | 0.6s
+[22:46:45] client6   epoch 10/10 | loss 0.0928 | dice_fg per centre [0.9367, 0.9397, 0.9579] | 0.6s
+[22:46:45] === client7: clients ['IOP-1'] (20 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:46:46] client7   epoch  1/10 | loss 0.3309 | dice_fg per centre [] | 0.6s
+[22:46:47] client7   epoch  2/10 | loss 0.2374 | dice_fg per centre [0.636, 0.6041, 0.6427] | 0.6s
+[22:46:48] client7   epoch  3/10 | loss 0.2117 | dice_fg per centre [] | 0.6s
+[22:46:49] client7   epoch  4/10 | loss 0.1883 | dice_fg per centre [0.8811, 0.8521, 0.8485] | 0.6s
+[22:46:50] client7   epoch  5/10 | loss 0.1687 | dice_fg per centre [] | 0.6s
+[22:46:51] client7   epoch  6/10 | loss 0.1500 | dice_fg per centre [0.9194, 0.8978, 0.9508] | 0.6s
+[22:46:52] client7   epoch  7/10 | loss 0.1333 | dice_fg per centre [] | 0.6s
+[22:46:54] client7   epoch  8/10 | loss 0.1186 | dice_fg per centre [0.9072, 0.8875, 0.9514] | 0.6s
+[22:46:54] client7   epoch  9/10 | loss 0.1050 | dice_fg per centre [] | 0.6s
+[22:46:56] client7   epoch 10/10 | loss 0.0933 | dice_fg per centre [0.9403, 0.9386, 0.9559] | 0.6s
+[22:46:56] === client8: clients ['IOP-2'] (19 volumes), AdamW lr 0.001 x 10 epochs ===
+[22:46:56] client8   epoch  1/10 | loss 0.3316 | dice_fg per centre [] | 0.6s
+[22:46:58] client8   epoch  2/10 | loss 0.2420 | dice_fg per centre [0.5828, 0.552, 0.5962] | 0.6s
+[22:46:58] client8   epoch  3/10 | loss 0.2122 | dice_fg per centre [] | 0.6s
+[22:47:00] client8   epoch  4/10 | loss 0.1888 | dice_fg per centre [0.8246, 0.7812, 0.8138] | 0.6s
+[22:47:00] client8   epoch  5/10 | loss 0.1669 | dice_fg per centre [] | 0.6s
+[22:47:02] client8   epoch  6/10 | loss 0.1477 | dice_fg per centre [0.93, 0.9143, 0.9395] | 0.6s
+[22:47:02] client8   epoch  7/10 | loss 0.1313 | dice_fg per centre [] | 0.6s
+[22:47:04] client8   epoch  8/10 | loss 0.1169 | dice_fg per centre [0.934, 0.9289, 0.9404] | 0.6s
+[22:47:04] client8   epoch  9/10 | loss 0.1049 | dice_fg per centre [] | 0.6s
+[22:47:06] client8   epoch 10/10 | loss 0.0951 | dice_fg per centre [0.914, 0.8887, 0.9196] | 0.6s
+[22:47:06] summary (columns = test centre ['Guys', 'HH', 'IOP']):
+[22:47:06]   center0   n=249 dice [0.9859, 0.9821, 0.9804] dice_fg [0.9791, 0.9732, 0.9707]
+[22:47:06]   center1   n=145 dice [0.9766, 0.9836, 0.9605] dice_fg [0.9664, 0.9774, 0.9412]
+[22:47:06]   center2   n= 59 dice [0.9425, 0.9389, 0.9703] dice_fg [0.923, 0.917, 0.9684]
+[22:47:06]   client0   n= 83 dice [0.9774, 0.976, 0.9715] dice_fg [0.9707, 0.9684, 0.9616]
+[22:47:06]   client1   n= 83 dice [0.9744, 0.9688, 0.9669] dice_fg [0.9662, 0.9575, 0.9544]
+[22:47:06]   client2   n= 83 dice [0.9779, 0.9763, 0.9731] dice_fg [0.9723, 0.9698, 0.9647]
+[22:47:06]   client3   n= 49 dice [0.9541, 0.9678, 0.9286] dice_fg [0.9456, 0.9676, 0.9055]
+[22:47:06]   client4   n= 48 dice [0.9582, 0.9674, 0.937] dice_fg [0.9542, 0.9682, 0.9203]
+[22:47:06]   client5   n= 48 dice [0.9617, 0.9683, 0.9352] dice_fg [0.9571, 0.9683, 0.9149]
+[22:47:06]   client6   n= 20 dice [0.8914, 0.8941, 0.906] dice_fg [0.9367, 0.9397, 0.9579]
+[22:47:06]   client7   n= 20 dice [0.8961, 0.8976, 0.9075] dice_fg [0.9403, 0.9386, 0.9559]
+[22:47:06]   client8   n= 19 dice [0.8893, 0.877, 0.8945] dice_fg [0.914, 0.8887, 0.9196]
+[22:47:06]   pooled    n=453 dice [0.9877, 0.9881, 0.9855] dice_fg [0.9815, 0.9822, 0.9782]

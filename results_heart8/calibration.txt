@@ -1,0 +1,10 @@
+run                        : C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_heart8\fedavg8
+stationary at round        : 94  (accuracy_mean gain over 20 rounds = -0.0003 < 0.005)
+accuracy_mean there        : 0.6928
+weighted mean ||dtheta||   : 0.00423
+min over rounds of max||dtheta||: 0.01354
+gamma probes (last 3)      : [0.532, 0.709, 0.727]
+
+  --eps-1 0.00436 --eps-2 0.01313   (gamma_hat ~ 0.709; use --gamma-auto --gamma-probe-every 5)
+
+written to C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_heart8\fedavg8\calibration.json

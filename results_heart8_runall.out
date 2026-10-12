@@ -1,0 +1,320 @@
+=== 1/5 baselines ===
+[20:08:31] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:08:31]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:08:31]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:08:31]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:08:31]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:08:31]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:08:31]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:08:31]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:08:31]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:08:31]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:08:31]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:08:31]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:08:31]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:08:31] model: FLamby Cox linear model, 14 parameters
+[20:08:34] === pooled: clients ['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1', 'Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1'] | 486 patients (pos 0.52) | 122 steps/epoch x 50 ===
+[20:08:35] pooled    epoch 10/50 | loss 0.5030 | accuracy per region [0.798, 0.764, 0.625, 0.622]
+[20:08:37] pooled    epoch 20/50 | loss 0.4901 | accuracy per region [0.76, 0.764, 0.688, 0.6]
+[20:08:38] pooled    epoch 30/50 | loss 0.4879 | accuracy per region [0.75, 0.753, 0.75, 0.6]
+[20:08:40] pooled    epoch 40/50 | loss 0.4901 | accuracy per region [0.75, 0.753, 0.75, 0.6]
+[20:08:41] pooled    epoch 50/50 | loss 0.4877 | accuracy per region [0.75, 0.753, 0.75, 0.6]
+[20:08:41] === center0: clients ['Cleveland-0', 'Cleveland-1'] | 199 patients (pos 0.46) | 50 steps/epoch x 50 ===
+[20:08:42] center0   epoch 10/50 | loss 0.4419 | accuracy per region [0.74, 0.719, 0.75, 0.622]
+[20:08:42] center0   epoch 20/50 | loss 0.4033 | accuracy per region [0.76, 0.753, 0.75, 0.644]
+[20:08:43] center0   epoch 30/50 | loss 0.3911 | accuracy per region [0.74, 0.753, 0.688, 0.644]
+[20:08:43] center0   epoch 40/50 | loss 0.3851 | accuracy per region [0.731, 0.764, 0.688, 0.644]
+[20:08:44] center0   epoch 50/50 | loss 0.3820 | accuracy per region [0.731, 0.764, 0.625, 0.667]
+[20:08:44] === center1: clients ['Hungary-0', 'Hungary-1'] | 172 patients (pos 0.38) | 43 steps/epoch x 50 ===
+[20:08:44] center1   epoch 10/50 | loss 0.4407 | accuracy per region [0.788, 0.764, 0.625, 0.622]
+[20:08:45] center1   epoch 20/50 | loss 0.3718 | accuracy per region [0.788, 0.775, 0.562, 0.533]
+[20:08:45] center1   epoch 30/50 | loss 0.3423 | accuracy per region [0.779, 0.753, 0.5, 0.489]
+[20:08:46] center1   epoch 40/50 | loss 0.3267 | accuracy per region [0.75, 0.753, 0.5, 0.511]
+[20:08:46] center1   epoch 50/50 | loss 0.3172 | accuracy per region [0.769, 0.753, 0.5, 0.489]
+[20:08:46] === center2: clients ['Switzerland-0', 'Switzerland-1'] | 30 patients (pos 1.00) | 8 steps/epoch x 50 ===
+[20:08:46] center2   epoch 10/50 | loss 0.6911 | accuracy per region [0.606, 0.573, 0.688, 0.6]
+[20:08:46] center2   epoch 20/50 | loss 0.6781 | accuracy per region [0.625, 0.573, 0.75, 0.6]
+[20:08:46] center2   epoch 30/50 | loss 0.6118 | accuracy per region [0.587, 0.517, 0.75, 0.644]
+[20:08:46] center2   epoch 40/50 | loss 0.5823 | accuracy per region [0.587, 0.517, 0.812, 0.644]
+[20:08:46] center2   epoch 50/50 | loss 0.5251 | accuracy per region [0.567, 0.449, 0.812, 0.667]
+[20:08:46] === center3: clients ['LongBeachVA-0', 'LongBeachVA-1'] | 85 patients (pos 0.78) | 22 steps/epoch x 50 ===
+[20:08:47] center3   epoch 10/50 | loss 0.6227 | accuracy per region [0.663, 0.573, 0.75, 0.644]
+[20:08:47] center3   epoch 20/50 | loss 0.5909 | accuracy per region [0.683, 0.528, 0.812, 0.667]
+[20:08:47] center3   epoch 30/50 | loss 0.5536 | accuracy per region [0.644, 0.494, 0.812, 0.667]
+[20:08:47] center3   epoch 40/50 | loss 0.5176 | accuracy per region [0.625, 0.494, 0.875, 0.733]
+[20:08:48] center3   epoch 50/50 | loss 0.5036 | accuracy per region [0.606, 0.483, 0.875, 0.756]
+[20:08:48] === client0: clients ['Cleveland-0'] | 100 patients (pos 0.46) | 25 steps/epoch x 50 ===
+[20:08:48] client0   epoch 10/50 | loss 0.5090 | accuracy per region [0.731, 0.697, 0.688, 0.578]
+[20:08:48] client0   epoch 20/50 | loss 0.4614 | accuracy per region [0.721, 0.742, 0.688, 0.6]
+[20:08:48] client0   epoch 30/50 | loss 0.4382 | accuracy per region [0.721, 0.742, 0.75, 0.6]
+[20:08:49] client0   epoch 40/50 | loss 0.4257 | accuracy per region [0.76, 0.73, 0.688, 0.6]
+[20:08:49] client0   epoch 50/50 | loss 0.4178 | accuracy per region [0.769, 0.742, 0.688, 0.622]
+[20:08:49] === client1: clients ['Cleveland-1'] | 99 patients (pos 0.45) | 25 steps/epoch x 50 ===
+[20:08:49] client1   epoch 10/50 | loss 0.4574 | accuracy per region [0.683, 0.697, 0.625, 0.622]
+[20:08:49] client1   epoch 20/50 | loss 0.3980 | accuracy per region [0.74, 0.719, 0.688, 0.644]
+[20:08:50] client1   epoch 30/50 | loss 0.3708 | accuracy per region [0.731, 0.742, 0.688, 0.622]
+[20:08:50] client1   epoch 40/50 | loss 0.3468 | accuracy per region [0.731, 0.753, 0.688, 0.644]
+[20:08:50] client1   epoch 50/50 | loss 0.3360 | accuracy per region [0.731, 0.753, 0.688, 0.644]
+[20:08:50] === client2: clients ['Hungary-0'] | 87 patients (pos 0.38) | 22 steps/epoch x 50 ===
+[20:08:51] client2   epoch 10/50 | loss 0.5437 | accuracy per region [0.76, 0.708, 0.625, 0.578]
+[20:08:51] client2   epoch 20/50 | loss 0.4662 | accuracy per region [0.788, 0.775, 0.625, 0.578]
+[20:08:51] client2   epoch 30/50 | loss 0.4232 | accuracy per region [0.75, 0.798, 0.625, 0.578]
+[20:08:51] client2   epoch 40/50 | loss 0.3980 | accuracy per region [0.74, 0.787, 0.625, 0.533]
+[20:08:52] client2   epoch 50/50 | loss 0.3792 | accuracy per region [0.74, 0.764, 0.562, 0.533]
+[20:08:52] === client3: clients ['Hungary-1'] | 85 patients (pos 0.38) | 22 steps/epoch x 50 ===
+[20:08:52] client3   epoch 10/50 | loss 0.4882 | accuracy per region [0.76, 0.719, 0.688, 0.578]
+[20:08:52] client3   epoch 20/50 | loss 0.4003 | accuracy per region [0.788, 0.787, 0.625, 0.622]
+[20:08:52] client3   epoch 30/50 | loss 0.3385 | accuracy per region [0.788, 0.775, 0.562, 0.533]
+[20:08:53] client3   epoch 40/50 | loss 0.3083 | accuracy per region [0.798, 0.742, 0.5, 0.511]
+[20:08:53] client3   epoch 50/50 | loss 0.2900 | accuracy per region [0.788, 0.719, 0.5, 0.511]
+[20:08:53] === client4: clients ['Switzerland-0'] | 15 patients (pos 1.00) | 4 steps/epoch x 50 ===
+[20:08:53] client4   epoch 10/50 | loss 0.7495 | accuracy per region [0.606, 0.551, 0.625, 0.578]
+[20:08:53] client4   epoch 20/50 | loss 0.6991 | accuracy per region [0.587, 0.539, 0.625, 0.556]
+[20:08:53] client4   epoch 30/50 | loss 0.6485 | accuracy per region [0.577, 0.517, 0.625, 0.556]
+[20:08:53] client4   epoch 40/50 | loss 0.6089 | accuracy per region [0.558, 0.506, 0.688, 0.533]
+[20:08:53] client4   epoch 50/50 | loss 0.5709 | accuracy per region [0.587, 0.528, 0.688, 0.6]
+[20:08:53] === client5: clients ['Switzerland-1'] | 15 patients (pos 1.00) | 4 steps/epoch x 50 ===
+[20:08:53] client5   epoch 10/50 | loss 0.6152 | accuracy per region [0.596, 0.573, 0.625, 0.622]
+[20:08:53] client5   epoch 20/50 | loss 0.5710 | accuracy per region [0.625, 0.607, 0.688, 0.6]
+[20:08:53] client5   epoch 30/50 | loss 0.5440 | accuracy per region [0.635, 0.607, 0.688, 0.622]
+[20:08:53] client5   epoch 40/50 | loss 0.5209 | accuracy per region [0.654, 0.618, 0.688, 0.622]
+[20:08:53] client5   epoch 50/50 | loss 0.4937 | accuracy per region [0.663, 0.64, 0.688, 0.622]
+[20:08:53] === client6: clients ['LongBeachVA-0'] | 43 patients (pos 0.77) | 11 steps/epoch x 50 ===
+[20:08:53] client6   epoch 10/50 | loss 0.6705 | accuracy per region [0.673, 0.562, 0.688, 0.622]
+[20:08:54] client6   epoch 20/50 | loss 0.6169 | accuracy per region [0.663, 0.573, 0.688, 0.644]
+[20:08:54] client6   epoch 30/50 | loss 0.5741 | accuracy per region [0.712, 0.528, 0.688, 0.622]
+[20:08:54] client6   epoch 40/50 | loss 0.5420 | accuracy per region [0.692, 0.528, 0.75, 0.622]
+[20:08:54] client6   epoch 50/50 | loss 0.5137 | accuracy per region [0.683, 0.528, 0.875, 0.644]
+[20:08:54] === client7: clients ['LongBeachVA-1'] | 42 patients (pos 0.79) | 11 steps/epoch x 50 ===
+[20:08:54] client7   epoch 10/50 | loss 0.6273 | accuracy per region [0.615, 0.573, 0.688, 0.622]
+[20:08:54] client7   epoch 20/50 | loss 0.5948 | accuracy per region [0.615, 0.584, 0.75, 0.644]
+[20:08:54] client7   epoch 30/50 | loss 0.5495 | accuracy per region [0.644, 0.562, 0.812, 0.644]
+[20:08:54] client7   epoch 40/50 | loss 0.5403 | accuracy per region [0.625, 0.528, 0.812, 0.667]
+[20:08:55] client7   epoch 50/50 | loss 0.5223 | accuracy per region [0.644, 0.528, 0.812, 0.644]
+[20:08:55] summary (columns = test hospital 0..3):
+[20:08:55]   center0   n=199 (pos 0.46) accuracy [0.731, 0.764, 0.625, 0.667]
+[20:08:55]   center1   n=172 (pos 0.38) accuracy [0.769, 0.753, 0.5, 0.489]
+[20:08:55]   center2   n= 30 (pos 1.00) accuracy [0.567, 0.449, 0.812, 0.667]
+[20:08:55]   center3   n= 85 (pos 0.78) accuracy [0.606, 0.483, 0.875, 0.756]
+[20:08:55]   client0   n=100 (pos 0.46) accuracy [0.769, 0.742, 0.688, 0.622]
+[20:08:55]   client1   n= 99 (pos 0.45) accuracy [0.731, 0.753, 0.688, 0.644]
+[20:08:55]   client2   n= 87 (pos 0.38) accuracy [0.74, 0.764, 0.562, 0.533]
+[20:08:55]   client3   n= 85 (pos 0.38) accuracy [0.788, 0.719, 0.5, 0.511]
+[20:08:55]   client4   n= 15 (pos 1.00) accuracy [0.587, 0.528, 0.688, 0.6]
+[20:08:55]   client5   n= 15 (pos 1.00) accuracy [0.663, 0.64, 0.688, 0.622]
+[20:08:55]   client6   n= 43 (pos 0.77) accuracy [0.683, 0.528, 0.875, 0.644]
+[20:08:55]   client7   n= 42 (pos 0.79) accuracy [0.644, 0.528, 0.812, 0.644]
+[20:08:55]   pooled    n=486 (pos 0.52) accuracy [0.75, 0.753, 0.75, 0.6]
+=== 2/5 FedAvg (calibration + reference) ===
+[20:09:00] === CFL / Fed-Heart-Disease, 8 clients | run 'fedavg8' | strategy fedavg ===
+[20:09:01] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:09:01]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:09:01]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:09:01]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:09:01]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:09:01]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:09:01]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:09:01]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:09:01]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:09:01]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:09:01]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:09:01]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:09:01]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:09:03] model: FLamby logistic regression, 14 parameters
+[20:09:03] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[20:09:03] gamma probe: client Cleveland-0 -> halves of 50 / 50 patients, every 5 rounds
+[20:09:04] round   1/300 | accuracy 0.4189 (min 0.1875) | loss 0.8034 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0112 max 0.0164 | 0.4s
+[20:09:05] round  10/300 | accuracy 0.4478 (min 0.1875) | loss 0.7729 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0104 max 0.0166 | 0.2s
+[20:09:07] round  20/300 | accuracy 0.4921 (min 0.1875) | loss 0.7288 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0087 max 0.0143 | 0.2s
+[20:09:09] round  30/300 | accuracy 0.5309 (min 0.1875) | loss 0.7101 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0077 max 0.0141 | 0.2s
+[20:09:11] round  40/300 | accuracy 0.5959 (min 0.3750) | loss 0.6905 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0070 max 0.0142 | 0.2s
+[20:09:13] round  50/300 | accuracy 0.6279 (min 0.4375) | loss 0.6775 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0063 max 0.0144 | 0.3s
+[20:09:14] round  60/300 | accuracy 0.6243 (min 0.4375) | loss 0.6680 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0058 max 0.0145 | 0.2s
+[20:09:16] round  70/300 | accuracy 0.6747 (min 0.5625) | loss 0.6369 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0055 max 0.0150 | 0.2s
+[20:09:18] round  80/300 | accuracy 0.6959 (min 0.6222) | loss 0.6365 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0046 max 0.0151 | 0.2s
+[20:09:20] round  90/300 | accuracy 0.6959 (min 0.6222) | loss 0.6294 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0043 max 0.0154 | 0.3s
+[20:09:22] round 100/300 | accuracy 0.6956 (min 0.6000) | loss 0.6305 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0040 max 0.0158 | 0.2s
+[20:09:24] round 110/300 | accuracy 0.6983 (min 0.6222) | loss 0.6206 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0041 max 0.0157 | 0.3s
+[20:09:26] round 120/300 | accuracy 0.7015 (min 0.6250) | loss 0.6146 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0033 max 0.0160 | 0.3s
+[20:09:28] round 130/300 | accuracy 0.6983 (min 0.6222) | loss 0.6137 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0034 max 0.0159 | 0.3s
+[20:09:30] round 140/300 | accuracy 0.6983 (min 0.6222) | loss 0.6039 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0034 max 0.0161 | 0.3s
+[20:09:32] round 150/300 | accuracy 0.7092 (min 0.6222) | loss 0.5963 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0030 max 0.0165 | 0.3s
+[20:09:34] round 160/300 | accuracy 0.7088 (min 0.6000) | loss 0.6257 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0022 max 0.0163 | 0.3s
+[20:09:37] round 170/300 | accuracy 0.7088 (min 0.6000) | loss 0.6017 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0024 max 0.0164 | 0.3s
+[20:09:39] round 180/300 | accuracy 0.7060 (min 0.6000) | loss 0.6064 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0022 max 0.0158 | 0.3s
+[20:09:41] round 190/300 | accuracy 0.7060 (min 0.6000) | loss 0.5940 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0023 max 0.0168 | 0.3s
+[20:09:44] round 200/300 | accuracy 0.7188 (min 0.6000) | loss 0.6036 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0023 max 0.0162 | 0.3s
+[20:09:46] round 210/300 | accuracy 0.7244 (min 0.6222) | loss 0.6023 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0021 max 0.0165 | 0.3s
+[20:09:48] round 220/300 | accuracy 0.7272 (min 0.6222) | loss 0.6083 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0021 max 0.0165 | 0.3s
+[20:09:51] round 230/300 | accuracy 0.7272 (min 0.6222) | loss 0.6053 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0018 max 0.0167 | 0.3s
+[20:09:53] round 240/300 | accuracy 0.7272 (min 0.6222) | loss 0.5852 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0021 max 0.0164 | 0.3s
+[20:09:55] round 250/300 | accuracy 0.7300 (min 0.6222) | loss 0.5858 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0018 max 0.0168 | 0.3s
+[20:09:58] round 260/300 | accuracy 0.7324 (min 0.6222) | loss 0.6096 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0017 max 0.0170 | 0.3s
+[20:10:00] round 270/300 | accuracy 0.7300 (min 0.6222) | loss 0.5803 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0018 max 0.0165 | 0.3s
+[20:10:03] round 280/300 | accuracy 0.7300 (min 0.6222) | loss 0.5909 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0015 max 0.0165 | 0.3s
+[20:10:05] round 290/300 | accuracy 0.7300 (min 0.6222) | loss 0.5931 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0017 max 0.0165 | 0.3s
+[20:10:08] round 300/300 | accuracy 0.7324 (min 0.6222) | loss 0.5919 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0015 max 0.0164 | 0.3s
+[20:10:08] done in 1.08 min | accuracy 0.7324 | ARI 0.000 | clusters [['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1', 'Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']] | splits at []
+run                        : C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_heart8\fedavg8
+stationary at round        : 94  (accuracy_mean gain over 20 rounds = -0.0003 < 0.005)
+accuracy_mean there        : 0.6928
+weighted mean ||dtheta||   : 0.00423
+min over rounds of max||dtheta||: 0.01354
+gamma probes (last 3)      : [0.532, 0.709, 0.727]
+
+  --eps-1 0.00436 --eps-2 0.01313   (gamma_hat ~ 0.709; use --gamma-auto --gamma-probe-every 5)
+
+written to C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_heart8\fedavg8\calibration.json
+using eps_1=0.004355074604973158 eps_2=0.013134014736860983
+=== 3/5 oracle partition (the 4 hospitals) ===
+[20:10:22] === CFL / Fed-Heart-Disease, 8 clients | run 'oracle_centers' | strategy partition ===
+[20:10:22] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:10:22]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:10:22]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:10:22]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:10:22]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:10:22]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:10:22]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:10:22]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:10:22]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:10:22]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:10:22]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:10:22]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:10:22]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:10:26] model: FLamby logistic regression, 14 parameters
+[20:10:26] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[20:10:26] round   1/300 | accuracy 0.4189 (min 0.1875) | loss 0.8034 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0140 max 0.0164 | 0.4s
+[20:10:28] round  10/300 | accuracy 0.4686 (min 0.2500) | loss 0.7518 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0133 max 0.0162 | 0.2s
+[20:10:30] round  20/300 | accuracy 0.5179 (min 0.3125) | loss 0.6860 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0112 max 0.0134 | 0.2s
+[20:10:33] round  30/300 | accuracy 0.5755 (min 0.3750) | loss 0.6470 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0096 max 0.0126 | 0.2s
+[20:10:35] round  40/300 | accuracy 0.6043 (min 0.3750) | loss 0.6141 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0091 max 0.0122 | 0.3s
+[20:10:37] round  50/300 | accuracy 0.6679 (min 0.5625) | loss 0.5841 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0087 max 0.0115 | 0.3s
+[20:10:40] round  60/300 | accuracy 0.6943 (min 0.6250) | loss 0.5624 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0082 max 0.0108 | 0.3s
+[20:10:42] round  70/300 | accuracy 0.7100 (min 0.6222) | loss 0.5220 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0078 max 0.0103 | 0.3s
+[20:10:44] round  80/300 | accuracy 0.7284 (min 0.6222) | loss 0.5065 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0075 max 0.0099 | 0.3s
+[20:10:47] round  90/300 | accuracy 0.7572 (min 0.6444) | loss 0.4892 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0072 max 0.0093 | 0.2s
+[20:10:49] round 100/300 | accuracy 0.7867 (min 0.6889) | loss 0.4806 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0068 max 0.0090 | 0.2s
+[20:10:51] round 110/300 | accuracy 0.7867 (min 0.6889) | loss 0.4623 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0065 max 0.0086 | 0.2s
+[20:10:54] round 120/300 | accuracy 0.7867 (min 0.7111) | loss 0.4493 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0063 max 0.0082 | 0.3s
+[20:10:56] round 130/300 | accuracy 0.8079 (min 0.7333) | loss 0.4383 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0060 max 0.0079 | 0.2s
+[20:10:58] round 140/300 | accuracy 0.8019 (min 0.7111) | loss 0.4227 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0058 max 0.0076 | 0.2s
+[20:11:00] round 150/300 | accuracy 0.8043 (min 0.7111) | loss 0.4173 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0055 max 0.0073 | 0.2s
+[20:11:02] round 160/300 | accuracy 0.8043 (min 0.7111) | loss 0.4322 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0053 max 0.0070 | 0.2s
+[20:11:04] round 170/300 | accuracy 0.7939 (min 0.6889) | loss 0.4129 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0051 max 0.0066 | 0.2s
+[20:11:06] round 180/300 | accuracy 0.7939 (min 0.6889) | loss 0.4154 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0049 max 0.0064 | 0.2s
+[20:11:08] round 190/300 | accuracy 0.7911 (min 0.6889) | loss 0.3855 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0048 max 0.0062 | 0.2s
+[20:11:10] round 200/300 | accuracy 0.7911 (min 0.6889) | loss 0.3978 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0046 max 0.0059 | 0.2s
+[20:11:13] round 210/300 | accuracy 0.7911 (min 0.6889) | loss 0.3890 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0044 max 0.0057 | 0.2s
+[20:11:15] round 220/300 | accuracy 0.7883 (min 0.6889) | loss 0.3850 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0043 max 0.0056 | 0.2s
+[20:11:17] round 230/300 | accuracy 0.7907 (min 0.6889) | loss 0.3794 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0041 max 0.0054 | 0.3s
+[20:11:20] round 240/300 | accuracy 0.7879 (min 0.6889) | loss 0.3624 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0040 max 0.0052 | 0.2s
+[20:11:22] round 250/300 | accuracy 0.7931 (min 0.7111) | loss 0.3629 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0039 max 0.0050 | 0.2s
+[20:11:24] round 260/300 | accuracy 0.7931 (min 0.7111) | loss 0.3751 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0038 max 0.0049 | 0.3s
+[20:11:27] round 270/300 | accuracy 0.7931 (min 0.7111) | loss 0.3504 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0036 max 0.0047 | 0.2s
+[20:11:29] round 280/300 | accuracy 0.7986 (min 0.7333) | loss 0.3562 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0035 max 0.0045 | 0.2s
+[20:11:31] round 290/300 | accuracy 0.7986 (min 0.7333) | loss 0.3570 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0034 max 0.0046 | 0.2s
+[20:11:34] round 300/300 | accuracy 0.7986 (min 0.7333) | loss 0.3502 | clusters 4 (ARI 1.000, 4 pure) | ||mean dW|| 0.0033 max 0.0043 | 0.3s
+[20:11:34] done in 1.14 min | accuracy 0.7986 | ARI 1.000 | clusters [['Cleveland-0', 'Cleveland-1'], ['Hungary-0', 'Hungary-1'], ['Switzerland-0', 'Switzerland-1'], ['LongBeachVA-0', 'LongBeachVA-1']] | splits at []
+=== 4/5 CFL ===
+[20:11:41] === CFL / Fed-Heart-Disease, 8 clients | run 'cfl8' | strategy cfl ===
+[20:11:41] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:11:41]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:11:41]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:11:41]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:11:41]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:11:41]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:11:41]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:11:41]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:11:41]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:11:41]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:11:41]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:11:41]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:11:41]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:11:44] model: FLamby logistic regression, 14 parameters
+[20:11:44] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[20:11:44] gamma probe: client Cleveland-0 -> halves of 50 / 50 patients, every 5 rounds
+[20:11:45] round   1/300 | accuracy 0.4189 (min 0.1875) | loss 0.8034 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0112 max 0.0164 | 0.5s
+[20:11:47] round  10/300 | accuracy 0.4478 (min 0.1875) | loss 0.7729 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0104 max 0.0166 | 0.3s
+[20:11:50] round  20/300 | accuracy 0.4921 (min 0.1875) | loss 0.7288 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0087 max 0.0143 | 0.3s
+[20:11:52] round  30/300 | accuracy 0.5309 (min 0.1875) | loss 0.7101 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0077 max 0.0141 | 0.3s
+[20:11:54] round  40/300 | accuracy 0.5959 (min 0.3750) | loss 0.6905 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0070 max 0.0142 | 0.3s
+[20:11:57] round  50/300 | accuracy 0.6279 (min 0.4375) | loss 0.6775 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0063 max 0.0144 | 0.3s
+[20:11:59] round  60/300 | accuracy 0.6243 (min 0.4375) | loss 0.6680 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0058 max 0.0145 | 0.3s
+[20:12:01] round  70/300 | accuracy 0.6747 (min 0.5625) | loss 0.6369 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0055 max 0.0150 | 0.3s
+[20:12:04] round  80/300 | accuracy 0.6959 (min 0.6222) | loss 0.6365 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0046 max 0.0151 | 0.3s
+[20:12:06] round 88: SPLIT [0, 1, 2, 3, 4, 5, 6, 7] -> ['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'] | ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']  mean=0.0042 max=0.0154 a_cross=0.293 g_est=-0.067 | respects centres
+[20:12:06] round  90/300 | accuracy 0.6959 (min 0.6222) | loss 0.6258 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0077 max 0.0153 | 0.3s
+[20:12:09] round 100/300 | accuracy 0.7071 (min 0.6250) | loss 0.6091 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0075 max 0.0151 | 0.3s
+[20:12:11] round 110/300 | accuracy 0.7210 (min 0.6250) | loss 0.5837 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0072 max 0.0145 | 0.3s
+[20:12:14] round 120/300 | accuracy 0.7366 (min 0.6875) | loss 0.5635 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0067 max 0.0143 | 0.3s
+[20:12:16] round 130/300 | accuracy 0.7505 (min 0.6875) | loss 0.5504 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0064 max 0.0136 | 0.3s
+[20:12:18] round 140/300 | accuracy 0.7474 (min 0.6875) | loss 0.5273 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0062 max 0.0133 | 0.3s
+[20:12:21] round 150/300 | accuracy 0.7418 (min 0.6875) | loss 0.5124 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0056 max 0.0132 | 0.3s
+[20:12:23] round 160/300 | accuracy 0.7394 (min 0.6875) | loss 0.5270 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0056 max 0.0127 | 0.3s
+[20:12:26] round 170/300 | accuracy 0.7478 (min 0.6875) | loss 0.5008 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0050 max 0.0123 | 0.4s
+[20:12:28] round 180/300 | accuracy 0.7689 (min 0.7500) | loss 0.4973 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0048 max 0.0116 | 0.3s
+[20:12:31] round 190/300 | accuracy 0.7689 (min 0.7500) | loss 0.4717 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0050 max 0.0119 | 0.3s
+[20:12:33] round 200/300 | accuracy 0.7742 (min 0.7500) | loss 0.4805 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0043 max 0.0112 | 0.3s
+[20:12:35] round 210/300 | accuracy 0.7742 (min 0.7500) | loss 0.4688 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0043 max 0.0111 | 0.3s
+[20:12:38] round 220/300 | accuracy 0.7585 (min 0.6875) | loss 0.4649 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0045 max 0.0108 | 0.3s
+[20:12:40] round 230/300 | accuracy 0.7696 (min 0.6875) | loss 0.4558 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0046 max 0.0106 | 0.3s
+[20:12:43] round 240/300 | accuracy 0.7853 (min 0.7500) | loss 0.4376 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0039 max 0.0103 | 0.3s
+[20:12:45] round 250/300 | accuracy 0.8141 (min 0.7500) | loss 0.4355 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0038 max 0.0102 | 0.3s
+[20:12:48] round 260/300 | accuracy 0.8113 (min 0.7500) | loss 0.4503 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0036 max 0.0102 | 0.3s
+[20:12:50] round 270/300 | accuracy 0.8053 (min 0.7596) | loss 0.4182 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0034 max 0.0098 | 0.3s
+[20:12:53] round 280/300 | accuracy 0.8053 (min 0.7596) | loss 0.4246 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0034 max 0.0095 | 0.3s
+[20:12:55] round 290/300 | accuracy 0.7998 (min 0.7556) | loss 0.4267 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0033 max 0.0093 | 0.3s
+[20:12:57] round 300/300 | accuracy 0.8026 (min 0.7556) | loss 0.4191 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0032 max 0.0092 | 0.3s
+[20:12:57] done in 1.22 min | accuracy 0.8026 | ARI 0.364 | clusters [['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'], ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']] | splits at [88]
+=== 5/5 CFL with stragglers ===
+[20:13:05] === CFL / Fed-Heart-Disease, 8 clients | run 'cfl8_strag' | strategy cfl ===
+[20:13:05] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:13:05]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:13:05]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:13:05]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:13:05]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:13:05]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:13:05]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:13:05]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:13:05]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:13:05]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:13:05]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:13:05]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:13:05]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:13:08] model: FLamby logistic regression, 14 parameters
+[20:13:08] straggler mode=partial profile=tiers deadline=1.0 dynamic=False speeds=[1.0, 0.4, 1.0, 0.4, 1.0, 0.4, 1.0, 0.4]
+[20:13:08] gamma probe: client Cleveland-0 -> halves of 50 / 50 patients, every 5 rounds
+[20:13:09] round   1/300 | accuracy 0.4077 (min 0.1875) | loss 0.7931 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0072 max 0.0131 | 0.4s
+[20:13:10] round  10/300 | accuracy 0.4213 (min 0.1250) | loss 0.7699 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0069 max 0.0127 | 0.2s
+[20:13:12] round  20/300 | accuracy 0.4701 (min 0.1875) | loss 0.7521 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0064 max 0.0133 | 0.2s
+[20:13:14] round  30/300 | accuracy 0.4921 (min 0.1875) | loss 0.7345 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0057 max 0.0137 | 0.3s
+[20:13:16] round  40/300 | accuracy 0.5094 (min 0.1875) | loss 0.7180 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0053 max 0.0136 | 0.2s
+[20:13:18] round  50/300 | accuracy 0.5510 (min 0.2500) | loss 0.6934 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0049 max 0.0138 | 0.2s
+[20:13:19] round  60/300 | accuracy 0.5959 (min 0.3750) | loss 0.6926 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0044 max 0.0139 | 0.2s
+[20:13:20] round 61: SPLIT [0, 1, 2, 3, 4, 5, 6, 7] -> ['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'] | ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']  mean=0.0043 max=0.0140 a_cross=0.263 g_est=-0.059 | respects centres
+[20:13:21] round  70/300 | accuracy 0.6098 (min 0.3750) | loss 0.6589 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0057 max 0.0138 | 0.2s
+[20:13:23] round  80/300 | accuracy 0.6571 (min 0.5000) | loss 0.6420 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0054 max 0.0135 | 0.3s
+[20:13:25] round  90/300 | accuracy 0.6886 (min 0.5625) | loss 0.6108 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0050 max 0.0133 | 0.2s
+[20:13:27] round 100/300 | accuracy 0.7074 (min 0.6250) | loss 0.6064 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0052 max 0.0132 | 0.3s
+[20:13:29] round 110/300 | accuracy 0.7022 (min 0.6250) | loss 0.5902 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0048 max 0.0128 | 0.2s
+[20:13:30] round 120/300 | accuracy 0.7106 (min 0.6250) | loss 0.5917 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0048 max 0.0127 | 0.2s
+[20:13:32] round 130/300 | accuracy 0.7234 (min 0.6875) | loss 0.5401 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0046 max 0.0123 | 0.2s
+[20:13:34] round 140/300 | accuracy 0.7345 (min 0.6875) | loss 0.5478 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0042 max 0.0120 | 0.2s
+[20:13:36] round 150/300 | accuracy 0.7158 (min 0.6250) | loss 0.5359 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0042 max 0.0120 | 0.3s
+[20:13:38] round 160/300 | accuracy 0.7370 (min 0.6875) | loss 0.5401 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0042 max 0.0117 | 0.2s
+[20:13:40] round 170/300 | accuracy 0.7454 (min 0.6875) | loss 0.5177 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0037 max 0.0115 | 0.2s
+[20:13:41] round 180/300 | accuracy 0.7658 (min 0.7333) | loss 0.5229 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0038 max 0.0109 | 0.3s
+[20:13:43] round 190/300 | accuracy 0.7630 (min 0.7333) | loss 0.4998 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0039 max 0.0112 | 0.3s
+[20:13:45] round 200/300 | accuracy 0.7630 (min 0.7333) | loss 0.4843 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0036 max 0.0107 | 0.3s
+[20:13:47] round 210/300 | accuracy 0.7654 (min 0.7333) | loss 0.4777 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0035 max 0.0107 | 0.2s
+[20:13:49] round 220/300 | accuracy 0.7654 (min 0.7333) | loss 0.4723 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0033 max 0.0104 | 0.2s
+[20:13:51] round 230/300 | accuracy 0.7682 (min 0.7333) | loss 0.4777 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0037 max 0.0103 | 0.3s
+[20:13:53] round 240/300 | accuracy 0.7838 (min 0.7333) | loss 0.4743 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0037 max 0.0101 | 0.2s
+[20:13:54] round 250/300 | accuracy 0.7790 (min 0.7333) | loss 0.4775 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0030 max 0.0101 | 0.2s
+[20:13:56] round 260/300 | accuracy 0.7790 (min 0.7333) | loss 0.4809 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0032 max 0.0101 | 0.2s
+[20:13:58] round 270/300 | accuracy 0.7790 (min 0.7333) | loss 0.4427 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0028 max 0.0097 | 0.2s
+[20:14:00] round 280/300 | accuracy 0.7790 (min 0.7333) | loss 0.4639 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0029 max 0.0096 | 0.2s
+[20:14:02] round 290/300 | accuracy 0.7874 (min 0.7500) | loss 0.4494 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0028 max 0.0094 | 0.2s
+[20:14:04] round 300/300 | accuracy 0.7953 (min 0.7596) | loss 0.4252 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0029 max 0.0094 | 0.2s
+[20:14:04] done in 0.92 min | accuracy 0.7953 | ARI 0.364 | clusters [['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'], ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']] | splits at [61]
+ALL DONE

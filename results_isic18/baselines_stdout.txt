@@ -1,0 +1,571 @@
+[02:21:45] device: cuda -- NVIDIA RTX A2000 12GB (12.5 GB), torch 2.5.1+cu121, amp=True
+[02:21:45]   client  0: BCN-0        centre BCN        |  3310 train | 2483 test
+[02:21:45]   client  1: BCN-1        centre BCN        |  3310 train | 2483 test
+[02:21:45]   client  2: BCN-2        centre BCN        |  3310 train | 2483 test
+[02:21:45]   client  3: molemax-0    centre molemax    |  1055 train |  791 test
+[02:21:45]   client  4: molemax-1    centre molemax    |  1054 train |  791 test
+[02:21:45]   client  5: molemax-2    centre molemax    |  1054 train |  791 test
+[02:21:45]   client  6: modern-0     centre modern     |   897 train |  672 test
+[02:21:45]   client  7: modern-1     centre modern     |   897 train |  672 test
+[02:21:45]   client  8: modern-2     centre modern     |   897 train |  672 test
+[02:21:45]   client  9: rosendahl-0  centre rosendahl  |   603 train |  452 test
+[02:21:45]   client 10: rosendahl-1  centre rosendahl  |   602 train |  452 test
+[02:21:45]   client 11: rosendahl-2  centre rosendahl  |   602 train |  452 test
+[02:21:45]   client 12: MSK-0        centre MSK        |   219 train |  164 test
+[02:21:45]   client 13: MSK-1        centre MSK        |   218 train |  164 test
+[02:21:45]   client 14: MSK-2        centre MSK        |   218 train |  164 test
+[02:21:45]   client 15: vienna-0     centre vienna     |   117 train |   88 test
+[02:21:45]   client 16: vienna-1     centre vienna     |   117 train |   88 test
+[02:21:45]   client 17: vienna-2     centre vienna     |   117 train |   88 test
+[02:21:45] model: FLamby EfficientNet-B0, 4017796 parameters
+[02:21:48] === pooled: clients ['BCN-0', 'BCN-1', 'BCN-2', 'molemax-0', 'molemax-1', 'molemax-2', 'modern-0', 'modern-1', 'modern-2', 'rosendahl-0', 'rosendahl-1', 'rosendahl-2', 'MSK-0', 'MSK-1', 'MSK-2', 'vienna-0', 'vienna-1', 'vienna-2'] | 18597 images | 291 steps/epoch x 20 epochs ===
+[02:26:57] pooled    epoch  1/20 | loss 7.1613 | bacc per centre [] | 309s
+[02:29:59] pooled    epoch  2/20 | loss 4.8619 | bacc per centre [] | 182s
+[02:33:01] pooled    epoch  3/20 | loss 4.0704 | bacc per centre [] | 181s
+[02:36:02] pooled    epoch  4/20 | loss 3.6213 | bacc per centre [] | 182s
+[02:42:28] pooled    epoch  5/20 | loss 3.1190 | bacc per centre [0.671, 0.744, 0.768, 0.55, 0.613, 0.593] | 181s
+[02:45:29] pooled    epoch  6/20 | loss 2.8832 | bacc per centre [] | 181s
+[02:48:29] pooled    epoch  7/20 | loss 2.7245 | bacc per centre [] | 180s
+[02:51:30] pooled    epoch  8/20 | loss 2.4102 | bacc per centre [] | 181s
+[02:54:33] pooled    epoch  9/20 | loss 2.1706 | bacc per centre [] | 183s
+[02:57:45] pooled    epoch 10/20 | loss 2.0600 | bacc per centre [0.708, 0.724, 0.645, 0.593, 0.703, 0.728] | 181s
+[03:00:47] pooled    epoch 11/20 | loss 1.7360 | bacc per centre [] | 182s
+[03:03:48] pooled    epoch 12/20 | loss 1.6029 | bacc per centre [] | 181s
+[03:06:50] pooled    epoch 13/20 | loss 1.4841 | bacc per centre [] | 182s
+[03:09:52] pooled    epoch 14/20 | loss 1.4088 | bacc per centre [] | 183s
+[03:13:04] pooled    epoch 15/20 | loss 1.6283 | bacc per centre [0.653, 0.848, 0.771, 0.619, 0.68, 0.703] | 180s
+[03:16:07] pooled    epoch 16/20 | loss 1.4205 | bacc per centre [] | 183s
+[03:19:09] pooled    epoch 17/20 | loss 1.2726 | bacc per centre [] | 182s
+[03:22:12] pooled    epoch 18/20 | loss 1.3047 | bacc per centre [] | 183s
+[03:25:14] pooled    epoch 19/20 | loss 1.3293 | bacc per centre [] | 182s
+[03:28:23] pooled    epoch 20/20 | loss 1.0798 | bacc per centre [0.75, 0.835, 0.822, 0.64, 0.768, 0.716] | 178s
+[03:28:25] === center0: clients ['BCN-0', 'BCN-1', 'BCN-2'] | 9930 images | 156 steps/epoch x 20 epochs ===
+[03:30:38] center0   epoch  1/20 | loss 9.1104 | bacc per centre [] | 133s
+[03:32:15] center0   epoch  2/20 | loss 6.2597 | bacc per centre [] | 97s
+[03:33:52] center0   epoch  3/20 | loss 5.2302 | bacc per centre [] | 97s
+[03:35:28] center0   epoch  4/20 | loss 4.3411 | bacc per centre [] | 95s
+[03:37:17] center0   epoch  5/20 | loss 3.6906 | bacc per centre [0.666, 0.62, 0.63, 0.444, 0.257, 0.638] | 98s
+[03:38:54] center0   epoch  6/20 | loss 3.0547 | bacc per centre [] | 97s
+[03:40:31] center0   epoch  7/20 | loss 2.7324 | bacc per centre [] | 97s
+[03:42:09] center0   epoch  8/20 | loss 2.4601 | bacc per centre [] | 97s
+[03:43:45] center0   epoch  9/20 | loss 2.3001 | bacc per centre [] | 97s
+[03:45:31] center0   epoch 10/20 | loss 2.4842 | bacc per centre [0.732, 0.36, 0.628, 0.42, 0.386, 0.673] | 94s
+[03:47:09] center0   epoch 11/20 | loss 1.9332 | bacc per centre [] | 97s
+[03:48:46] center0   epoch 12/20 | loss 1.5464 | bacc per centre [] | 97s
+[03:50:23] center0   epoch 13/20 | loss 1.4101 | bacc per centre [] | 97s
+[03:52:00] center0   epoch 14/20 | loss 1.4389 | bacc per centre [] | 97s
+[03:53:49] center0   epoch 15/20 | loss 1.1731 | bacc per centre [0.744, 0.56, 0.562, 0.367, 0.333, 0.614] | 98s
+[03:55:25] center0   epoch 16/20 | loss 1.2663 | bacc per centre [] | 96s
+[03:57:03] center0   epoch 17/20 | loss 2.0737 | bacc per centre [] | 98s
+[03:58:41] center0   epoch 18/20 | loss 1.5106 | bacc per centre [] | 98s
+[04:00:17] center0   epoch 19/20 | loss 1.1495 | bacc per centre [] | 97s
+[04:02:04] center0   epoch 20/20 | loss 0.9997 | bacc per centre [0.741, 0.47, 0.683, 0.391, 0.39, 0.599] | 96s
+[04:02:07] === center1: clients ['molemax-0', 'molemax-1', 'molemax-2'] | 3163 images | 50 steps/epoch x 20 epochs ===
+[04:03:23] center1   epoch  1/20 | loss 2.2124 | bacc per centre [] | 76s
+[04:03:54] center1   epoch  2/20 | loss 0.5100 | bacc per centre [] | 31s
+[04:04:26] center1   epoch  3/20 | loss 0.3518 | bacc per centre [] | 31s
+[04:04:56] center1   epoch  4/20 | loss 0.4233 | bacc per centre [] | 31s
+[04:05:39] center1   epoch  5/20 | loss 0.4259 | bacc per centre [0.211, 0.671, 0.315, 0.212, 0.361, 0.458] | 31s
+[04:06:10] center1   epoch  6/20 | loss 0.1996 | bacc per centre [] | 31s
+[04:06:41] center1   epoch  7/20 | loss 0.1502 | bacc per centre [] | 31s
+[04:07:12] center1   epoch  8/20 | loss 0.1347 | bacc per centre [] | 31s
+[04:07:43] center1   epoch  9/20 | loss 0.0809 | bacc per centre [] | 31s
+[04:08:25] center1   epoch 10/20 | loss 0.1317 | bacc per centre [0.271, 0.708, 0.407, 0.221, 0.289, 0.598] | 31s
+[04:08:55] center1   epoch 11/20 | loss 0.1548 | bacc per centre [] | 30s
+[04:09:26] center1   epoch 12/20 | loss 0.6446 | bacc per centre [] | 31s
+[04:09:57] center1   epoch 13/20 | loss 0.4786 | bacc per centre [] | 31s
+[04:10:28] center1   epoch 14/20 | loss 0.3428 | bacc per centre [] | 31s
+[04:11:12] center1   epoch 15/20 | loss 0.1797 | bacc per centre [0.257, 0.682, 0.417, 0.238, 0.246, 0.216] | 32s
+[04:11:43] center1   epoch 16/20 | loss 0.0650 | bacc per centre [] | 31s
+[04:12:13] center1   epoch 17/20 | loss 0.0684 | bacc per centre [] | 31s
+[04:12:45] center1   epoch 18/20 | loss 0.0560 | bacc per centre [] | 31s
+[04:13:16] center1   epoch 19/20 | loss 0.0455 | bacc per centre [] | 31s
+[04:13:58] center1   epoch 20/20 | loss 0.0552 | bacc per centre [0.218, 0.746, 0.419, 0.221, 0.331, 0.316] | 31s
+[04:14:00] === center2: clients ['modern-0', 'modern-1', 'modern-2'] | 2691 images | 43 steps/epoch x 20 epochs ===
+[04:14:57] center2   epoch  1/20 | loss 7.9585 | bacc per centre [] | 57s
+[04:15:24] center2   epoch  2/20 | loss 3.6111 | bacc per centre [] | 26s
+[04:15:50] center2   epoch  3/20 | loss 2.6721 | bacc per centre [] | 27s
+[04:16:16] center2   epoch  4/20 | loss 6.8464 | bacc per centre [] | 26s
+[04:16:54] center2   epoch  5/20 | loss 3.6018 | bacc per centre [0.335, 0.628, 0.584, 0.438, 0.367, 0.248] | 26s
+[04:17:20] center2   epoch  6/20 | loss 1.9751 | bacc per centre [] | 27s
+[04:17:47] center2   epoch  7/20 | loss 1.3678 | bacc per centre [] | 27s
+[04:18:14] center2   epoch  8/20 | loss 1.1124 | bacc per centre [] | 27s
+[04:18:41] center2   epoch  9/20 | loss 1.1101 | bacc per centre [] | 26s
+[04:19:15] center2   epoch 10/20 | loss 0.9948 | bacc per centre [0.319, 0.608, 0.653, 0.418, 0.448, 0.694] | 24s
+[04:19:40] center2   epoch 11/20 | loss 1.0629 | bacc per centre [] | 25s
+[04:20:07] center2   epoch 12/20 | loss 0.7786 | bacc per centre [] | 27s
+[04:20:34] center2   epoch 13/20 | loss 0.7834 | bacc per centre [] | 26s
+[04:21:00] center2   epoch 14/20 | loss 0.7364 | bacc per centre [] | 26s
+[04:21:38] center2   epoch 15/20 | loss 1.0097 | bacc per centre [0.366, 0.574, 0.648, 0.411, 0.482, 0.553] | 26s
+[04:22:04] center2   epoch 16/20 | loss 0.8738 | bacc per centre [] | 26s
+[04:22:31] center2   epoch 17/20 | loss 0.6197 | bacc per centre [] | 27s
+[04:22:58] center2   epoch 18/20 | loss 0.5707 | bacc per centre [] | 27s
+[04:23:24] center2   epoch 19/20 | loss 0.6597 | bacc per centre [] | 26s
+[04:24:02] center2   epoch 20/20 | loss 0.6466 | bacc per centre [0.328, 0.693, 0.684, 0.462, 0.448, 0.658] | 26s
+[04:24:04] === center3: clients ['rosendahl-0', 'rosendahl-1', 'rosendahl-2'] | 1807 images | 29 steps/epoch x 20 epochs ===
+[04:24:59] center3   epoch  1/20 | loss 12.1791 | bacc per centre [] | 55s
+[04:25:17] center3   epoch  2/20 | loss 7.9019 | bacc per centre [] | 18s
+[04:25:35] center3   epoch  3/20 | loss 6.2204 | bacc per centre [] | 18s
+[04:25:53] center3   epoch  4/20 | loss 4.6934 | bacc per centre [] | 18s
+[04:26:22] center3   epoch  5/20 | loss 3.8967 | bacc per centre [0.272, 0.347, 0.337, 0.6, 0.378, 0.356] | 18s
+[04:26:40] center3   epoch  6/20 | loss 2.9218 | bacc per centre [] | 18s
+[04:26:58] center3   epoch  7/20 | loss 2.4497 | bacc per centre [] | 18s
+[04:27:14] center3   epoch  8/20 | loss 2.6373 | bacc per centre [] | 16s
+[04:27:31] center3   epoch  9/20 | loss 2.7835 | bacc per centre [] | 17s
+[04:28:00] center3   epoch 10/20 | loss 2.3797 | bacc per centre [0.266, 0.487, 0.37, 0.616, 0.436, 0.383] | 18s
+[04:28:18] center3   epoch 11/20 | loss 1.7060 | bacc per centre [] | 18s
+[04:28:36] center3   epoch 12/20 | loss 1.7290 | bacc per centre [] | 18s
+[04:28:54] center3   epoch 13/20 | loss 1.4759 | bacc per centre [] | 18s
+[04:29:12] center3   epoch 14/20 | loss 1.1717 | bacc per centre [] | 18s
+[04:29:41] center3   epoch 15/20 | loss 1.0576 | bacc per centre [0.272, 0.487, 0.412, 0.628, 0.412, 0.404] | 18s
+[04:29:58] center3   epoch 16/20 | loss 1.0654 | bacc per centre [] | 18s
+[04:30:16] center3   epoch 17/20 | loss 1.2881 | bacc per centre [] | 18s
+[04:30:34] center3   epoch 18/20 | loss 1.1493 | bacc per centre [] | 18s
+[04:30:52] center3   epoch 19/20 | loss 0.9022 | bacc per centre [] | 18s
+[04:31:21] center3   epoch 20/20 | loss 0.6966 | bacc per centre [0.246, 0.323, 0.322, 0.63, 0.494, 0.5] | 18s
+[04:31:24] === center4: clients ['MSK-0', 'MSK-1', 'MSK-2'] | 655 images | 11 steps/epoch x 20 epochs ===
+[04:31:30] center4   epoch  1/20 | loss 4.6322 | bacc per centre [] | 6s
+[04:31:36] center4   epoch  2/20 | loss 1.9290 | bacc per centre [] | 6s
+[04:31:43] center4   epoch  3/20 | loss 1.3480 | bacc per centre [] | 7s
+[04:31:50] center4   epoch  4/20 | loss 0.9056 | bacc per centre [] | 7s
+[04:32:08] center4   epoch  5/20 | loss 0.7225 | bacc per centre [0.171, 0.266, 0.195, 0.169, 0.599, 0.326] | 7s
+[04:32:15] center4   epoch  6/20 | loss 0.6500 | bacc per centre [] | 6s
+[04:32:21] center4   epoch  7/20 | loss 0.5428 | bacc per centre [] | 7s
+[04:32:28] center4   epoch  8/20 | loss 0.3929 | bacc per centre [] | 6s
+[04:32:34] center4   epoch  9/20 | loss 0.4885 | bacc per centre [] | 6s
+[04:32:52] center4   epoch 10/20 | loss 0.3218 | bacc per centre [0.185, 0.35, 0.213, 0.213, 0.58, 0.294] | 6s
+[04:32:58] center4   epoch 11/20 | loss 0.3112 | bacc per centre [] | 6s
+[04:33:04] center4   epoch 12/20 | loss 0.3978 | bacc per centre [] | 6s
+[04:33:09] center4   epoch 13/20 | loss 0.3491 | bacc per centre [] | 5s
+[04:33:16] center4   epoch 14/20 | loss 0.2946 | bacc per centre [] | 6s
+[04:33:34] center4   epoch 15/20 | loss 0.3506 | bacc per centre [0.176, 0.301, 0.214, 0.196, 0.661, 0.309] | 7s
+[04:33:40] center4   epoch 16/20 | loss 0.2712 | bacc per centre [] | 6s
+[04:33:47] center4   epoch 17/20 | loss 0.2137 | bacc per centre [] | 6s
+[04:33:53] center4   epoch 18/20 | loss 0.3867 | bacc per centre [] | 6s
+[04:34:00] center4   epoch 19/20 | loss 0.2901 | bacc per centre [] | 6s
+[04:34:18] center4   epoch 20/20 | loss 0.2538 | bacc per centre [0.19, 0.392, 0.219, 0.223, 0.662, 0.381] | 6s
+[04:34:20] === center5: clients ['vienna-0', 'vienna-1', 'vienna-2'] | 351 images | 6 steps/epoch x 20 epochs ===
+[04:35:11] center5   epoch  1/20 | loss 6.7912 | bacc per centre [] | 51s
+[04:35:15] center5   epoch  2/20 | loss 4.3946 | bacc per centre [] | 4s
+[04:35:18] center5   epoch  3/20 | loss 2.4711 | bacc per centre [] | 3s
+[04:35:22] center5   epoch  4/20 | loss 1.6550 | bacc per centre [] | 3s
+[04:35:37] center5   epoch  5/20 | loss 1.1526 | bacc per centre [0.152, 0.218, 0.182, 0.192, 0.345, 0.226] | 3s
+[04:35:40] center5   epoch  6/20 | loss 1.0089 | bacc per centre [] | 3s
+[04:35:44] center5   epoch  7/20 | loss 0.6117 | bacc per centre [] | 3s
+[04:35:47] center5   epoch  8/20 | loss 0.6072 | bacc per centre [] | 3s
+[04:35:51] center5   epoch  9/20 | loss 0.4223 | bacc per centre [] | 3s
+[04:36:06] center5   epoch 10/20 | loss 0.3079 | bacc per centre [0.142, 0.206, 0.166, 0.162, 0.335, 0.25] | 3s
+[04:36:09] center5   epoch 11/20 | loss 0.2505 | bacc per centre [] | 4s
+[04:36:13] center5   epoch 12/20 | loss 0.3624 | bacc per centre [] | 3s
+[04:36:16] center5   epoch 13/20 | loss 0.1931 | bacc per centre [] | 3s
+[04:36:19] center5   epoch 14/20 | loss 0.1868 | bacc per centre [] | 3s
+[04:36:34] center5   epoch 15/20 | loss 0.1461 | bacc per centre [0.16, 0.318, 0.176, 0.205, 0.335, 0.302] | 3s
+[04:36:38] center5   epoch 16/20 | loss 0.1675 | bacc per centre [] | 4s
+[04:36:41] center5   epoch 17/20 | loss 0.1389 | bacc per centre [] | 3s
+[04:36:45] center5   epoch 18/20 | loss 0.1184 | bacc per centre [] | 3s
+[04:36:48] center5   epoch 19/20 | loss 0.0712 | bacc per centre [] | 3s
+[04:37:02] center5   epoch 20/20 | loss 0.0932 | bacc per centre [0.162, 0.199, 0.169, 0.214, 0.322, 0.337] | 4s
+[04:37:04] === client0: clients ['BCN-0'] | 3310 images | 52 steps/epoch x 20 epochs ===
+[04:38:36] client0   epoch  1/20 | loss 10.4770 | bacc per centre [] | 92s
+[04:39:09] client0   epoch  2/20 | loss 7.2464 | bacc per centre [] | 33s
+[04:39:41] client0   epoch  3/20 | loss 5.6443 | bacc per centre [] | 32s
+[04:40:11] client0   epoch  4/20 | loss 4.4051 | bacc per centre [] | 30s
+[04:40:56] client0   epoch  5/20 | loss 3.8989 | bacc per centre [0.528, 0.363, 0.62, 0.392, 0.34, 0.589] | 33s
+[04:41:28] client0   epoch  6/20 | loss 3.3441 | bacc per centre [] | 33s
+[04:42:01] client0   epoch  7/20 | loss 2.9847 | bacc per centre [] | 32s
+[04:42:33] client0   epoch  8/20 | loss 2.5024 | bacc per centre [] | 33s
+[04:43:04] client0   epoch  9/20 | loss 2.5499 | bacc per centre [] | 31s
+[04:43:48] client0   epoch 10/20 | loss 1.8954 | bacc per centre [0.576, 0.558, 0.646, 0.411, 0.392, 0.545] | 32s
+[04:44:21] client0   epoch 11/20 | loss 1.5067 | bacc per centre [] | 33s
+[04:44:53] client0   epoch 12/20 | loss 1.3305 | bacc per centre [] | 33s
+[04:45:26] client0   epoch 13/20 | loss 1.6971 | bacc per centre [] | 32s
+[04:45:59] client0   epoch 14/20 | loss 1.5075 | bacc per centre [] | 33s
+[04:46:43] client0   epoch 15/20 | loss 1.4327 | bacc per centre [0.582, 0.474, 0.576, 0.386, 0.373, 0.7] | 33s
+[04:47:15] client0   epoch 16/20 | loss 1.0620 | bacc per centre [] | 32s
+[04:47:48] client0   epoch 17/20 | loss 1.0231 | bacc per centre [] | 33s
+[04:48:20] client0   epoch 18/20 | loss 0.7989 | bacc per centre [] | 32s
+[04:48:52] client0   epoch 19/20 | loss 0.8811 | bacc per centre [] | 32s
+[04:49:35] client0   epoch 20/20 | loss 0.8932 | bacc per centre [0.586, 0.449, 0.494, 0.326, 0.396, 0.639] | 31s
+[04:49:37] === client1: clients ['BCN-1'] | 3310 images | 52 steps/epoch x 20 epochs ===
+[04:50:10] client1   epoch  1/20 | loss 11.3866 | bacc per centre [] | 32s
+[04:50:42] client1   epoch  2/20 | loss 7.0512 | bacc per centre [] | 33s
+[04:51:15] client1   epoch  3/20 | loss 6.3419 | bacc per centre [] | 32s
+[04:51:47] client1   epoch  4/20 | loss 4.7192 | bacc per centre [] | 33s
+[04:52:29] client1   epoch  5/20 | loss 3.8089 | bacc per centre [0.608, 0.564, 0.674, 0.403, 0.34, 0.634] | 30s
+[04:53:03] client1   epoch  6/20 | loss 3.5133 | bacc per centre [] | 34s
+[04:53:35] client1   epoch  7/20 | loss 3.0607 | bacc per centre [] | 33s
+[04:54:08] client1   epoch  8/20 | loss 2.1866 | bacc per centre [] | 33s
+[04:54:41] client1   epoch  9/20 | loss 2.0993 | bacc per centre [] | 33s
+[04:55:25] client1   epoch 10/20 | loss 1.8322 | bacc per centre [0.525, 0.598, 0.625, 0.337, 0.321, 0.58] | 33s
+[04:55:57] client1   epoch 11/20 | loss 1.8083 | bacc per centre [] | 32s
+[04:56:30] client1   epoch 12/20 | loss 1.4620 | bacc per centre [] | 33s
+[04:57:00] client1   epoch 13/20 | loss 1.2893 | bacc per centre [] | 30s
+[04:57:32] client1   epoch 14/20 | loss 1.2380 | bacc per centre [] | 32s
+[04:58:16] client1   epoch 15/20 | loss 1.1936 | bacc per centre [0.575, 0.543, 0.64, 0.442, 0.281, 0.499] | 32s
+[04:58:49] client1   epoch 16/20 | loss 1.5107 | bacc per centre [] | 33s
+[04:59:21] client1   epoch 17/20 | loss 0.9713 | bacc per centre [] | 32s
+[04:59:54] client1   epoch 18/20 | loss 1.0077 | bacc per centre [] | 33s
+[05:00:27] client1   epoch 19/20 | loss 0.9743 | bacc per centre [] | 33s
+[05:01:11] client1   epoch 20/20 | loss 1.2687 | bacc per centre [0.561, 0.521, 0.585, 0.343, 0.408, 0.37] | 33s
+[05:01:14] === client2: clients ['BCN-2'] | 3310 images | 52 steps/epoch x 20 epochs ===
+[05:01:46] client2   epoch  1/20 | loss 11.8021 | bacc per centre [] | 32s
+[05:02:18] client2   epoch  2/20 | loss 7.5225 | bacc per centre [] | 32s
+[05:02:51] client2   epoch  3/20 | loss 5.7834 | bacc per centre [] | 33s
+[05:03:24] client2   epoch  4/20 | loss 4.4065 | bacc per centre [] | 33s
+[05:04:08] client2   epoch  5/20 | loss 4.0271 | bacc per centre [0.546, 0.603, 0.436, 0.463, 0.362, 0.617] | 32s
+[05:04:37] client2   epoch  6/20 | loss 3.1949 | bacc per centre [] | 30s
+[05:05:09] client2   epoch  7/20 | loss 2.9500 | bacc per centre [] | 32s
+[05:05:42] client2   epoch  8/20 | loss 2.5321 | bacc per centre [] | 33s
+[05:06:14] client2   epoch  9/20 | loss 2.5474 | bacc per centre [] | 33s
+[05:06:59] client2   epoch 10/20 | loss 1.8511 | bacc per centre [0.614, 0.553, 0.494, 0.388, 0.443, 0.639] | 33s
+[05:07:32] client2   epoch 11/20 | loss 1.8091 | bacc per centre [] | 33s
+[05:08:04] client2   epoch 12/20 | loss 1.7056 | bacc per centre [] | 32s
+[05:08:37] client2   epoch 13/20 | loss 1.4348 | bacc per centre [] | 33s
+[05:09:09] client2   epoch 14/20 | loss 1.0221 | bacc per centre [] | 33s
+[05:09:51] client2   epoch 15/20 | loss 0.9533 | bacc per centre [0.559, 0.468, 0.421, 0.362, 0.404, 0.565] | 30s
+[05:10:24] client2   epoch 16/20 | loss 1.6779 | bacc per centre [] | 33s
+[05:10:56] client2   epoch 17/20 | loss 1.5767 | bacc per centre [] | 33s
+[05:11:29] client2   epoch 18/20 | loss 1.1433 | bacc per centre [] | 32s
+[05:12:01] client2   epoch 19/20 | loss 0.8761 | bacc per centre [] | 32s
+[05:12:45] client2   epoch 20/20 | loss 0.9937 | bacc per centre [0.598, 0.488, 0.598, 0.39, 0.395, 0.57] | 33s
+[05:12:48] === client3: clients ['molemax-0'] | 1055 images | 17 steps/epoch x 20 epochs ===
+[05:12:58] client3   epoch  1/20 | loss 4.1238 | bacc per centre [] | 10s
+[05:13:08] client3   epoch  2/20 | loss 1.2251 | bacc per centre [] | 10s
+[05:13:18] client3   epoch  3/20 | loss 0.4579 | bacc per centre [] | 10s
+[05:13:28] client3   epoch  4/20 | loss 0.3194 | bacc per centre [] | 10s
+[05:13:48] client3   epoch  5/20 | loss 0.2941 | bacc per centre [0.133, 0.368, 0.16, 0.144, 0.354, 0.243] | 10s
+[05:13:59] client3   epoch  6/20 | loss 0.1764 | bacc per centre [] | 11s
+[05:14:09] client3   epoch  7/20 | loss 0.1249 | bacc per centre [] | 11s
+[05:14:20] client3   epoch  8/20 | loss 0.1080 | bacc per centre [] | 11s
+[05:14:31] client3   epoch  9/20 | loss 0.0776 | bacc per centre [] | 10s
+[05:14:52] client3   epoch 10/20 | loss 0.0755 | bacc per centre [0.157, 0.493, 0.252, 0.15, 0.362, 0.258] | 10s
+[05:15:03] client3   epoch 11/20 | loss 0.0267 | bacc per centre [] | 10s
+[05:15:13] client3   epoch 12/20 | loss 0.0419 | bacc per centre [] | 10s
+[05:15:23] client3   epoch 13/20 | loss 0.0203 | bacc per centre [] | 10s
+[05:15:34] client3   epoch 14/20 | loss 0.0319 | bacc per centre [] | 10s
+[05:15:55] client3   epoch 15/20 | loss 0.0249 | bacc per centre [0.172, 0.614, 0.292, 0.181, 0.381, 0.481] | 10s
+[05:16:06] client3   epoch 16/20 | loss 0.0136 | bacc per centre [] | 10s
+[05:16:16] client3   epoch 17/20 | loss 0.0269 | bacc per centre [] | 10s
+[05:16:27] client3   epoch 18/20 | loss 0.0224 | bacc per centre [] | 10s
+[05:16:37] client3   epoch 19/20 | loss 0.0212 | bacc per centre [] | 10s
+[05:16:59] client3   epoch 20/20 | loss 0.0171 | bacc per centre [0.175, 0.649, 0.277, 0.17, 0.402, 0.301] | 10s
+[05:17:01] === client4: clients ['molemax-1'] | 1054 images | 17 steps/epoch x 20 epochs ===
+[05:17:59] client4   epoch  1/20 | loss 4.8096 | bacc per centre [] | 58s
+[05:18:09] client4   epoch  2/20 | loss 1.5974 | bacc per centre [] | 10s
+[05:18:20] client4   epoch  3/20 | loss 0.5550 | bacc per centre [] | 11s
+[05:18:30] client4   epoch  4/20 | loss 0.3920 | bacc per centre [] | 10s
+[05:18:52] client4   epoch  5/20 | loss 0.2023 | bacc per centre [0.155, 0.295, 0.215, 0.144, 0.318, 0.243] | 10s
+[05:19:01] client4   epoch  6/20 | loss 0.1610 | bacc per centre [] | 9s
+[05:19:11] client4   epoch  7/20 | loss 0.4534 | bacc per centre [] | 10s
+[05:19:22] client4   epoch  8/20 | loss 0.3192 | bacc per centre [] | 10s
+[05:19:32] client4   epoch  9/20 | loss 0.1304 | bacc per centre [] | 11s
+[05:19:54] client4   epoch 10/20 | loss 0.3592 | bacc per centre [0.163, 0.413, 0.248, 0.148, 0.344, 0.23] | 11s
+[05:20:05] client4   epoch 11/20 | loss 0.2786 | bacc per centre [] | 10s
+[05:20:15] client4   epoch 12/20 | loss 0.0890 | bacc per centre [] | 10s
+[05:20:25] client4   epoch 13/20 | loss 0.0487 | bacc per centre [] | 11s
+[05:20:36] client4   epoch 14/20 | loss 0.1464 | bacc per centre [] | 10s
+[05:20:58] client4   epoch 15/20 | loss 0.1209 | bacc per centre [0.191, 0.514, 0.283, 0.16, 0.344, 0.179] | 10s
+[05:21:09] client4   epoch 16/20 | loss 0.0675 | bacc per centre [] | 11s
+[05:21:19] client4   epoch 17/20 | loss 0.1520 | bacc per centre [] | 11s
+[05:21:30] client4   epoch 18/20 | loss 0.0819 | bacc per centre [] | 10s
+[05:21:40] client4   epoch 19/20 | loss 0.0283 | bacc per centre [] | 10s
+[05:22:02] client4   epoch 20/20 | loss 0.0358 | bacc per centre [0.203, 0.621, 0.311, 0.164, 0.35, 0.255] | 10s
+[05:22:04] === client5: clients ['molemax-2'] | 1054 images | 17 steps/epoch x 20 epochs ===
+[05:22:14] client5   epoch  1/20 | loss 5.2449 | bacc per centre [] | 10s
+[05:22:25] client5   epoch  2/20 | loss 1.7167 | bacc per centre [] | 10s
+[05:22:35] client5   epoch  3/20 | loss 0.6265 | bacc per centre [] | 10s
+[05:22:46] client5   epoch  4/20 | loss 0.3983 | bacc per centre [] | 10s
+[05:23:07] client5   epoch  5/20 | loss 0.3742 | bacc per centre [0.143, 0.39, 0.189, 0.141, 0.34, 0.243] | 10s
+[05:23:16] client5   epoch  6/20 | loss 0.3129 | bacc per centre [] | 9s
+[05:23:26] client5   epoch  7/20 | loss 0.2935 | bacc per centre [] | 10s
+[05:23:36] client5   epoch  8/20 | loss 0.2517 | bacc per centre [] | 10s
+[05:23:46] client5   epoch  9/20 | loss 0.1665 | bacc per centre [] | 10s
+[05:24:07] client5   epoch 10/20 | loss 0.1390 | bacc per centre [0.167, 0.534, 0.221, 0.147, 0.355, 0.32] | 10s
+[05:24:18] client5   epoch 11/20 | loss 0.1054 | bacc per centre [] | 10s
+[05:24:28] client5   epoch 12/20 | loss 0.0760 | bacc per centre [] | 10s
+[05:24:39] client5   epoch 13/20 | loss 0.0588 | bacc per centre [] | 11s
+[05:24:49] client5   epoch 14/20 | loss 0.0618 | bacc per centre [] | 10s
+[05:25:11] client5   epoch 15/20 | loss 0.0542 | bacc per centre [0.2, 0.627, 0.279, 0.164, 0.364, 0.346] | 10s
+[05:25:21] client5   epoch 16/20 | loss 0.0347 | bacc per centre [] | 10s
+[05:25:32] client5   epoch 17/20 | loss 0.0203 | bacc per centre [] | 10s
+[05:25:42] client5   epoch 18/20 | loss 0.0297 | bacc per centre [] | 10s
+[05:25:52] client5   epoch 19/20 | loss 0.0397 | bacc per centre [] | 11s
+[05:26:14] client5   epoch 20/20 | loss 0.3693 | bacc per centre [0.217, 0.676, 0.305, 0.184, 0.332, 0.398] | 10s
+[05:26:16] === client6: clients ['modern-0'] | 897 images | 15 steps/epoch x 20 epochs ===
+[05:26:56] client6   epoch  1/20 | loss 10.4357 | bacc per centre [] | 40s
+[05:27:05] client6   epoch  2/20 | loss 5.9331 | bacc per centre [] | 9s
+[05:27:14] client6   epoch  3/20 | loss 3.7044 | bacc per centre [] | 9s
+[05:27:23] client6   epoch  4/20 | loss 2.8007 | bacc per centre [] | 9s
+[05:27:43] client6   epoch  5/20 | loss 1.9402 | bacc per centre [0.253, 0.552, 0.402, 0.3, 0.369, 0.331] | 9s
+[05:27:52] client6   epoch  6/20 | loss 1.5910 | bacc per centre [] | 9s
+[05:28:02] client6   epoch  7/20 | loss 2.1079 | bacc per centre [] | 9s
+[05:28:11] client6   epoch  8/20 | loss 1.4932 | bacc per centre [] | 9s
+[05:28:20] client6   epoch  9/20 | loss 0.8965 | bacc per centre [] | 9s
+[05:28:40] client6   epoch 10/20 | loss 0.8680 | bacc per centre [0.243, 0.514, 0.476, 0.253, 0.422, 0.272] | 9s
+[05:28:49] client6   epoch 11/20 | loss 1.1586 | bacc per centre [] | 9s
+[05:28:58] client6   epoch 12/20 | loss 0.7575 | bacc per centre [] | 9s
+[05:29:07] client6   epoch 13/20 | loss 0.5191 | bacc per centre [] | 9s
+[05:29:16] client6   epoch 14/20 | loss 0.4951 | bacc per centre [] | 9s
+[05:29:35] client6   epoch 15/20 | loss 0.4867 | bacc per centre [0.236, 0.595, 0.43, 0.326, 0.461, 0.303] | 9s
+[05:29:44] client6   epoch 16/20 | loss 0.4492 | bacc per centre [] | 9s
+[05:29:52] client6   epoch 17/20 | loss 0.3877 | bacc per centre [] | 8s
+[05:30:01] client6   epoch 18/20 | loss 0.3354 | bacc per centre [] | 9s
+[05:30:09] client6   epoch 19/20 | loss 0.7502 | bacc per centre [] | 9s
+[05:30:30] client6   epoch 20/20 | loss 0.3939 | bacc per centre [0.223, 0.569, 0.476, 0.356, 0.487, 0.261] | 9s
+[05:30:32] === client7: clients ['modern-1'] | 897 images | 15 steps/epoch x 20 epochs ===
+[05:30:41] client7   epoch  1/20 | loss 10.9933 | bacc per centre [] | 9s
+[05:30:50] client7   epoch  2/20 | loss 5.5651 | bacc per centre [] | 9s
+[05:30:59] client7   epoch  3/20 | loss 4.5889 | bacc per centre [] | 9s
+[05:31:07] client7   epoch  4/20 | loss 2.4743 | bacc per centre [] | 9s
+[05:31:28] client7   epoch  5/20 | loss 2.2264 | bacc per centre [0.281, 0.425, 0.352, 0.327, 0.371, 0.327] | 9s
+[05:31:37] client7   epoch  6/20 | loss 2.6280 | bacc per centre [] | 9s
+[05:31:46] client7   epoch  7/20 | loss 1.3449 | bacc per centre [] | 9s
+[05:31:54] client7   epoch  8/20 | loss 1.4272 | bacc per centre [] | 9s
+[05:32:03] client7   epoch  9/20 | loss 1.8252 | bacc per centre [] | 9s
+[05:32:23] client7   epoch 10/20 | loss 1.1015 | bacc per centre [0.314, 0.513, 0.431, 0.316, 0.421, 0.376] | 8s
+[05:32:32] client7   epoch 11/20 | loss 1.3946 | bacc per centre [] | 9s
+[05:32:41] client7   epoch 12/20 | loss 0.8836 | bacc per centre [] | 9s
+[05:32:50] client7   epoch 13/20 | loss 0.8147 | bacc per centre [] | 9s
+[05:32:58] client7   epoch 14/20 | loss 1.2268 | bacc per centre [] | 9s
+[05:33:19] client7   epoch 15/20 | loss 0.8549 | bacc per centre [0.298, 0.55, 0.534, 0.284, 0.401, 0.541] | 9s
+[05:33:28] client7   epoch 16/20 | loss 0.5795 | bacc per centre [] | 9s
+[05:33:36] client7   epoch 17/20 | loss 0.4487 | bacc per centre [] | 9s
+[05:33:45] client7   epoch 18/20 | loss 0.5256 | bacc per centre [] | 9s
+[05:33:54] client7   epoch 19/20 | loss 1.1171 | bacc per centre [] | 9s
+[05:34:14] client7   epoch 20/20 | loss 0.5650 | bacc per centre [0.286, 0.564, 0.56, 0.344, 0.317, 0.402] | 9s
+[05:34:17] === client8: clients ['modern-2'] | 897 images | 15 steps/epoch x 20 epochs ===
+[05:34:25] client8   epoch  1/20 | loss 14.7317 | bacc per centre [] | 9s
+[05:34:34] client8   epoch  2/20 | loss 9.6077 | bacc per centre [] | 9s
+[05:34:43] client8   epoch  3/20 | loss 4.1820 | bacc per centre [] | 9s
+[05:34:53] client8   epoch  4/20 | loss 3.1612 | bacc per centre [] | 9s
+[05:35:12] client8   epoch  5/20 | loss 3.1184 | bacc per centre [0.25, 0.498, 0.385, 0.327, 0.335, 0.341] | 8s
+[05:35:20] client8   epoch  6/20 | loss 2.0025 | bacc per centre [] | 9s
+[05:35:29] client8   epoch  7/20 | loss 1.7979 | bacc per centre [] | 9s
+[05:35:38] client8   epoch  8/20 | loss 1.4344 | bacc per centre [] | 9s
+[05:35:47] client8   epoch  9/20 | loss 1.4575 | bacc per centre [] | 9s
+[05:36:07] client8   epoch 10/20 | loss 1.3856 | bacc per centre [0.265, 0.538, 0.505, 0.322, 0.428, 0.665] | 9s
+[05:36:16] client8   epoch 11/20 | loss 1.0510 | bacc per centre [] | 9s
+[05:36:25] client8   epoch 12/20 | loss 1.9053 | bacc per centre [] | 9s
+[05:36:34] client8   epoch 13/20 | loss 2.4940 | bacc per centre [] | 9s
+[05:36:43] client8   epoch 14/20 | loss 1.0662 | bacc per centre [] | 9s
+[05:37:03] client8   epoch 15/20 | loss 0.9015 | bacc per centre [0.302, 0.54, 0.577, 0.303, 0.414, 0.63] | 9s
+[05:37:12] client8   epoch 16/20 | loss 1.6135 | bacc per centre [] | 9s
+[05:37:21] client8   epoch 17/20 | loss 0.7653 | bacc per centre [] | 9s
+[05:37:30] client8   epoch 18/20 | loss 0.5632 | bacc per centre [] | 9s
+[05:37:39] client8   epoch 19/20 | loss 0.7026 | bacc per centre [] | 9s
+[05:37:59] client8   epoch 20/20 | loss 1.8002 | bacc per centre [0.291, 0.604, 0.631, 0.363, 0.34, 0.478] | 9s
+[05:38:01] === client9: clients ['rosendahl-0'] | 603 images | 10 steps/epoch x 20 epochs ===
+[05:38:07] client9   epoch  1/20 | loss 12.2184 | bacc per centre [] | 6s
+[05:38:13] client9   epoch  2/20 | loss 9.0185 | bacc per centre [] | 6s
+[05:38:19] client9   epoch  3/20 | loss 6.9365 | bacc per centre [] | 6s
+[05:38:25] client9   epoch  4/20 | loss 4.8812 | bacc per centre [] | 6s
+[05:38:42] client9   epoch  5/20 | loss 3.8160 | bacc per centre [0.217, 0.294, 0.342, 0.357, 0.349, 0.237] | 6s
+[05:38:48] client9   epoch  6/20 | loss 3.5370 | bacc per centre [] | 6s
+[05:38:54] client9   epoch  7/20 | loss 2.9054 | bacc per centre [] | 6s
+[05:39:00] client9   epoch  8/20 | loss 2.0713 | bacc per centre [] | 6s
+[05:39:06] client9   epoch  9/20 | loss 1.9728 | bacc per centre [] | 6s
+[05:39:23] client9   epoch 10/20 | loss 2.0462 | bacc per centre [0.23, 0.348, 0.279, 0.493, 0.436, 0.442] | 6s
+[05:39:29] client9   epoch 11/20 | loss 1.1551 | bacc per centre [] | 6s
+[05:39:35] client9   epoch 12/20 | loss 1.3620 | bacc per centre [] | 6s
+[05:39:41] client9   epoch 13/20 | loss 1.2282 | bacc per centre [] | 6s
+[05:39:47] client9   epoch 14/20 | loss 1.0985 | bacc per centre [] | 6s
+[05:40:05] client9   epoch 15/20 | loss 0.8566 | bacc per centre [0.254, 0.251, 0.317, 0.511, 0.453, 0.245] | 6s
+[05:40:10] client9   epoch 16/20 | loss 0.7545 | bacc per centre [] | 5s
+[05:40:16] client9   epoch 17/20 | loss 0.6141 | bacc per centre [] | 6s
+[05:40:21] client9   epoch 18/20 | loss 0.5086 | bacc per centre [] | 5s
+[05:40:27] client9   epoch 19/20 | loss 0.4764 | bacc per centre [] | 6s
+[05:40:44] client9   epoch 20/20 | loss 0.7017 | bacc per centre [0.263, 0.369, 0.445, 0.522, 0.463, 0.359] | 6s
+[05:40:47] === client10: clients ['rosendahl-1'] | 602 images | 10 steps/epoch x 20 epochs ===
+[05:41:37] client10  epoch  1/20 | loss 16.8287 | bacc per centre [] | 50s
+[05:41:43] client10  epoch  2/20 | loss 11.9199 | bacc per centre [] | 6s
+[05:41:49] client10  epoch  3/20 | loss 8.1975 | bacc per centre [] | 6s
+[05:41:55] client10  epoch  4/20 | loss 6.3665 | bacc per centre [] | 6s
+[05:42:13] client10  epoch  5/20 | loss 5.7783 | bacc per centre [0.272, 0.368, 0.424, 0.449, 0.241, 0.241] | 6s
+[05:42:19] client10  epoch  6/20 | loss 4.3033 | bacc per centre [] | 6s
+[05:42:25] client10  epoch  7/20 | loss 4.2045 | bacc per centre [] | 6s
+[05:42:31] client10  epoch  8/20 | loss 3.5400 | bacc per centre [] | 6s
+[05:42:37] client10  epoch  9/20 | loss 3.3659 | bacc per centre [] | 6s
+[05:42:54] client10  epoch 10/20 | loss 2.5323 | bacc per centre [0.282, 0.431, 0.34, 0.534, 0.373, 0.399] | 6s
+[05:43:00] client10  epoch 11/20 | loss 1.8904 | bacc per centre [] | 6s
+[05:43:06] client10  epoch 12/20 | loss 1.8010 | bacc per centre [] | 5s
+[05:43:11] client10  epoch 13/20 | loss 1.5468 | bacc per centre [] | 6s
+[05:43:17] client10  epoch 14/20 | loss 1.3881 | bacc per centre [] | 6s
+[05:43:35] client10  epoch 15/20 | loss 1.2970 | bacc per centre [0.292, 0.391, 0.515, 0.595, 0.36, 0.248] | 6s
+[05:43:41] client10  epoch 16/20 | loss 1.1581 | bacc per centre [] | 6s
+[05:43:47] client10  epoch 17/20 | loss 1.1604 | bacc per centre [] | 6s
+[05:43:53] client10  epoch 18/20 | loss 1.0333 | bacc per centre [] | 6s
+[05:43:59] client10  epoch 19/20 | loss 1.2239 | bacc per centre [] | 6s
+[05:44:16] client10  epoch 20/20 | loss 0.8901 | bacc per centre [0.28, 0.413, 0.475, 0.598, 0.429, 0.355] | 6s
+[05:44:18] === client11: clients ['rosendahl-2'] | 602 images | 10 steps/epoch x 20 epochs ===
+[05:44:24] client11  epoch  1/20 | loss 15.0717 | bacc per centre [] | 6s
+[05:44:30] client11  epoch  2/20 | loss 10.5049 | bacc per centre [] | 6s
+[05:44:36] client11  epoch  3/20 | loss 8.2724 | bacc per centre [] | 6s
+[05:44:42] client11  epoch  4/20 | loss 5.8061 | bacc per centre [] | 6s
+[05:45:00] client11  epoch  5/20 | loss 4.7532 | bacc per centre [0.221, 0.2, 0.194, 0.345, 0.276, 0.286] | 6s
+[05:45:06] client11  epoch  6/20 | loss 3.9608 | bacc per centre [] | 6s
+[05:45:12] client11  epoch  7/20 | loss 3.3491 | bacc per centre [] | 6s
+[05:45:17] client11  epoch  8/20 | loss 2.6662 | bacc per centre [] | 6s
+[05:45:23] client11  epoch  9/20 | loss 2.3210 | bacc per centre [] | 6s
+[05:45:41] client11  epoch 10/20 | loss 2.2274 | bacc per centre [0.244, 0.246, 0.282, 0.427, 0.319, 0.335] | 6s
+[05:45:47] client11  epoch 11/20 | loss 1.6409 | bacc per centre [] | 6s
+[05:45:52] client11  epoch 12/20 | loss 1.6226 | bacc per centre [] | 6s
+[05:45:58] client11  epoch 13/20 | loss 1.5029 | bacc per centre [] | 6s
+[05:46:03] client11  epoch 14/20 | loss 1.0322 | bacc per centre [] | 5s
+[05:46:20] client11  epoch 15/20 | loss 1.0092 | bacc per centre [0.256, 0.23, 0.267, 0.425, 0.297, 0.298] | 5s
+[05:46:26] client11  epoch 16/20 | loss 1.0823 | bacc per centre [] | 6s
+[05:46:32] client11  epoch 17/20 | loss 1.3183 | bacc per centre [] | 6s
+[05:46:38] client11  epoch 18/20 | loss 1.1917 | bacc per centre [] | 6s
+[05:46:44] client11  epoch 19/20 | loss 1.1571 | bacc per centre [] | 6s
+[05:47:01] client11  epoch 20/20 | loss 1.3836 | bacc per centre [0.247, 0.179, 0.283, 0.508, 0.328, 0.258] | 6s
+[05:47:04] === client12: clients ['MSK-0'] | 219 images | 4 steps/epoch x 20 epochs ===
+[05:47:06] client12  epoch  1/20 | loss 6.1181 | bacc per centre [] | 2s
+[05:47:08] client12  epoch  2/20 | loss 3.7870 | bacc per centre [] | 2s
+[05:47:10] client12  epoch  3/20 | loss 2.5403 | bacc per centre [] | 2s
+[05:47:12] client12  epoch  4/20 | loss 1.6044 | bacc per centre [] | 2s
+[05:47:26] client12  epoch  5/20 | loss 1.2133 | bacc per centre [0.159, 0.22, 0.187, 0.193, 0.528, 0.291] | 2s
+[05:47:28] client12  epoch  6/20 | loss 0.7446 | bacc per centre [] | 2s
+[05:47:30] client12  epoch  7/20 | loss 0.6355 | bacc per centre [] | 2s
+[05:47:33] client12  epoch  8/20 | loss 0.5335 | bacc per centre [] | 2s
+[05:47:35] client12  epoch  9/20 | loss 0.3457 | bacc per centre [] | 2s
+[05:47:49] client12  epoch 10/20 | loss 0.4425 | bacc per centre [0.142, 0.245, 0.181, 0.198, 0.529, 0.28] | 2s
+[05:47:51] client12  epoch 11/20 | loss 0.4009 | bacc per centre [] | 2s
+[05:47:53] client12  epoch 12/20 | loss 0.3143 | bacc per centre [] | 2s
+[05:47:55] client12  epoch 13/20 | loss 0.1773 | bacc per centre [] | 2s
+[05:47:57] client12  epoch 14/20 | loss 0.2775 | bacc per centre [] | 2s
+[05:48:11] client12  epoch 15/20 | loss 0.1953 | bacc per centre [0.15, 0.221, 0.181, 0.199, 0.568, 0.274] | 2s
+[05:48:13] client12  epoch 16/20 | loss 0.1882 | bacc per centre [] | 2s
+[05:48:15] client12  epoch 17/20 | loss 0.2020 | bacc per centre [] | 2s
+[05:48:18] client12  epoch 18/20 | loss 0.2328 | bacc per centre [] | 2s
+[05:48:20] client12  epoch 19/20 | loss 0.0731 | bacc per centre [] | 2s
+[05:48:33] client12  epoch 20/20 | loss 0.1511 | bacc per centre [0.164, 0.2, 0.192, 0.182, 0.591, 0.27] | 2s
+[05:48:36] === client13: clients ['MSK-1'] | 218 images | 4 steps/epoch x 20 epochs ===
+[05:48:38] client13  epoch  1/20 | loss 6.2309 | bacc per centre [] | 2s
+[05:48:40] client13  epoch  2/20 | loss 3.5130 | bacc per centre [] | 2s
+[05:48:42] client13  epoch  3/20 | loss 2.5640 | bacc per centre [] | 2s
+[05:48:44] client13  epoch  4/20 | loss 1.7046 | bacc per centre [] | 2s
+[05:48:59] client13  epoch  5/20 | loss 1.0012 | bacc per centre [0.175, 0.278, 0.199, 0.201, 0.559, 0.336] | 2s
+[05:49:01] client13  epoch  6/20 | loss 0.9075 | bacc per centre [] | 2s
+[05:49:03] client13  epoch  7/20 | loss 0.5804 | bacc per centre [] | 2s
+[05:49:05] client13  epoch  8/20 | loss 0.3946 | bacc per centre [] | 2s
+[05:49:08] client13  epoch  9/20 | loss 0.3398 | bacc per centre [] | 2s
+[05:49:21] client13  epoch 10/20 | loss 0.3253 | bacc per centre [0.191, 0.274, 0.209, 0.239, 0.521, 0.538] | 2s
+[05:49:24] client13  epoch 11/20 | loss 0.2253 | bacc per centre [] | 2s
+[05:49:26] client13  epoch 12/20 | loss 0.2060 | bacc per centre [] | 2s
+[05:49:28] client13  epoch 13/20 | loss 0.1811 | bacc per centre [] | 2s
+[05:49:30] client13  epoch 14/20 | loss 0.1925 | bacc per centre [] | 2s
+[05:49:44] client13  epoch 15/20 | loss 0.1905 | bacc per centre [0.188, 0.296, 0.218, 0.229, 0.57, 0.515] | 2s
+[05:49:46] client13  epoch 16/20 | loss 0.1657 | bacc per centre [] | 2s
+[05:49:48] client13  epoch 17/20 | loss 0.1398 | bacc per centre [] | 2s
+[05:49:50] client13  epoch 18/20 | loss 0.0880 | bacc per centre [] | 2s
+[05:49:53] client13  epoch 19/20 | loss 0.2740 | bacc per centre [] | 2s
+[05:50:06] client13  epoch 20/20 | loss 0.0430 | bacc per centre [0.184, 0.288, 0.203, 0.22, 0.553, 0.373] | 2s
+[05:50:09] === client14: clients ['MSK-2'] | 218 images | 4 steps/epoch x 20 epochs ===
+[05:50:11] client14  epoch  1/20 | loss 6.9702 | bacc per centre [] | 2s
+[05:50:13] client14  epoch  2/20 | loss 4.0646 | bacc per centre [] | 2s
+[05:50:15] client14  epoch  3/20 | loss 2.7443 | bacc per centre [] | 2s
+[05:50:17] client14  epoch  4/20 | loss 1.7315 | bacc per centre [] | 2s
+[05:50:31] client14  epoch  5/20 | loss 1.2508 | bacc per centre [0.164, 0.224, 0.206, 0.182, 0.497, 0.324] | 2s
+[05:50:33] client14  epoch  6/20 | loss 1.0954 | bacc per centre [] | 2s
+[05:50:35] client14  epoch  7/20 | loss 0.9205 | bacc per centre [] | 2s
+[05:50:37] client14  epoch  8/20 | loss 0.6853 | bacc per centre [] | 2s
+[05:50:40] client14  epoch  9/20 | loss 0.4942 | bacc per centre [] | 2s
+[05:50:53] client14  epoch 10/20 | loss 0.4200 | bacc per centre [0.17, 0.262, 0.183, 0.193, 0.487, 0.358] | 2s
+[05:50:56] client14  epoch 11/20 | loss 0.3708 | bacc per centre [] | 2s
+[05:50:58] client14  epoch 12/20 | loss 0.2694 | bacc per centre [] | 2s
+[05:51:00] client14  epoch 13/20 | loss 0.3965 | bacc per centre [] | 2s
+[05:51:02] client14  epoch 14/20 | loss 0.1795 | bacc per centre [] | 2s
+[05:51:16] client14  epoch 15/20 | loss 0.2336 | bacc per centre [0.175, 0.301, 0.209, 0.203, 0.526, 0.404] | 2s
+[05:51:18] client14  epoch 16/20 | loss 0.1904 | bacc per centre [] | 2s
+[05:51:20] client14  epoch 17/20 | loss 0.1325 | bacc per centre [] | 2s
+[05:51:22] client14  epoch 18/20 | loss 0.2986 | bacc per centre [] | 2s
+[05:51:24] client14  epoch 19/20 | loss 0.1213 | bacc per centre [] | 2s
+[05:51:38] client14  epoch 20/20 | loss 0.1938 | bacc per centre [0.174, 0.327, 0.204, 0.195, 0.491, 0.39] | 2s
+[05:51:40] === client15: clients ['vienna-0'] | 117 images | 2 steps/epoch x 20 epochs ===
+[05:52:45] client15  epoch  1/20 | loss 5.7189 | bacc per centre [] | 65s
+[05:52:46] client15  epoch  2/20 | loss 4.1966 | bacc per centre [] | 1s
+[05:52:47] client15  epoch  3/20 | loss 3.2371 | bacc per centre [] | 1s
+[05:52:48] client15  epoch  4/20 | loss 2.1457 | bacc per centre [] | 1s
+[05:53:00] client15  epoch  5/20 | loss 1.6838 | bacc per centre [0.138, 0.236, 0.16, 0.151, 0.342, 0.253] | 1s
+[05:53:01] client15  epoch  6/20 | loss 1.2957 | bacc per centre [] | 1s
+[05:53:02] client15  epoch  7/20 | loss 0.9508 | bacc per centre [] | 1s
+[05:53:03] client15  epoch  8/20 | loss 0.7077 | bacc per centre [] | 1s
+[05:53:04] client15  epoch  9/20 | loss 0.5023 | bacc per centre [] | 1s
+[05:53:17] client15  epoch 10/20 | loss 0.4950 | bacc per centre [0.136, 0.28, 0.168, 0.184, 0.342, 0.223] | 1s
+[05:53:18] client15  epoch 11/20 | loss 0.3804 | bacc per centre [] | 1s
+[05:53:19] client15  epoch 12/20 | loss 0.1962 | bacc per centre [] | 1s
+[05:53:21] client15  epoch 13/20 | loss 0.2530 | bacc per centre [] | 1s
+[05:53:22] client15  epoch 14/20 | loss 0.1373 | bacc per centre [] | 1s
+[05:53:35] client15  epoch 15/20 | loss 0.0652 | bacc per centre [0.131, 0.24, 0.154, 0.179, 0.34, 0.24] | 1s
+[05:53:36] client15  epoch 16/20 | loss 0.0699 | bacc per centre [] | 1s
+[05:53:37] client15  epoch 17/20 | loss 0.0657 | bacc per centre [] | 1s
+[05:53:38] client15  epoch 18/20 | loss 0.0560 | bacc per centre [] | 1s
+[05:53:39] client15  epoch 19/20 | loss 0.0800 | bacc per centre [] | 1s
+[05:53:52] client15  epoch 20/20 | loss 0.0322 | bacc per centre [0.126, 0.235, 0.147, 0.162, 0.33, 0.25] | 1s
+[05:53:54] === client16: clients ['vienna-1'] | 117 images | 2 steps/epoch x 20 epochs ===
+[05:53:55] client16  epoch  1/20 | loss 8.8344 | bacc per centre [] | 1s
+[05:53:56] client16  epoch  2/20 | loss 7.2324 | bacc per centre [] | 1s
+[05:53:57] client16  epoch  3/20 | loss 5.7456 | bacc per centre [] | 1s
+[05:53:59] client16  epoch  4/20 | loss 4.3975 | bacc per centre [] | 1s
+[05:54:11] client16  epoch  5/20 | loss 3.2143 | bacc per centre [0.144, 0.2, 0.175, 0.173, 0.39, 0.331] | 1s
+[05:54:12] client16  epoch  6/20 | loss 2.4764 | bacc per centre [] | 1s
+[05:54:14] client16  epoch  7/20 | loss 2.1997 | bacc per centre [] | 1s
+[05:54:15] client16  epoch  8/20 | loss 1.7020 | bacc per centre [] | 1s
+[05:54:16] client16  epoch  9/20 | loss 1.5114 | bacc per centre [] | 1s
+[05:54:29] client16  epoch 10/20 | loss 1.3779 | bacc per centre [0.139, 0.22, 0.185, 0.197, 0.349, 0.23] | 1s
+[05:54:30] client16  epoch 11/20 | loss 1.0783 | bacc per centre [] | 1s
+[05:54:31] client16  epoch 12/20 | loss 0.9152 | bacc per centre [] | 1s
+[05:54:32] client16  epoch 13/20 | loss 0.6779 | bacc per centre [] | 1s
+[05:54:33] client16  epoch 14/20 | loss 0.6694 | bacc per centre [] | 1s
+[05:54:46] client16  epoch 15/20 | loss 0.4256 | bacc per centre [0.14, 0.197, 0.178, 0.182, 0.34, 0.236] | 1s
+[05:54:47] client16  epoch 16/20 | loss 0.4279 | bacc per centre [] | 1s
+[05:54:48] client16  epoch 17/20 | loss 0.4543 | bacc per centre [] | 1s
+[05:54:50] client16  epoch 18/20 | loss 0.2935 | bacc per centre [] | 1s
+[05:54:51] client16  epoch 19/20 | loss 0.2531 | bacc per centre [] | 1s
+[05:55:03] client16  epoch 20/20 | loss 0.1766 | bacc per centre [0.14, 0.238, 0.175, 0.178, 0.339, 0.25] | 1s
+[05:55:06] === client17: clients ['vienna-2'] | 117 images | 2 steps/epoch x 20 epochs ===
+[05:55:07] client17  epoch  1/20 | loss 6.4000 | bacc per centre [] | 1s
+[05:55:08] client17  epoch  2/20 | loss 4.7403 | bacc per centre [] | 1s
+[05:55:09] client17  epoch  3/20 | loss 3.5103 | bacc per centre [] | 1s
+[05:55:10] client17  epoch  4/20 | loss 2.8316 | bacc per centre [] | 1s
+[05:55:23] client17  epoch  5/20 | loss 2.3199 | bacc per centre [0.128, 0.155, 0.139, 0.144, 0.308, 0.228] | 1s
+[05:55:24] client17  epoch  6/20 | loss 1.8001 | bacc per centre [] | 1s
+[05:55:26] client17  epoch  7/20 | loss 1.6091 | bacc per centre [] | 1s
+[05:55:27] client17  epoch  8/20 | loss 1.2129 | bacc per centre [] | 1s
+[05:55:28] client17  epoch  9/20 | loss 1.1159 | bacc per centre [] | 1s
+[05:55:40] client17  epoch 10/20 | loss 0.9479 | bacc per centre [0.136, 0.199, 0.179, 0.223, 0.381, 0.179] | 1s
+[05:55:41] client17  epoch 11/20 | loss 0.5973 | bacc per centre [] | 1s
+[05:55:42] client17  epoch 12/20 | loss 0.5734 | bacc per centre [] | 1s
+[05:55:43] client17  epoch 13/20 | loss 0.4362 | bacc per centre [] | 1s
+[05:55:45] client17  epoch 14/20 | loss 0.3676 | bacc per centre [] | 1s
+[05:55:57] client17  epoch 15/20 | loss 0.3894 | bacc per centre [0.147, 0.196, 0.163, 0.236, 0.339, 0.3] | 1s
+[05:55:58] client17  epoch 16/20 | loss 0.2207 | bacc per centre [] | 1s
+[05:55:59] client17  epoch 17/20 | loss 0.2670 | bacc per centre [] | 1s
+[05:56:00] client17  epoch 18/20 | loss 0.1287 | bacc per centre [] | 1s
+[05:56:01] client17  epoch 19/20 | loss 0.1941 | bacc per centre [] | 1s
+[05:56:13] client17  epoch 20/20 | loss 0.0805 | bacc per centre [0.143, 0.202, 0.158, 0.216, 0.342, 0.323] | 1s
+[05:56:13] summary (columns = test centre ['BCN', 'molemax', 'modern', 'rosendahl', 'MSK', 'vienna']):
+[05:56:13]   center0   n= 9930 bacc [0.741, 0.47, 0.683, 0.391, 0.39, 0.599]
+[05:56:13]   center1   n= 3163 bacc [0.218, 0.746, 0.419, 0.221, 0.331, 0.316]
+[05:56:13]   center2   n= 2691 bacc [0.328, 0.693, 0.684, 0.462, 0.448, 0.658]
+[05:56:13]   center3   n= 1807 bacc [0.246, 0.323, 0.322, 0.63, 0.494, 0.5]
+[05:56:13]   center4   n=  655 bacc [0.19, 0.392, 0.219, 0.223, 0.662, 0.381]
+[05:56:13]   center5   n=  351 bacc [0.162, 0.199, 0.169, 0.214, 0.322, 0.337]
+[05:56:13]   client0   n= 3310 bacc [0.586, 0.449, 0.494, 0.326, 0.396, 0.639]
+[05:56:13]   client1   n= 3310 bacc [0.561, 0.521, 0.585, 0.343, 0.408, 0.37]
+[05:56:13]   client10  n=  602 bacc [0.28, 0.413, 0.475, 0.598, 0.429, 0.355]
+[05:56:13]   client11  n=  602 bacc [0.247, 0.179, 0.283, 0.508, 0.328, 0.258]
+[05:56:13]   client12  n=  219 bacc [0.164, 0.2, 0.192, 0.182, 0.591, 0.27]
+[05:56:13]   client13  n=  218 bacc [0.184, 0.288, 0.203, 0.22, 0.553, 0.373]
+[05:56:13]   client14  n=  218 bacc [0.174, 0.327, 0.204, 0.195, 0.491, 0.39]
+[05:56:13]   client15  n=  117 bacc [0.126, 0.235, 0.147, 0.162, 0.33, 0.25]
+[05:56:13]   client16  n=  117 bacc [0.14, 0.238, 0.175, 0.178, 0.339, 0.25]
+[05:56:13]   client17  n=  117 bacc [0.143, 0.202, 0.158, 0.216, 0.342, 0.323]
+[05:56:13]   client2   n= 3310 bacc [0.598, 0.488, 0.598, 0.39, 0.395, 0.57]
+[05:56:13]   client3   n= 1055 bacc [0.175, 0.649, 0.277, 0.17, 0.402, 0.301]
+[05:56:13]   client4   n= 1054 bacc [0.203, 0.621, 0.311, 0.164, 0.35, 0.255]
+[05:56:13]   client5   n= 1054 bacc [0.217, 0.676, 0.305, 0.184, 0.332, 0.398]
+[05:56:13]   client6   n=  897 bacc [0.223, 0.569, 0.476, 0.356, 0.487, 0.261]
+[05:56:13]   client7   n=  897 bacc [0.286, 0.564, 0.56, 0.344, 0.317, 0.402]
+[05:56:13]   client8   n=  897 bacc [0.291, 0.604, 0.631, 0.363, 0.34, 0.478]
+[05:56:13]   client9   n=  603 bacc [0.263, 0.369, 0.445, 0.522, 0.463, 0.359]
+[05:56:13]   pooled    n=18597 bacc [0.75, 0.835, 0.822, 0.64, 0.768, 0.716]

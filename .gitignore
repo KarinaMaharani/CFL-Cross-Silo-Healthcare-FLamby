@@ -1,0 +1,36 @@
+# ---------------------------------------------------------------- datasets
+# None of the raw or preprocessed data belongs in git: GitHub rejects single
+# files over 100 MB, and all of it is re-creatable from the scripts in this repo.
+#
+#   ixi/    447 MB  IXI Tiny, Mendeley release 7kd5wj7v7p-3
+#   isic/   3.4 GB  ISIC 2019 jpgs + the uint8 cache
+#                   -> python -m cfl_isic_client.download_preprocess
+#   cache/  374 MB  preprocessed IXI volumes (rebuilt automatically on first run)
+#
+# brca/ (150 KB, ships with FLamby) and heart/ (40 KB, from UCI via
+# `python -m cfl_heart_disease_client.download`) are small enough to keep.
+ixi/
+isic/
+cache/
+
+# -------------------------------------------------------- run artefacts
+# Model checkpoints; the logs, metrics.csv, rounds.jsonl and final.json
+# in results_*/ are small and ARE tracked.
+results_*/**/models/
+*.pt
+*.pth
+
+# similarity matrices can be a few MB each; keep them unless they bloat the repo
+# results_*/**/similarities.npz
+
+# ------------------------------------------------------------------ python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ------------------------------------------------------------------- misc
+*.tgz
+*.zip
+.DS_Store

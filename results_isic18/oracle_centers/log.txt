@@ -1,0 +1,63 @@
+[09:58:00] === CFL / Fed-ISIC2019, 18 clients | run 'oracle_centers' | strategy partition ===
+[09:58:00] device: cuda -- NVIDIA RTX A2000 12GB (12.5 GB), torch 2.5.1+cu121, amp=True
+[09:58:00]   client  0: BCN-0        centre BCN        |  3310 train | 2483 test
+[09:58:00]   client  1: BCN-1        centre BCN        |  3310 train | 2483 test
+[09:58:00]   client  2: BCN-2        centre BCN        |  3310 train | 2483 test
+[09:58:00]   client  3: molemax-0    centre molemax    |  1055 train |  791 test
+[09:58:00]   client  4: molemax-1    centre molemax    |  1054 train |  791 test
+[09:58:00]   client  5: molemax-2    centre molemax    |  1054 train |  791 test
+[09:58:00]   client  6: modern-0     centre modern     |   897 train |  672 test
+[09:58:00]   client  7: modern-1     centre modern     |   897 train |  672 test
+[09:58:00]   client  8: modern-2     centre modern     |   897 train |  672 test
+[09:58:00]   client  9: rosendahl-0  centre rosendahl  |   603 train |  452 test
+[09:58:00]   client 10: rosendahl-1  centre rosendahl  |   602 train |  452 test
+[09:58:00]   client 11: rosendahl-2  centre rosendahl  |   602 train |  452 test
+[09:58:00]   client 12: MSK-0        centre MSK        |   219 train |  164 test
+[09:58:00]   client 13: MSK-1        centre MSK        |   218 train |  164 test
+[09:58:00]   client 14: MSK-2        centre MSK        |   218 train |  164 test
+[09:58:00]   client 15: vienna-0     centre vienna     |   117 train |   88 test
+[09:58:00]   client 16: vienna-1     centre vienna     |   117 train |   88 test
+[09:58:00]   client 17: vienna-2     centre vienna     |   117 train |   88 test
+[09:58:31] model: FLamby EfficientNet-B0 (8 classes), 4017796 parameters, pretrained=True
+[09:58:31] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[10:08:05] round   1/40 | bacc nan (min nan) | loss 8.7124 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.7177 max 0.7632 | steps 33-33 | 574s | ETA 373m
+[10:13:39] round   2/40 | bacc nan (min nan) | loss 6.8468 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.3853 max 0.5671 | steps 33-33 | 334s | ETA 288m
+[10:18:27] round   3/40 | bacc nan (min nan) | loss 6.0540 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.3265 max 0.4954 | steps 33-33 | 287s | ETA 246m
+[10:23:14] round   4/40 | bacc nan (min nan) | loss 5.4244 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2852 max 0.4436 | steps 33-33 | 287s | ETA 222m
+[10:31:10] round   5/40 | bacc 0.4543 (min 0.3512) | loss 4.8387 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2551 max 0.4095 | steps 33-33 | 476s | ETA 229m
+[10:35:59] round   6/40 | bacc 0.4543 (min 0.3512) | loss 4.3487 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2280 max 0.3913 | steps 33-33 | 290s | ETA 212m
+[10:40:40] round   7/40 | bacc 0.4543 (min 0.3512) | loss 4.0605 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2233 max 0.3563 | steps 33-33 | 281s | ETA 199m
+[10:45:28] round   8/40 | bacc 0.4543 (min 0.3512) | loss 3.7539 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2109 max 0.3401 | steps 33-33 | 288s | ETA 188m
+[10:50:17] round   9/40 | bacc 0.4543 (min 0.3512) | loss 3.5387 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.2077 max 0.3322 | steps 33-33 | 289s | ETA 178m
+[10:58:15] round  10/40 | bacc 0.5569 (min 0.3891) | loss 3.9001 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1922 max 0.3316 | steps 33-33 | 478s | ETA 179m
+[11:03:03] round  11/40 | bacc 0.5569 (min 0.3891) | loss 3.1787 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1893 max 0.3307 | steps 33-33 | 288s | ETA 170m
+[11:07:50] round  12/40 | bacc 0.5569 (min 0.3891) | loss 2.9728 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1925 max 0.3277 | steps 33-33 | 287s | ETA 162m
+[11:12:36] round  13/40 | bacc 0.5569 (min 0.3891) | loss 3.0281 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1911 max 0.3209 | steps 33-33 | 286s | ETA 154m
+[11:17:24] round  14/40 | bacc 0.5569 (min 0.3891) | loss 4.0948 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1823 max 0.3210 | steps 33-33 | 288s | ETA 146m
+[11:22:38] round  15/40 | bacc 0.5641 (min 0.3857) | loss 2.6506 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1899 max 0.3084 | steps 33-33 | 315s | ETA 140m
+[11:27:25] round  16/40 | bacc 0.5641 (min 0.3857) | loss 3.3373 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1845 max 0.3088 | steps 33-33 | 286s | ETA 133m
+[11:32:13] round  17/40 | bacc 0.5641 (min 0.3857) | loss 2.5852 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1794 max 0.3064 | steps 33-33 | 289s | ETA 127m
+[11:36:59] round  18/40 | bacc 0.5641 (min 0.3857) | loss 2.4762 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1787 max 0.3132 | steps 33-33 | 285s | ETA 120m
+[11:41:49] round  19/40 | bacc 0.5641 (min 0.3857) | loss 2.3774 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1773 max 0.3107 | steps 33-33 | 290s | ETA 114m
+[11:49:46] round  20/40 | bacc 0.5733 (min 0.3857) | loss 2.3562 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1689 max 0.3085 | steps 33-33 | 478s | ETA 111m
+[11:54:36] round  21/40 | bacc 0.5733 (min 0.3857) | loss 2.2433 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1753 max 0.2993 | steps 33-33 | 290s | ETA 105m
+[11:59:24] round  22/40 | bacc 0.5733 (min 0.3857) | loss 2.2585 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1712 max 0.2967 | steps 33-33 | 287s | ETA 99m
+[12:04:11] round  23/40 | bacc 0.5733 (min 0.3857) | loss 2.0547 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1726 max 0.2986 | steps 33-33 | 287s | ETA 93m
+[12:08:58] round  24/40 | bacc 0.5733 (min 0.3857) | loss 2.0588 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1679 max 0.3076 | steps 33-33 | 287s | ETA 87m
+[12:14:11] round  25/40 | bacc 0.5891 (min 0.3857) | loss 2.0004 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1745 max 0.2984 | steps 33-33 | 313s | ETA 81m
+[12:18:59] round  26/40 | bacc 0.5891 (min 0.3857) | loss 1.9909 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1676 max 0.2938 | steps 33-33 | 288s | ETA 76m
+[12:23:48] round  27/40 | bacc 0.5891 (min 0.3857) | loss 1.9321 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1637 max 0.2913 | steps 33-33 | 289s | ETA 70m
+[12:28:36] round  28/40 | bacc 0.5891 (min 0.3857) | loss 1.8879 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1662 max 0.2992 | steps 33-33 | 288s | ETA 64m
+[12:33:25] round  29/40 | bacc 0.5891 (min 0.3857) | loss 3.5310 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1701 max 0.3130 | steps 33-33 | 289s | ETA 59m
+[12:41:06] round  30/40 | bacc 0.5935 (min 0.3857) | loss 1.8042 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1621 max 0.2948 | steps 33-33 | 461s | ETA 54m
+[12:45:52] round  31/40 | bacc 0.5935 (min 0.3857) | loss 1.7911 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1640 max 0.3074 | steps 33-33 | 286s | ETA 49m
+[12:50:39] round  32/40 | bacc 0.5935 (min 0.3857) | loss 1.7105 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1667 max 0.2968 | steps 33-33 | 287s | ETA 43m
+[12:55:25] round  33/40 | bacc 0.5935 (min 0.3857) | loss 1.7185 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1603 max 0.2927 | steps 33-33 | 286s | ETA 38m
+[13:00:12] round  34/40 | bacc 0.5935 (min 0.3857) | loss 1.6773 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1623 max 0.2982 | steps 33-33 | 287s | ETA 32m
+[13:05:22] round  35/40 | bacc 0.5996 (min 0.3857) | loss 3.5349 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1642 max 0.2986 | steps 33-33 | 310s | ETA 27m
+[13:10:08] round  36/40 | bacc 0.5996 (min 0.3857) | loss 2.6660 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1611 max 0.2924 | steps 33-33 | 286s | ETA 21m
+[13:14:54] round  37/40 | bacc 0.5996 (min 0.3857) | loss 1.6092 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1657 max 0.2947 | steps 33-33 | 286s | ETA 16m
+[13:19:40] round  38/40 | bacc 0.5996 (min 0.3857) | loss 1.5441 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1620 max 0.2925 | steps 33-33 | 285s | ETA 11m
+[13:24:27] round  39/40 | bacc 0.5996 (min 0.3857) | loss 2.4947 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1628 max 0.2956 | steps 33-33 | 287s | ETA 5m
+[13:32:23] round  40/40 | bacc 0.6009 (min 0.3857) | loss 1.4974 | clusters 6 (ARI 1.000, 6 pure) | ||mean dW|| 0.1592 max 0.2915 | steps 33-33 | 476s | ETA 0m
+[13:35:11] done in 216.7 min | bacc 0.6009 | ARI 1.000 | clusters [['BCN-0', 'BCN-1', 'BCN-2'], ['molemax-0', 'molemax-1', 'molemax-2'], ['modern-0', 'modern-1', 'modern-2'], ['rosendahl-0', 'rosendahl-1', 'rosendahl-2'], ['MSK-0', 'MSK-1', 'MSK-2'], ['vienna-0', 'vienna-1', 'vienna-2']] | splits at []

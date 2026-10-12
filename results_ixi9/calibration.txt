@@ -1,0 +1,10 @@
+run                        : C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_ixi9\fedavg9
+stationary at round        : 43  (dice_fg_mean gain over 10 rounds = 0.0050 < 0.005)
+dice_fg_mean there         : 0.9505
+weighted mean ||dtheta||   : 0.01024
+min over rounds of max||dtheta||: 0.01346
+gamma probes (last 3)      : [0.168, 0.182, 0.201]
+
+  --eps-1 0.01055 --eps-2 0.01305   (gamma_hat ~ 0.182; use --gamma-auto --gamma-probe-every 5)
+
+written to C:\.FILES\..MY STUFF\..KARIN\.UI\.SEM 6\skripsi\...revamp-2\cfl-replicate-flamby\results_ixi9\fedavg9\calibration.json

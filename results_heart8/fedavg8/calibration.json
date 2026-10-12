@@ -1,0 +1,13 @@
+{
+  "stationary_round": 94,
+  "eps_1": 0.004355074604973158,
+  "eps_2": 0.013134014736860983,
+  "gamma_hat_median_last3": 0.7089376937179525,
+  "rule": {
+    "metric": "accuracy_mean",
+    "window": 20,
+    "tol": 0.005,
+    "eps1_margin": 1.03,
+    "eps2_margin": 0.97
+  }
+}

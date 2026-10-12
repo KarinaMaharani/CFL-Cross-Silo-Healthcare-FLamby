@@ -1,0 +1,100 @@
+[01:55:47] === CFL / Fed-IXI, 9 clients | run 'cfl9_strag' | strategy cfl ===
+[01:55:49] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU (6.4 GB), torch 2.8.0+cu128
+[01:55:50]   client 0: Guys-0     centre Guys |  83 train |  62 test
+[01:55:50]   client 1: Guys-1     centre Guys |  83 train |  62 test
+[01:55:50]   client 2: Guys-2     centre Guys |  83 train |  62 test
+[01:55:50]   client 3: HH-0       centre HH   |  49 train |  36 test
+[01:55:50]   client 4: HH-1       centre HH   |  48 train |  36 test
+[01:55:50]   client 5: HH-2       centre HH   |  48 train |  36 test
+[01:55:50]   client 6: IOP-0      centre IOP  |  20 train |  15 test
+[01:55:50]   client 7: IOP-1      centre IOP  |  20 train |  15 test
+[01:55:50]   client 8: IOP-2      centre IOP  |  19 train |  15 test
+[01:55:53] model: FLamby Fed-IXI 3D U-Net, 246156 parameters
+[01:55:53] test sets: Guys_test=62, HH_test=36, IOP_test=15
+[01:55:53] straggler mode=partial profile=tiers deadline=1.0 dynamic=False speeds=[1.0, 0.5, 0.25, 1.0, 0.5, 0.25, 1.0, 0.5, 0.25]
+[01:55:53] gamma probe: client Guys-0 -> halves of 42 / 41 volumes, every 5 rounds (gamma_max automatic)
+[01:56:05] round 1: gamma probe alpha_halves=0.999 gamma_hat=0.019
+[01:56:41] round   1/60 | dice 0.5878 | dice_fg 0.7538 (min 0.6619) | loss 0.4123 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0720 max 0.1132 | steps 25-100 | 48.2s | ETA 47m
+[01:57:17] round   2/60 | dice 0.6706 | dice_fg 0.8167 (min 0.7248) | loss 0.3409 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0500 max 0.0874 | steps 25-100 | 35.9s | ETA 41m
+[01:57:53] round   3/60 | dice 0.7043 | dice_fg 0.8512 (min 0.7745) | loss 0.3037 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0393 max 0.0737 | steps 25-100 | 35.9s | ETA 38m
+[01:58:29] round   4/60 | dice 0.7230 | dice_fg 0.8628 (min 0.7852) | loss 0.2809 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0325 max 0.0639 | steps 25-100 | 35.9s | ETA 36m
+[01:58:42] round 5: gamma probe alpha_halves=0.997 gamma_hat=0.036
+[01:59:17] round   5/60 | dice 0.7370 | dice_fg 0.8707 (min 0.8042) | loss 0.2645 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0286 max 0.0575 | steps 25-100 | 48.6s | ETA 38m
+[01:59:53] round   6/60 | dice 0.7483 | dice_fg 0.8751 (min 0.8099) | loss 0.2515 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0260 max 0.0527 | steps 25-100 | 35.9s | ETA 36m
+[02:00:29] round   7/60 | dice 0.7583 | dice_fg 0.8804 (min 0.8171) | loss 0.2401 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0243 max 0.0491 | steps 25-100 | 35.9s | ETA 35m
+[02:01:05] round   8/60 | dice 0.7673 | dice_fg 0.8836 (min 0.8249) | loss 0.2306 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0231 max 0.0463 | steps 25-100 | 35.9s | ETA 34m
+[02:01:41] round   9/60 | dice 0.7757 | dice_fg 0.8878 (min 0.8336) | loss 0.2217 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0221 max 0.0440 | steps 25-100 | 35.9s | ETA 33m
+[02:01:54] round 10: gamma probe alpha_halves=0.996 gamma_hat=0.046
+[02:02:37] round  10/60 | dice 0.7829 | dice_fg 0.8893 (min 0.8328) | loss 0.2134 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0212 max 0.0421 | steps 25-100 | 55.5s | ETA 34m
+[02:03:12] round  11/60 | dice 0.7908 | dice_fg 0.8943 (min 0.8425) | loss 0.2059 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0205 max 0.0406 | steps 25-100 | 35.9s | ETA 33m
+[02:03:48] round  12/60 | dice 0.7973 | dice_fg 0.8972 (min 0.8477) | loss 0.1989 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0198 max 0.0391 | steps 25-100 | 35.9s | ETA 32m
+[02:04:24] round  13/60 | dice 0.8041 | dice_fg 0.9006 (min 0.8518) | loss 0.1924 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0193 max 0.0379 | steps 25-100 | 36.0s | ETA 31m
+[02:05:00] round  14/60 | dice 0.8098 | dice_fg 0.9028 (min 0.8580) | loss 0.1859 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0187 max 0.0368 | steps 25-100 | 35.9s | ETA 30m
+[02:05:13] round 15: gamma probe alpha_halves=0.995 gamma_hat=0.050
+[02:05:49] round  15/60 | dice 0.8155 | dice_fg 0.9052 (min 0.8600) | loss 0.1804 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0182 max 0.0358 | steps 25-100 | 48.8s | ETA 30m
+[02:06:25] round  16/60 | dice 0.8206 | dice_fg 0.9074 (min 0.8636) | loss 0.1746 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0178 max 0.0348 | steps 25-100 | 35.9s | ETA 29m
+[02:07:01] round  17/60 | dice 0.8261 | dice_fg 0.9100 (min 0.8679) | loss 0.1695 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0173 max 0.0341 | steps 25-100 | 35.9s | ETA 28m
+[02:07:37] round  18/60 | dice 0.8307 | dice_fg 0.9116 (min 0.8698) | loss 0.1644 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0169 max 0.0333 | steps 25-100 | 35.9s | ETA 27m
+[02:08:13] round  19/60 | dice 0.8358 | dice_fg 0.9149 (min 0.8760) | loss 0.1597 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0165 max 0.0326 | steps 25-100 | 35.9s | ETA 27m
+[02:08:25] round 20: gamma probe alpha_halves=0.994 gamma_hat=0.056
+[02:09:08] round  20/60 | dice 0.8400 | dice_fg 0.9157 (min 0.8754) | loss 0.1550 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0161 max 0.0318 | steps 25-100 | 55.5s | ETA 27m
+[02:09:44] round  21/60 | dice 0.8442 | dice_fg 0.9178 (min 0.8785) | loss 0.1508 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0157 max 0.0312 | steps 25-100 | 36.0s | ETA 26m
+[02:10:20] round  22/60 | dice 0.8487 | dice_fg 0.9204 (min 0.8829) | loss 0.1466 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0154 max 0.0306 | steps 25-100 | 36.0s | ETA 25m
+[02:10:56] round  23/60 | dice 0.8517 | dice_fg 0.9203 (min 0.8824) | loss 0.1427 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0150 max 0.0299 | steps 25-100 | 36.1s | ETA 24m
+[02:11:32] round  24/60 | dice 0.8563 | dice_fg 0.9233 (min 0.8867) | loss 0.1387 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0147 max 0.0294 | steps 25-100 | 35.9s | ETA 23m
+[02:11:45] round 25: gamma probe alpha_halves=0.992 gamma_hat=0.062
+[02:12:21] round  25/60 | dice 0.8594 | dice_fg 0.9238 (min 0.8856) | loss 0.1351 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0144 max 0.0289 | steps 25-100 | 48.7s | ETA 23m
+[02:12:57] round  26/60 | dice 0.8629 | dice_fg 0.9255 (min 0.8895) | loss 0.1318 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0141 max 0.0283 | steps 25-100 | 35.9s | ETA 22m
+[02:13:32] round  27/60 | dice 0.8664 | dice_fg 0.9269 (min 0.8931) | loss 0.1285 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0138 max 0.0278 | steps 25-100 | 35.8s | ETA 22m
+[02:14:08] round  28/60 | dice 0.8694 | dice_fg 0.9278 (min 0.8938) | loss 0.1252 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0135 max 0.0272 | steps 25-100 | 35.9s | ETA 21m
+[02:14:44] round  29/60 | dice 0.8727 | dice_fg 0.9298 (min 0.8971) | loss 0.1222 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0132 max 0.0269 | steps 25-100 | 35.8s | ETA 20m
+[02:14:57] round 30: gamma probe alpha_halves=0.989 gamma_hat=0.074
+[02:15:40] round  30/60 | dice 0.8754 | dice_fg 0.9302 (min 0.8985) | loss 0.1193 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0129 max 0.0263 | steps 25-100 | 55.5s | ETA 20m
+[02:16:15] round  31/60 | dice 0.8783 | dice_fg 0.9315 (min 0.8977) | loss 0.1166 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0126 max 0.0259 | steps 25-100 | 35.7s | ETA 19m
+[02:16:51] round  32/60 | dice 0.8809 | dice_fg 0.9325 (min 0.8999) | loss 0.1138 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0123 max 0.0254 | steps 25-100 | 35.6s | ETA 18m
+[02:17:27] round  33/60 | dice 0.8832 | dice_fg 0.9327 (min 0.8992) | loss 0.1113 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0121 max 0.0250 | steps 25-100 | 35.7s | ETA 18m
+[02:18:02] round  34/60 | dice 0.8859 | dice_fg 0.9341 (min 0.9041) | loss 0.1090 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0118 max 0.0247 | steps 25-100 | 35.7s | ETA 17m
+[02:18:15] round 35: gamma probe alpha_halves=0.988 gamma_hat=0.076
+[02:18:51] round  35/60 | dice 0.8884 | dice_fg 0.9352 (min 0.9053) | loss 0.1065 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0116 max 0.0243 | steps 25-100 | 48.4s | ETA 16m
+[02:19:26] round  36/60 | dice 0.8908 | dice_fg 0.9360 (min 0.9068) | loss 0.1042 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0114 max 0.0239 | steps 25-100 | 35.7s | ETA 16m
+[02:20:02] round  37/60 | dice 0.8925 | dice_fg 0.9360 (min 0.9061) | loss 0.1022 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0111 max 0.0235 | steps 25-100 | 35.6s | ETA 15m
+[02:20:38] round  38/60 | dice 0.8952 | dice_fg 0.9380 (min 0.9104) | loss 0.0999 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0109 max 0.0232 | steps 25-100 | 35.9s | ETA 14m
+[02:21:14] round  39/60 | dice 0.8970 | dice_fg 0.9383 (min 0.9088) | loss 0.0979 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0107 max 0.0227 | steps 25-100 | 35.9s | ETA 14m
+[02:21:27] round 40: gamma probe alpha_halves=0.986 gamma_hat=0.085
+[02:22:00] round 40: SPLIT [0, 1, 2, 3, 4, 5, 6, 7, 8] -> [0, 1, 2, 3, 4, 5] | [6, 7, 8]  (Guys-0+Guys-1+Guys-2+HH-0+HH-1+HH-2 | IOP-0+IOP-1+IOP-2)  mean=0.0105 max=0.0226 a_cross=0.777 g_est=-0.156 gamma=0.076 < bound=0.334 | respects centres
+[02:22:09] round  40/60 | dice 0.9045 | dice_fg 0.9473 (min 0.9412) | loss 0.0962 | clusters 2 (ARI 0.500, 1 pure) | ||mean dW|| 0.0105 max 0.0226 | steps 25-100 | 55.6s | ETA 13m
+[02:22:43] round 41: SPLIT [0, 1, 2, 3, 4, 5] -> [0, 1, 2] | [3, 4, 5]  (Guys-0+Guys-1+Guys-2 | HH-0+HH-1+HH-2)  mean=0.0103 max=0.0191 a_cross=0.805 g_est=0.134 gamma=0.076 < bound=0.312 | respects centres
+[02:22:52] round  41/60 | dice 0.9064 | dice_fg 0.9477 (min 0.9414) | loss 0.0938 | clusters 3 (ARI 1.000, 3 pure) | ||mean dW|| 0.0118 max 0.0200 | steps 25-100 | 42.7s | ETA 13m
+[02:23:26] round 42: SPLIT [0, 1, 2] -> [0, 1] | [2]  (Guys-0+Guys-1 | Guys-2)  mean=0.0103 max=0.0175 a_cross=0.976 g_est=0.010 gamma=0.076 < bound=0.109 | CUTS THROUGH A CENTRE
+[02:23:35] round  42/60 | dice 0.9083 | dice_fg 0.9482 (min 0.9424) | loss 0.0918 | clusters 4 (ARI 0.840, 4 pure) | ||mean dW|| 0.0112 max 0.0190 | steps 25-100 | 42.7s | ETA 12m
+[02:24:09] round 43: SPLIT [3, 4, 5] -> [3, 4] | [5]  (HH-0+HH-1 | HH-2)  mean=0.0103 max=0.0174 a_cross=0.974 g_est=0.006 gamma=0.076 < bound=0.113 | CUTS THROUGH A CENTRE
+[02:24:18] round  43/60 | dice 0.9102 | dice_fg 0.9491 (min 0.9441) | loss 0.0897 | clusters 5 (ARI 0.652, 5 pure) | ||mean dW|| 0.0128 max 0.0183 | steps 25-100 | 43.0s | ETA 11m
+[02:24:51] round 44: SPLIT [6, 7, 8] -> [6, 7] | [8]  (IOP-0+IOP-1 | IOP-2)  mean=0.0105 max=0.0178 a_cross=0.901 g_est=0.025 gamma=0.076 < bound=0.223 | CUTS THROUGH A CENTRE
+[02:25:01] round  44/60 | dice 0.9123 | dice_fg 0.9503 (min 0.9451) | loss 0.0881 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0127 max 0.0178 | steps 25-100 | 42.7s | ETA 11m
+[02:25:13] round 45: gamma probe alpha_halves=0.978 gamma_hat=0.105
+[02:25:49] round  45/60 | dice 0.9135 | dice_fg 0.9504 (min 0.9440) | loss 0.0864 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0128 max 0.0172 | steps 25-100 | 48.6s | ETA 10m
+[02:26:25] round  46/60 | dice 0.9152 | dice_fg 0.9510 (min 0.9446) | loss 0.0849 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0124 max 0.0167 | steps 25-100 | 35.8s | ETA 9m
+[02:27:01] round  47/60 | dice 0.9166 | dice_fg 0.9514 (min 0.9462) | loss 0.0834 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0121 max 0.0162 | steps 25-100 | 35.9s | ETA 9m
+[02:27:37] round  48/60 | dice 0.9180 | dice_fg 0.9518 (min 0.9457) | loss 0.0818 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0118 max 0.0158 | steps 25-100 | 35.9s | ETA 8m
+[02:28:13] round  49/60 | dice 0.9194 | dice_fg 0.9524 (min 0.9457) | loss 0.0804 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0114 max 0.0154 | steps 25-100 | 36.1s | ETA 7m
+[02:28:26] round 50: gamma probe alpha_halves=0.976 gamma_hat=0.110
+[02:29:09] round  50/60 | dice 0.9208 | dice_fg 0.9530 (min 0.9467) | loss 0.0793 | clusters 6 (ARI 0.429, 6 pure) | ||mean dW|| 0.0112 max 0.0150 | steps 25-100 | 55.7s | ETA 7m
+[02:29:42] round 51: split of [0, 1] REJECTED by Alg.5 l.18: gamma_max=0.105 >= bound=0.100 (alpha_cross_max=0.980)
+[02:29:42] round 51: SPLIT [3, 4] -> [3] | [4]  (HH-0 | HH-1)  mean=0.0105 max=0.0139 a_cross=0.971 g_est=nan gamma=0.105 < bound=0.121 | CUTS THROUGH A CENTRE
+[02:29:52] round  51/60 | dice 0.9219 | dice_fg 0.9531 (min 0.9458) | loss 0.0779 | clusters 7 (ARI 0.300, 7 pure) | ||mean dW|| 0.0109 max 0.0146 | steps 25-100 | 42.9s | ETA 6m
+[02:30:25] round 52: split of [0, 1] REJECTED by Alg.5 l.18: gamma_max=0.105 >= bound=0.103 (alpha_cross_max=0.979)
+[02:30:28] round  52/60 | dice 0.9231 | dice_fg 0.9536 (min 0.9462) | loss 0.0767 | clusters 7 (ARI 0.300, 7 pure) | ||mean dW|| 0.0135 max 0.0143 | steps 25-100 | 36.1s | ETA 5m
+[02:31:01] round 53: split of [0, 1] REJECTED by Alg.5 l.18: gamma_max=0.105 >= bound=0.101 (alpha_cross_max=0.980)
+[02:31:01] round 53: SPLIT [6, 7] -> [6] | [7]  (IOP-0 | IOP-1)  mean=0.0104 max=0.0139 a_cross=0.893 g_est=nan gamma=0.105 < bound=0.231 | CUTS THROUGH A CENTRE
+[02:31:10] round  53/60 | dice 0.9242 | dice_fg 0.9538 (min 0.9459) | loss 0.0756 | clusters 8 (ARI 0.158, 8 pure) | ||mean dW|| 0.0131 max 0.0139 | steps 25-100 | 42.8s | ETA 5m
+[02:31:44] round 54: SPLIT [0, 1] -> [0] | [1]  (Guys-0 | Guys-1)  mean=0.0099 max=0.0132 a_cross=0.972 g_est=nan gamma=0.105 < bound=0.118 | CUTS THROUGH A CENTRE
+[02:31:53] round  54/60 | dice 0.9255 | dice_fg 0.9545 (min 0.9475) | loss 0.0746 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0134 max 0.0134 | steps 25-100 | 42.8s | ETA 4m
+[02:32:06] round 55: gamma probe alpha_halves=0.970 gamma_hat=0.122
+[02:32:42] round  55/60 | dice 0.9263 | dice_fg 0.9544 (min 0.9471) | loss 0.0734 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0130 max 0.0130 | steps 25-100 | 48.9s | ETA 3m
+[02:33:18] round  56/60 | dice 0.9273 | dice_fg 0.9548 (min 0.9481) | loss 0.0724 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0126 max 0.0126 | steps 25-100 | 36.0s | ETA 3m
+[02:33:54] round  57/60 | dice 0.9283 | dice_fg 0.9550 (min 0.9477) | loss 0.0714 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0123 max 0.0123 | steps 25-100 | 35.9s | ETA 2m
+[02:34:30] round  58/60 | dice 0.9292 | dice_fg 0.9551 (min 0.9481) | loss 0.0704 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0119 max 0.0119 | steps 25-100 | 36.0s | ETA 1m
+[02:35:06] round  59/60 | dice 0.9301 | dice_fg 0.9556 (min 0.9481) | loss 0.0695 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0116 max 0.0116 | steps 25-100 | 36.1s | ETA 1m
+[02:35:19] round 60: gamma probe alpha_halves=0.962 gamma_hat=0.138
+[02:36:02] round  60/60 | dice 0.9309 | dice_fg 0.9557 (min 0.9485) | loss 0.0688 | clusters 9 (ARI 0.000, 9 pure) | ||mean dW|| 0.0113 max 0.0113 | steps 25-100 | 55.5s | ETA 0m
+[02:36:09] done in 40.3 min | dice 0.9309 | dice_fg 0.9557 | ARI 0.000 | clusters [['Guys-0'], ['Guys-1'], ['Guys-2'], ['HH-0'], ['HH-1'], ['HH-2'], ['IOP-0'], ['IOP-1'], ['IOP-2']] | splits at [40, 41, 42, 43, 44, 51, 53, 54]

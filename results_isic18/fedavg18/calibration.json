@@ -1,0 +1,13 @@
+{
+  "stationary_round": 40,
+  "eps_1": 0.0963809692114591,
+  "eps_2": 0.5617733234167099,
+  "gamma_hat_median_last3": 0.6267110713906708,
+  "rule": {
+    "metric": "bacc_mean",
+    "window": 10,
+    "tol": 0.005,
+    "eps1_margin": 1.03,
+    "eps2_margin": 0.97
+  }
+}

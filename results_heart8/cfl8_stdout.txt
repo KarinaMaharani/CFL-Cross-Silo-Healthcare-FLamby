@@ -1,0 +1,50 @@
+[20:11:41] === CFL / Fed-Heart-Disease, 8 clients | run 'cfl8' | strategy cfl ===
+[20:11:41] device: cuda -- NVIDIA GeForce RTX 3050 6GB Laptop GPU, torch 2.8.0+cu128
+[20:11:41]   cleveland    303 patients (199 train / 104 test), positive rate 0.46
+[20:11:41]   hungarian    261 patients (172 train / 89 test), positive rate 0.38
+[20:11:41]   switzerland   46 patients (30 train / 16 test), positive rate 0.98
+[20:11:41]   va           130 patients (85 train / 45 test), positive rate 0.78
+[20:11:41]   client 0: Cleveland-0     centre Cleveland    | 100 train (pos 0.46) | 104 test
+[20:11:41]   client 1: Cleveland-1     centre Cleveland    |  99 train (pos 0.45) | 104 test
+[20:11:41]   client 2: Hungary-0       centre Hungary      |  87 train (pos 0.38) |  89 test
+[20:11:41]   client 3: Hungary-1       centre Hungary      |  85 train (pos 0.38) |  89 test
+[20:11:41]   client 4: Switzerland-0   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:11:41]   client 5: Switzerland-1   centre Switzerland  |  15 train (pos 1.00) |  16 test
+[20:11:41]   client 6: LongBeachVA-0   centre LongBeachVA  |  43 train (pos 0.77) |  45 test
+[20:11:41]   client 7: LongBeachVA-1   centre LongBeachVA  |  42 train (pos 0.79) |  45 test
+[20:11:44] model: FLamby logistic regression, 14 parameters
+[20:11:44] straggler mode=none profile=- deadline=1.0 dynamic=False speeds=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+[20:11:44] gamma probe: client Cleveland-0 -> halves of 50 / 50 patients, every 5 rounds
+[20:11:45] round   1/300 | accuracy 0.4189 (min 0.1875) | loss 0.8034 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0112 max 0.0164 | 0.5s
+[20:11:47] round  10/300 | accuracy 0.4478 (min 0.1875) | loss 0.7729 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0104 max 0.0166 | 0.3s
+[20:11:50] round  20/300 | accuracy 0.4921 (min 0.1875) | loss 0.7288 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0087 max 0.0143 | 0.3s
+[20:11:52] round  30/300 | accuracy 0.5309 (min 0.1875) | loss 0.7101 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0077 max 0.0141 | 0.3s
+[20:11:54] round  40/300 | accuracy 0.5959 (min 0.3750) | loss 0.6905 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0070 max 0.0142 | 0.3s
+[20:11:57] round  50/300 | accuracy 0.6279 (min 0.4375) | loss 0.6775 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0063 max 0.0144 | 0.3s
+[20:11:59] round  60/300 | accuracy 0.6243 (min 0.4375) | loss 0.6680 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0058 max 0.0145 | 0.3s
+[20:12:01] round  70/300 | accuracy 0.6747 (min 0.5625) | loss 0.6369 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0055 max 0.0150 | 0.3s
+[20:12:04] round  80/300 | accuracy 0.6959 (min 0.6222) | loss 0.6365 | clusters 1 (ARI 0.000, 0 pure) | ||mean dW|| 0.0046 max 0.0151 | 0.3s
+[20:12:06] round 88: SPLIT [0, 1, 2, 3, 4, 5, 6, 7] -> ['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'] | ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']  mean=0.0042 max=0.0154 a_cross=0.293 g_est=-0.067 | respects centres
+[20:12:06] round  90/300 | accuracy 0.6959 (min 0.6222) | loss 0.6258 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0077 max 0.0153 | 0.3s
+[20:12:09] round 100/300 | accuracy 0.7071 (min 0.6250) | loss 0.6091 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0075 max 0.0151 | 0.3s
+[20:12:11] round 110/300 | accuracy 0.7210 (min 0.6250) | loss 0.5837 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0072 max 0.0145 | 0.3s
+[20:12:14] round 120/300 | accuracy 0.7366 (min 0.6875) | loss 0.5635 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0067 max 0.0143 | 0.3s
+[20:12:16] round 130/300 | accuracy 0.7505 (min 0.6875) | loss 0.5504 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0064 max 0.0136 | 0.3s
+[20:12:18] round 140/300 | accuracy 0.7474 (min 0.6875) | loss 0.5273 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0062 max 0.0133 | 0.3s
+[20:12:21] round 150/300 | accuracy 0.7418 (min 0.6875) | loss 0.5124 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0056 max 0.0132 | 0.3s
+[20:12:23] round 160/300 | accuracy 0.7394 (min 0.6875) | loss 0.5270 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0056 max 0.0127 | 0.3s
+[20:12:26] round 170/300 | accuracy 0.7478 (min 0.6875) | loss 0.5008 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0050 max 0.0123 | 0.4s
+[20:12:28] round 180/300 | accuracy 0.7689 (min 0.7500) | loss 0.4973 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0048 max 0.0116 | 0.3s
+[20:12:31] round 190/300 | accuracy 0.7689 (min 0.7500) | loss 0.4717 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0050 max 0.0119 | 0.3s
+[20:12:33] round 200/300 | accuracy 0.7742 (min 0.7500) | loss 0.4805 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0043 max 0.0112 | 0.3s
+[20:12:35] round 210/300 | accuracy 0.7742 (min 0.7500) | loss 0.4688 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0043 max 0.0111 | 0.3s
+[20:12:38] round 220/300 | accuracy 0.7585 (min 0.6875) | loss 0.4649 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0045 max 0.0108 | 0.3s
+[20:12:40] round 230/300 | accuracy 0.7696 (min 0.6875) | loss 0.4558 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0046 max 0.0106 | 0.3s
+[20:12:43] round 240/300 | accuracy 0.7853 (min 0.7500) | loss 0.4376 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0039 max 0.0103 | 0.3s
+[20:12:45] round 250/300 | accuracy 0.8141 (min 0.7500) | loss 0.4355 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0038 max 0.0102 | 0.3s
+[20:12:48] round 260/300 | accuracy 0.8113 (min 0.7500) | loss 0.4503 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0036 max 0.0102 | 0.3s
+[20:12:50] round 270/300 | accuracy 0.8053 (min 0.7596) | loss 0.4182 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0034 max 0.0098 | 0.3s
+[20:12:53] round 280/300 | accuracy 0.8053 (min 0.7596) | loss 0.4246 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0034 max 0.0095 | 0.3s
+[20:12:55] round 290/300 | accuracy 0.7998 (min 0.7556) | loss 0.4267 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0033 max 0.0093 | 0.3s
+[20:12:57] round 300/300 | accuracy 0.8026 (min 0.7556) | loss 0.4191 | clusters 2 (ARI 0.364, 0 pure) | ||mean dW|| 0.0032 max 0.0092 | 0.3s
+[20:12:57] done in 1.22 min | accuracy 0.8026 | ARI 0.364 | clusters [['Cleveland-0', 'Cleveland-1', 'Hungary-0', 'Hungary-1'], ['Switzerland-0', 'Switzerland-1', 'LongBeachVA-0', 'LongBeachVA-1']] | splits at [88]

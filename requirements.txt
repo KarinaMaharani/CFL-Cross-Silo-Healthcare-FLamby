@@ -1,0 +1,36 @@
+# Dependencies for the CFL / FLamby replication (cfl_ixi, cfl_ixi_client,
+# cfl_isic, cfl_isic_client).
+#
+# Install in two steps, because the right torch build depends on the machine's
+# CUDA driver (check it with `nvidia-smi`):
+#
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121   # or cu128
+#   pip install -r requirements.txt
+#
+# cu121 suits most servers; the laptop this was developed on uses cu128.
+# Verify afterwards:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+#
+# Versions below are the floors this code was developed and tested against
+# (laptop: torch 2.8.0+cu128, numpy 2.2.6, scipy 1.13.0, scikit-learn 1.6.1,
+# pandas 2.2.3, nibabel 5.4.2, pillow 12.1.1, efficientnet_pytorch 0.7.1).
+
+torch>=2.0            # installed separately, see above; listed for completeness
+
+# --- shared ---------------------------------------------------------------
+numpy>=1.24
+scipy>=1.10
+scikit-learn>=1.4     # AgglomerativeClustering(metric=...) replaced affinity= in 1.4
+pandas>=2.0
+
+# --- Fed-IXI (cfl_ixi, cfl_ixi_client) ------------------------------------
+nibabel>=5.0          # reads the .nii.gz volumes when the cache is built
+
+# --- Fed-ISIC2019 (cfl_isic, cfl_isic_client) -----------------------------
+pillow>=10.0          # reads the preprocessed jpgs when the cache is built
+efficientnet_pytorch>=0.7.1   # FLamby's EfficientNet-B0 baseline
+
+# --- analysis notebooks (optional) ----------------------------------------
+# matplotlib>=3.7
+# nbformat>=5.9
+# jupyter

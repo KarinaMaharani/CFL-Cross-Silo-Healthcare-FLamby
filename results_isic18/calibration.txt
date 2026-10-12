@@ -1,0 +1,11 @@
+WARNING: bacc_mean never flattened within 40 rounds; using the last round
+run                        : /home/karina/skripsi/cfl-replicate-flamby/results_isic18/fedavg18
+stationary at round        : 40  (bacc_mean gain over 10 rounds = 0.0255 < 0.005)
+bacc_mean there            : 0.6172
+weighted mean ||dtheta||   : 0.09357
+min over rounds of max||dtheta||: 0.57915
+gamma probes (last 3)      : [0.627, 0.635, 0.621]
+
+  --eps-1 0.09638 --eps-2 0.56177   (gamma_hat ~ 0.627; use --gamma-auto --gamma-probe-every 5)
+
+written to /home/karina/skripsi/cfl-replicate-flamby/results_isic18/fedavg18/calibration.json
