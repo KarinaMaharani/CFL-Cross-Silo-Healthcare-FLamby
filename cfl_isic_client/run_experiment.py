@@ -159,6 +159,21 @@ def run(cfg):
             names[p], len(probes[0].train_data), len(probes[1].train_data),
             cfg.gamma_probe_every, " (gamma_max automatic)" if cfg.gamma_auto else ""))
 
+    if cfg.strategy in ("fedprox", "scaffold", "cyclic", "cyclic_learning", "fedadam", "fedyogi", "fedadagrad"):
+        from fl_algorithms import run_fl_benchmark
+        cfg.algorithm = "cyclic" if cfg.strategy == "cyclic_learning" else cfg.strategy
+        return run_fl_benchmark(
+            cfg=cfg,
+            clients=clients,
+            server=server,
+            client_center=client_center,
+            center_test=center_test,
+            meta={"names": names},
+            sched=sched,
+            metric_name="bacc",
+            cross_eval_fn=cross_evaluate
+        )
+
     clusters = (parse_partition(cfg.partition, n) if cfg.strategy == "partition"
                 else [np.arange(n).astype(int)])
     born = {tuple(i.tolist()): 0 for i in clusters}
@@ -171,6 +186,12 @@ def run(cfg):
     ev = [{"bacc": float("nan"), "acc": float("nan")}] * n
     cum_time, t_start = 0.0, time.time()
 
+    best_metric, best_round, stopped_early, break_after = -1e9, 0, None, False
+    stop = None
+    if cfg.stop_rule == "converge":
+        from fl_algorithms.stopping import StopRule
+        stop = StopRule(cfg)
+        log(stop.describe() + " | cap {} rounds".format(cfg.communication_rounds))
     for rnd in range(1, cfg.communication_rounds + 1):
         t0 = time.time()
 
@@ -332,6 +353,20 @@ def run(cfg):
                                 "cluster_stats": records}) + "\n")
         jsonl.flush()
 
+        # ---- convergence-based stop: no improvement for `patience` rounds
+        if cfg.early_stop_patience:
+            _m = float(np.mean(bacc))
+            if n_split:                # a split starts a new problem: restart the patience
+                best_metric, best_round = -1e9, rnd
+            if _m > best_metric + cfg.early_stop_delta:
+                best_metric, best_round = _m, rnd
+            if rnd >= max(cfg.min_rounds, 1) and (rnd - best_round) >= cfg.early_stop_patience:
+                stopped_early = rnd
+                log("stopping at round {}: no gain above {:.3f} since round {} "
+                    "(best {} {:.4f})".format(rnd, cfg.early_stop_delta, best_round,
+                                              "bacc", best_metric))
+                break_after = True
+
         if rnd % cfg.log_every == 0 or rnd == 1:
             eta = (time.time() - t_start) / rnd * (cfg.communication_rounds - rnd)
             log("round {:3d}/{} | bacc {:.4f} (min {:.4f}) | loss {:.4f} | clusters {} "
@@ -342,6 +377,17 @@ def run(cfg):
                     row["max_norm_max"], row["steps_min"], row["steps_max"],
                     " ({} dropped)".format(row["n_dropped"]) if row["n_dropped"] else "",
                     dt, eta / 60))
+
+        if break_after:
+            break
+
+        if stop is not None:
+            why = stop.update(rnd, row["train_loss"], row["bacc_mean"], split=n_split > 0)
+            if why and rnd % cfg.eval_every == 0:      # stop only where the score is fresh
+                log("STOP at round {}: {}".format(rnd, why))
+                break
+            if why:
+                stop.reason, stop.stopped_at = None, None
 
     final_cross = cross_evaluate(clients, center_test, full=True)
     lab = cluster_labels(clusters, n)
@@ -354,7 +400,14 @@ def run(cfg):
              "client_names": names, "client_center": client_center.tolist(),
              "truth": truth.tolist(), "per_client": ev, "cross": final_cross,
              "straggler_speeds": sched.speeds(0).tolist(),
-             "cum_round_time": cum_time, "minutes": (time.time() - t_start) / 60}
+             "cum_round_time": cum_time, "minutes": (time.time() - t_start) / 60,
+             "rounds_run": rnd, "rounds_budget": cfg.communication_rounds,
+             "stopped_early": stopped_early, "best_round": best_round,
+             "best_metric": (None if best_metric < -1e8 else best_metric)}
+    if stop is not None:
+        final.update(stop.summary())
+        final.update({"rounds_run": rnd, "rounds_budget": cfg.communication_rounds,
+                      "stopped_early": stop.stopped_at})
     with open(os.path.join(out, "final.json"), "w") as f:
         json.dump(final, f, indent=2)
     if cfg.save_similarities:
@@ -377,7 +430,7 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--run-name")
-    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition"])
+    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition", "fedprox", "scaffold", "cyclic", "cyclic_learning", "fedadam", "fedyogi", "fedadagrad"])
     p.add_argument("--partition")
     p.add_argument("--rounds", type=int, dest="communication_rounds")
     p.add_argument("--local-updates", type=int)
@@ -422,11 +475,30 @@ def parse_args(argv=None):
     p.add_argument("--straggler-min-updates", type=int)
     p.add_argument("--straggler-seed", type=int)
     # io
+    p.add_argument("--early-stop-patience", type=int)
+    p.add_argument("--early-stop-delta", type=float)
+    p.add_argument("--min-rounds", type=int)
+    p.add_argument("--stop-rule", choices=["none", "converge"])
+    p.add_argument("--stop-window", type=int)
+    p.add_argument("--stop-patience", type=int)
+    p.add_argument("--stop-rel-tol", type=float)
+    p.add_argument("--stop-drop", type=float)
+    p.add_argument("--stop-drop-patience", type=int)
+    p.add_argument("--stop-loss-floor", type=float)
+    p.add_argument("--stop-split-grace", type=int)
     p.add_argument("--eval-every", type=int)
     p.add_argument("--cross-eval-every", type=int)
     p.add_argument("--seed", type=int)
     p.add_argument("--device", choices=["auto", "cuda", "cpu"])
     p.add_argument("--results-dir")
+    # benchmark-strategy knobs (FedProx mu, Scaffold/adaptive server lr,
+    # FedAdam / FedYogi / FedAdagrad moments) -- the Config already has these
+    # fields; without these flags benchmark_isic/{fedprox,scaffold}/run.py abort.
+    p.add_argument("--mu", type=float)
+    p.add_argument("--server-lr", type=float)
+    p.add_argument("--beta-1", type=float)
+    p.add_argument("--beta-2", type=float)
+    p.add_argument("--tau", type=float)
     p.add_argument("--no-amp", dest="amp", action="store_const", const=False)
     p.add_argument("--save-models", action="store_const", const=True)
     a = vars(p.parse_args(argv))

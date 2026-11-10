@@ -117,12 +117,22 @@ def load_ixi(root, cache_dir, log=print):
     os.makedirs(cache_dir, exist_ok=True)
     cache = os.path.join(cache_dir, CACHE_NAME)
     meta_csv = os.path.join(cache_dir, "subjects.csv")
-    subjects = list_subjects(root)
+    # The cache is self-contained (it stores the subject names), so a machine that has
+    # it does NOT need the 447 MB of raw NIfTI volumes.  Only consult the raw folder
+    # when the cache is missing, or to check it is not stale when the raw data is there.
     if os.path.exists(cache) and os.path.exists(meta_csv):
         z = np.load(cache)
-        if len(z["names"]) == len(subjects):
-            with open(meta_csv, newline="") as f:
-                return {"x": z["x"], "y": z["y"], "meta": list(csv.DictReader(f))}
+        with open(meta_csv, newline="") as f:
+            meta = list(csv.DictReader(f))
+        fresh = len(z["names"]) == len(meta)
+        if fresh and os.path.isdir(root):
+            try:
+                fresh = len(z["names"]) == len(list_subjects(root))
+            except FileNotFoundError:
+                pass            # raw data absent: trust the cache
+        if fresh:
+            return {"x": z["x"], "y": z["y"], "meta": meta}
+    subjects = list_subjects(root)      # needed only to (re)build the cache
     log("preprocessing {} subjects -> {} (one-off, ~1-2 min)".format(len(subjects), cache))
     splits = flamby_split([s["center"] for s in subjects])
     xs, ys, meta = [], [], []

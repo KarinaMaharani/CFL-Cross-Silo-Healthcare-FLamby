@@ -136,7 +136,7 @@ class Client:
         if self.B:
             copy_(target=self.B, source=server.B)
 
-    def compute_weight_update(self, num_updates):
+    def compute_weight_update(self, num_updates, proximal_mu=0.0, W_global=None, c_server=None, c_local=None):
         """``num_updates`` local SGD steps; 0 means dropped by the straggler deadline."""
         copy_(target=self.W_old, source=self.W)
         self.steps_done = int(num_updates)
@@ -152,10 +152,18 @@ class Client:
             self.optimizer.zero_grad(set_to_none=True)
             loss = bce_loss(self.model(x), y)
             loss.backward()
+            if proximal_mu > 0.0 and W_global is not None:
+                for name, p in self.model.named_parameters():
+                    if p.grad is not None and name in W_global:
+                        p.grad.data.add_(p.data - W_global[name].data, alpha=proximal_mu)
+            if c_server is not None and c_local is not None:
+                for name, p in self.model.named_parameters():
+                    if p.grad is not None and name in c_server:
+                        p.grad.data.add_(c_server[name].to(p.device) - c_local[name].to(p.device))
             if self.cfg.grad_clip is not None:
                 torch.nn.utils.clip_grad_norm_(self.model.parameters(), self.cfg.grad_clip)
             self.optimizer.step()
-            running += float(loss)
+            running += float(loss.detach())
             used += 1
         subtract_(target=self.dW, minuend=self.W, subtrahend=self.W_old)
         if not torch.isfinite(flatten(self.dW)).all():

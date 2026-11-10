@@ -26,6 +26,13 @@ class Config:
     weighted_aggregation: bool = True   # FedAvg weights clients by |D_i|
     bn_stats: str = "local"          # "local" (FLamby/CFL: params only) | "average"
 
+    # -------------------------------------------------- benchmark algorithms
+    mu: float = 0.01                 # FedProx proximal term
+    server_lr: float = 1.0           # Scaffold & Adaptive server lr [110]
+    beta_1: float = 0.9              # FedAdam / FedYogi beta_1 [110]
+    beta_2: float = 0.99             # FedAdam / FedYogi beta_2 [110]
+    tau: float = 1e-3                # FedAdam / FedYogi / FedAdagrad tau [110]
+
     # ---------------------------------------------------------- client partition
     clients_per_center: int = 3      # 3 hospitals x 3 = 9 clients
     centers: str = "0,1,2"           # Guys=0, HH=1, IOP=2
@@ -70,6 +77,18 @@ class Config:
     layer_order: str = ""            # FLamby: "cbp" = conv + BatchNorm + PReLU
     upsample: str = ""               # FLamby: "trilinear" (upsampling_type="linear")
     dropout_prob: float = 0.0
+
+    # ------------------------------------------- stopping rule (fl_algorithms/stopping.py)
+    # "converge" is the same rule as Fed-Heart-Disease; communication_rounds is then a hard cap.
+    stop_rule: str = "none"
+    stop_window: int = 10
+    stop_patience: int = 50
+    stop_rel_tol: float = 0.01
+    stop_drop: float = 0.02
+    stop_drop_patience: int = 20
+    stop_loss_floor: float = 1e-3
+    stop_split_grace: int = 50
+    min_rounds: int = 100
 
     # ------------------------------------------------------------ eval / data / io
     eval_every: int = 1

@@ -46,7 +46,7 @@ def main(argv=None):
         r = int(flat[0])
 
     eps1 = float(m.loc[r, "mean_norm_max"]) * a.margin
-    eps2 = float(m["max_norm_max"].min()) * 0.97
+    eps2 = float(m["max_norm_max"].iloc[:r + 1].min()) * 0.97
     gammas = m["gamma_hat"].dropna().tolist() if "gamma_hat" in m else []
     gamma = float(np.median(gammas[-3:])) if gammas else None
 
@@ -55,7 +55,7 @@ def main(argv=None):
         int(m.loc[r, "round"]), a.metric, a.window, float(gain.loc[r]), a.tol))
     print("{:27s}: {:.4f}".format(a.metric + " there", float(m.loc[r, a.metric])))
     print("weighted mean ||dtheta||   : {:.5f}".format(float(m.loc[r, "mean_norm_max"])))
-    print("min over rounds of max||dtheta||: {:.5f}".format(float(m["max_norm_max"].min())))
+    print("min over rounds of max||dtheta||: {:.5f}".format(float(m["max_norm_max"].iloc[:r + 1].min())))
     print("gamma probes (last 3)      : {}".format([round(g, 3) for g in gammas[-3:]]))
     print()
     print("  --eps-1 {:.5f} --eps-2 {:.5f}{}".format(

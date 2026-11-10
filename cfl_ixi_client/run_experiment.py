@@ -172,6 +172,25 @@ def run(cfg):
             names[p], len(probes[0].train_data), len(probes[1].train_data),
             cfg.gamma_probe_every, " (gamma_max automatic)" if cfg.gamma_auto else ""))
 
+    # --------------------------------------------------- FLamby benchmark strategies
+    # Not part of CFL: FedProx/SCAFFOLD/Cyclic/FedAdam/FedYogi/FedAdagrad hand the
+    # whole run over to fl_algorithms.runner, which owns its own training loop.
+    if cfg.strategy in ("fedprox", "scaffold", "cyclic", "cyclic_learning",
+                        "fedadam", "fedyogi", "fedadagrad"):
+        from fl_algorithms import run_fl_benchmark
+        cfg.algorithm = "cyclic" if cfg.strategy == "cyclic_learning" else cfg.strategy
+        return run_fl_benchmark(
+            cfg=cfg,
+            clients=clients,
+            server=server,
+            client_center=client_center,
+            center_test=center_test,
+            meta={"names": names},
+            sched=sched,
+            metric_name="dice",
+            cross_eval_fn=cross_evaluate
+        )
+
     # ------------------------------------------------------------------- clusters
     if cfg.strategy == "partition":
         clusters = parse_partition(cfg.partition, n)
@@ -187,6 +206,11 @@ def run(cfg):
     ev = [{"dice": float("nan"), "dice_fg": float("nan")}] * n
     cum_time, t_start = 0.0, time.time()
 
+    stop = None
+    if cfg.stop_rule == "converge":
+        from fl_algorithms.stopping import StopRule
+        stop = StopRule(cfg)
+        log(stop.describe() + " | cap {} rounds".format(cfg.communication_rounds))
     for rnd in range(1, cfg.communication_rounds + 1):
         t0 = time.time()
 
@@ -372,6 +396,14 @@ def run(cfg):
                     " ({} dropped)".format(row["n_dropped"]) if row["n_dropped"] else "",
                     dt, eta / 60))
 
+        if stop is not None:
+            why = stop.update(rnd, row["train_loss"], row["dice_mean"], split=n_split > 0)
+            if why and rnd % cfg.eval_every == 0:      # stop only where the score is fresh
+                log("STOP at round {}: {}".format(rnd, why))
+                break
+            if why:
+                stop.reason, stop.stopped_at = None, None
+
     # ----------------------------------------------------------------- wrap up
     final_cross = cross_evaluate(clients, center_test, samples=True)
     lab = cluster_labels(clusters, n)
@@ -386,6 +418,10 @@ def run(cfg):
              "straggler_speeds": sched.speeds(0).tolist(),
              "cum_round_time": cum_time,
              "minutes": (time.time() - t_start) / 60}
+    if stop is not None:
+        final.update(stop.summary())
+        final.update({"rounds_run": rnd, "rounds_budget": cfg.communication_rounds,
+                      "stopped_early": stop.stopped_at})
     with open(os.path.join(out, "final.json"), "w") as f:
         json.dump(final, f, indent=2)
     if cfg.save_similarities:
@@ -411,7 +447,7 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--run-name")
-    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition"])
+    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition", "fedprox", "scaffold", "cyclic", "cyclic_learning", "fedadam", "fedyogi", "fedadagrad"])
     p.add_argument("--partition", help='e.g. "0,1,2|3,4,5|6,7,8"')
     p.add_argument("--rounds", type=int, dest="communication_rounds")
     p.add_argument("--local-updates", type=int)
@@ -460,11 +496,25 @@ def parse_args(argv=None):
     p.add_argument("--upsample", choices=["nearest", "trilinear", "deconv"])
     p.add_argument("--dropout-prob", type=float)
     # io
+    p.add_argument("--stop-rule", choices=["none", "converge"])
+    p.add_argument("--stop-window", type=int)
+    p.add_argument("--stop-patience", type=int)
+    p.add_argument("--stop-rel-tol", type=float)
+    p.add_argument("--stop-drop", type=float)
+    p.add_argument("--stop-drop-patience", type=int)
+    p.add_argument("--stop-loss-floor", type=float)
+    p.add_argument("--stop-split-grace", type=int)
+    p.add_argument("--min-rounds", type=int)
     p.add_argument("--eval-every", type=int)
     p.add_argument("--cross-eval-every", type=int)
     p.add_argument("--seed", type=int)
     p.add_argument("--device", choices=["auto", "cuda", "cpu"])
     p.add_argument("--results-dir")
+    p.add_argument("--mu", type=float)
+    p.add_argument("--server-lr", type=float)
+    p.add_argument("--beta-1", type=float)
+    p.add_argument("--beta-2", type=float)
+    p.add_argument("--tau", type=float)
     p.add_argument("--no-save-models", dest="save_models", action="store_const", const=False)
     p.add_argument("--no-pin-data", dest="pin_data_to_device", action="store_const",
                    const=False)

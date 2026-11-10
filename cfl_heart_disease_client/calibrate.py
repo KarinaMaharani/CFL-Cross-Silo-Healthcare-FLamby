@@ -28,7 +28,7 @@ def main(argv=None):
     p = argparse.ArgumentParser()
     p.add_argument("--run", default="fedavg8")
     p.add_argument("--results-dir", default="results_heart8")
-    p.add_argument("--window", type=int, default=20, help="rounds over which to measure the gain")
+    p.add_argument("--window", type=int, default=10, help="rounds over which to measure the gain")
     p.add_argument("--tol", type=float, default=0.005, help="accuracy gain that counts as 'flat'")
     p.add_argument("--metric", default="accuracy_mean")
     p.add_argument("--margin", type=float, default=1.03, help="eps_1 = margin x mean norm")
@@ -46,7 +46,7 @@ def main(argv=None):
         r = int(flat[0])
 
     eps1 = float(m.loc[r, "mean_norm_max"]) * a.margin
-    eps2 = float(m["max_norm_max"].min()) * 0.97
+    eps2 = float(m["max_norm_max"].iloc[:r + 1].min()) * 0.97
     gammas = m["gamma_hat"].dropna().tolist() if "gamma_hat" in m else []
     gamma = float(np.median(gammas[-3:])) if gammas else None
 

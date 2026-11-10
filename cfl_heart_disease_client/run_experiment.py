@@ -128,6 +128,21 @@ def run(cfg):
             names[p], len(probes[0].train_data), len(probes[1].train_data),
             cfg.gamma_probe_every))
 
+    if cfg.strategy in ("fedprox", "scaffold", "cyclic", "cyclic_learning", "fedadam", "fedyogi", "fedadagrad"):
+        from fl_algorithms import run_fl_benchmark
+        cfg.algorithm = "cyclic" if cfg.strategy == "cyclic_learning" else cfg.strategy
+        return run_fl_benchmark(
+            cfg=cfg,
+            clients=clients,
+            server=server,
+            client_center=client_center,
+            center_test=center_test,
+            meta=meta,
+            sched=sched,
+            metric_name="accuracy",
+            cross_eval_fn=cross_evaluate
+        )
+
     clusters = (parse_partition(cfg.partition, n) if cfg.strategy == "partition"
                 else [np.arange(n).astype(int)])
     born = {tuple(i.tolist()): 0 for i in clusters}
@@ -139,6 +154,11 @@ def run(cfg):
     all_S, split_rounds, split_events = [], [], []
     ev = [{"accuracy": float("nan")}] * n
     cum_time, t_start = 0.0, time.time()
+    stop = None
+    if cfg.stop_rule == "converge":
+        from fl_algorithms.stopping import StopRule
+        stop = StopRule(cfg)
+        log(stop.describe() + " | cap {} rounds".format(cfg.communication_rounds))
 
     for rnd in range(1, cfg.communication_rounds + 1):
         t0 = time.time()
@@ -298,6 +318,16 @@ def run(cfg):
                     row["train_loss"], len(clusters), ari, pure, row["mean_norm_max"],
                     row["max_norm_max"], dt))
 
+        if stop is not None:
+            why = stop.update(rnd, row["train_loss"], row["accuracy_mean"], split=n_split > 0)
+            if why:
+                ev = [c.evaluate() for c in clients]
+                log("round {:3d}/{} | accuracy {:.4f} (min {:.4f}) | loss {:.4f} | clusters {}"
+                    .format(rnd, cfg.communication_rounds, row["accuracy_mean"],
+                            row["accuracy_min"], row["train_loss"], len(clusters)))
+                log("STOP at round {}: {}".format(rnd, why))
+                break
+
     final_cross = cross_evaluate(clients, center_test)
     lab = cluster_labels(clusters, n)
     final = {"final_clusters": [i.tolist() for i in clusters],
@@ -309,7 +339,11 @@ def run(cfg):
              "client_names": names, "client_center": client_center.tolist(),
              "per_client": ev, "cross": final_cross,
              "straggler_speeds": sched.speeds(0).tolist(),
-             "minutes": (time.time() - t_start) / 60}
+             "minutes": (time.time() - t_start) / 60,
+             "rounds_run": rnd, "rounds_budget": cfg.communication_rounds}
+    if stop is not None:
+        final.update(stop.summary())
+        final["stopped_early"] = stop.stopped_at
     with open(os.path.join(out, "final.json"), "w") as f:
         json.dump(final, f, indent=2)
     if cfg.save_similarities:
@@ -332,7 +366,7 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--run-name")
-    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition"])
+    p.add_argument("--strategy", choices=["cfl", "fedavg", "partition", "fedprox", "scaffold", "cyclic", "cyclic_learning", "fedadam", "fedyogi", "fedadagrad"])
     p.add_argument("--partition")
     p.add_argument("--rounds", type=int, dest="communication_rounds")
     p.add_argument("--local-updates", type=int)
@@ -368,12 +402,26 @@ def parse_args(argv=None):
     p.add_argument("--straggler-dynamic", action="store_const", const=True)
     p.add_argument("--straggler-deadline", type=float)
     p.add_argument("--straggler-seed", type=int)
+    p.add_argument("--stop-rule", choices=["none", "converge"])
+    p.add_argument("--stop-window", type=int)
+    p.add_argument("--stop-patience", type=int)
+    p.add_argument("--stop-rel-tol", type=float)
+    p.add_argument("--stop-drop", type=float)
+    p.add_argument("--stop-drop-patience", type=int)
+    p.add_argument("--stop-loss-floor", type=float)
+    p.add_argument("--stop-split-grace", type=int)
+    p.add_argument("--min-rounds", type=int)
     p.add_argument("--eval-every", type=int)
     p.add_argument("--cross-eval-every", type=int)
     p.add_argument("--log-every", type=int)
     p.add_argument("--seed", type=int)
     p.add_argument("--device", choices=["auto", "cuda", "cpu"])
     p.add_argument("--results-dir")
+    p.add_argument("--mu", type=float)
+    p.add_argument("--server-lr", type=float)
+    p.add_argument("--beta-1", type=float)
+    p.add_argument("--beta-2", type=float)
+    p.add_argument("--tau", type=float)
     p.add_argument("--no-save-models", dest="save_models", action="store_const", const=False)
     a = vars(p.parse_args(argv))
     sched = a.pop("split_schedule", None)

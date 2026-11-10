@@ -16,9 +16,7 @@ class Config:
 
     # ------------------------------- FLamby Fed-TCGA-BRCA federated protocol
     communication_rounds: int = 100  # FLamby's own budget: get_nb_max_rounds(100) = 5
-    local_updates: int = 20          # steps per client per round.  With 18 clients the
-                                     # smallest holds 13 patients = 2 batches, so 20
-                                     # steps is ~10 passes over it per round.
+    local_updates: int = 100         # FLamby: num_updates per client per round
     batch_size: int = 8              # fed_tcga_brca BATCH_SIZE
     lr: float = 0.1                  # config_tcga_brca.json FedAvg (SGD)
     momentum: float = 0.0
@@ -26,6 +24,13 @@ class Config:
     grad_clip: Optional[float] = None
     weighted_aggregation: bool = True
     bn_stats: str = "local"          # the model has no BatchNorm; kept for symmetry
+
+    # -------------------------------------------------- benchmark algorithms
+    mu: float = 0.01                 # FedProx proximal term
+    server_lr: float = 1.0           # Scaffold & Adaptive server lr [110]
+    beta_1: float = 0.9              # FedAdam / FedYogi beta_1 [110]
+    beta_2: float = 0.99             # FedAdam / FedYogi beta_2 [110]
+    tau: float = 1e-3                # FedAdam / FedYogi / FedAdagrad tau [110]
 
     # ---------------------------------------------------------- client partition
     clients_per_center: int = 3      # 6 regions x 3 = 18 clients
@@ -61,6 +66,18 @@ class Config:
     straggler_deadline: float = 1.0
     straggler_min_updates: int = 1
     straggler_seed: int = 7
+
+    # ------------------------------------------- stopping rule (fl_algorithms/stopping.py)
+    # "converge" is the same rule as Fed-Heart-Disease; communication_rounds is then a hard cap.
+    stop_rule: str = "none"
+    stop_window: int = 10
+    stop_patience: int = 50
+    stop_rel_tol: float = 0.01
+    stop_drop: float = 0.02
+    stop_drop_patience: int = 20
+    stop_loss_floor: float = 1e-3
+    stop_split_grace: int = 50
+    min_rounds: int = 100
 
     # ------------------------------------------------------------ eval / data / io
     eval_every: int = 1
